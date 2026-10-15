@@ -1,0 +1,330 @@
+/**
+ * ANEA'S LITTLE UNIVERSE ♡
+ * Mini-Games Styling: Collect Stars, Constellation, Love Quiz
+ */
+
+.carnival-tabs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 10px auto 26px;
+  flex-wrap: wrap;
+  padding: 0 16px;
+}
+
+.carnival-tab-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: rgba(16, 24, 44, 0.7);
+  border: 1px solid var(--border-starlight);
+  border-radius: 999px;
+  color: var(--warm-cream);
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  backdrop-filter: blur(6px);
+}
+
+.carnival-tab-btn:hover {
+  background: rgba(26, 38, 66, 0.9);
+  border-color: var(--gold-starlight);
+}
+
+.carnival-tab-btn.active {
+  background: linear-gradient(135deg, rgba(223, 186, 83, 0.3), rgba(116, 143, 126, 0.3));
+  border-color: var(--gold-starlight);
+  color: #fff;
+  box-shadow: 0 0 16px rgba(223, 186, 83, 0.3);
+}
+
+.game-stage-container {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 0 16px 40px;
+}
+
+.minigame-card {
+  background: linear-gradient(145deg, rgba(16, 24, 44, 0.92), rgba(10, 15, 29, 0.98));
+  border: 1px solid var(--border-starlight);
+  border-radius: 24px;
+  padding: 30px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+
+.game-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.game-title {
+  font-size: 1.5rem;
+  color: var(--gold-starlight);
+  margin-bottom: 4px;
+}
+
+.game-instruction {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.game-score-display {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 0.88rem;
+  color: var(--warm-ivory);
+  background: rgba(223, 186, 83, 0.15);
+  border: 1px solid rgba(223, 186, 83, 0.3);
+  padding: 4px 14px;
+  border-radius: 999px;
+}
+
+/* Game 1: Collect the Stars */
+.game-canvas-area {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+#g1Canvas {
+  max-width: 100%;
+  border-radius: 16px;
+  border: 1px solid var(--border-starlight);
+  cursor: ew-resize;
+  background: #0a0f1d;
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.7);
+}
+
+.touch-hint {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 8px;
+}
+
+.game-quote-banner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(223, 186, 83, 0.12);
+  border: 1px solid var(--gold-starlight);
+  border-radius: 12px;
+  padding: 12px 18px;
+  margin-top: 14px;
+  animation: fadeIn 0.3s ease;
+}
+
+.quote-sparkle {
+  color: var(--gold-starlight);
+  font-size: 1.2rem;
+}
+
+.quote-text {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--warm-ivory);
+}
+
+.game-completion-banner {
+  text-align: center;
+  padding: 20px;
+  background: rgba(30, 42, 35, 0.85);
+  border: 1px solid var(--soft-sage);
+  border-radius: 16px;
+  margin-top: 18px;
+  animation: scaleIn 0.35s ease;
+}
+
+.game-completion-banner h4 {
+  font-size: 1.25rem;
+  color: var(--gold-starlight);
+  margin-bottom: 6px;
+}
+
+.game-completion-banner p {
+  font-size: 1.05rem;
+  color: var(--warm-cream);
+  margin-bottom: 16px;
+}
+
+/* Game 2: Constellation */
+.constellation-canvas-area {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+#constellationSvg {
+  max-width: 100%;
+  height: auto;
+  border-radius: 16px;
+  background: radial-gradient(circle at 50% 50%, #15223e, #0a0f1d);
+  border: 1px solid var(--border-starlight);
+}
+
+.constellation-controls {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.constellation-reward {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: var(--gold-starlight);
+  letter-spacing: 0.05em;
+}
+
+/* Game 3: Love Quiz */
+.quiz-badge {
+  font-size: 0.75rem;
+  color: var(--gold-starlight);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.quiz-question-en {
+  font-size: 1.35rem;
+  color: var(--warm-ivory);
+  margin: 6px 0 4px;
+}
+
+.quiz-question-ar {
+  font-size: 1.15rem;
+  color: var(--soft-sage);
+}
+
+.quiz-options-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 24px 0 16px;
+}
+
+.quiz-option-btn {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 20px;
+  background: rgba(22, 34, 58, 0.7);
+  border: 1px solid var(--border-starlight);
+  border-radius: 14px;
+  color: var(--warm-cream);
+  font-size: 0.95rem;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.25s ease;
+}
+
+.quiz-option-btn:hover:not(:disabled) {
+  background: rgba(32, 48, 80, 0.9);
+  border-color: var(--gold-starlight);
+  transform: translateX(4px);
+}
+
+.opt-bullet {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 0.85rem;
+  color: var(--gold-starlight);
+  flex-shrink: 0;
+}
+
+.quiz-option-btn.correct-choice {
+  background: rgba(35, 65, 45, 0.85) !important;
+  border-color: #5bb377 !important;
+  color: #fff !important;
+}
+
+.quiz-option-btn.gentle-wrong-choice {
+  background: rgba(55, 35, 35, 0.85) !important;
+  border-color: #b35b5b !important;
+}
+
+.quiz-feedback-box {
+  margin-top: 16px;
+  padding: 16px;
+  border-radius: 12px;
+  animation: fadeIn 0.3s ease;
+}
+
+.feedback-correct {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: rgba(40, 70, 50, 0.6);
+  border: 1px solid rgba(116, 143, 126, 0.5);
+  padding: 14px;
+  border-radius: 12px;
+}
+
+.feedback-gentle {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: rgba(50, 40, 60, 0.6);
+  border: 1px solid rgba(223, 186, 83, 0.3);
+  padding: 14px;
+  border-radius: 12px;
+}
+
+.fb-icon {
+  font-size: 1.8rem;
+}
+
+.fb-ar {
+  font-size: 1.05rem;
+  color: var(--warm-ivory);
+}
+
+.fb-en {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.quiz-results-card {
+  text-align: center;
+  padding: 40px 24px;
+}
+
+.results-crown {
+  font-size: 3rem;
+  margin-bottom: 12px;
+  animation: pulseGlow 3s infinite;
+}
+
+.results-title {
+  font-size: 1.6rem;
+  color: var(--gold-starlight);
+  margin-bottom: 8px;
+}
+
+.results-arabic {
+  font-size: 1.15rem;
+  color: var(--warm-cream);
+  max-width: 500px;
+  margin: 0 auto 20px;
+}
+
+.results-star-badge {
+  display: inline-block;
+  padding: 8px 18px;
+  background: rgba(223, 186, 83, 0.2);
+  border: 1px solid var(--gold-starlight);
+  border-radius: 999px;
+  color: var(--gold-starlight);
+  font-weight: 500;
+  margin-bottom: 24px;
+}

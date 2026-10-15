@@ -117,23 +117,6 @@ export function renderGardenScene(container, returnToMap) {
         </div>
       </div>
 
-      <!-- Quick Memory Directory Carousel at Bottom for Mobile -->
-      <div class="garden-directory-wrapper">
-        <h4 class="directory-title" dir="rtl">قائمة الذكريات المستكشفة (${stateManager.state.memoriesVisited.length} / 6)</h4>
-        <div class="garden-directory-cards">
-          ${memories.map((mem) => {
-            const isVisited = stateManager.state.memoriesVisited.includes(mem.id);
-            return `
-              <button class="dir-memory-pill ${isVisited ? 'visited' : ''}" data-id="${mem.id}">
-                <span class="dir-icon">${isVisited ? '⭐' : '🌸'}</span>
-                <span class="dir-num">${mem.number}</span>
-                <span class="dir-name" dir="rtl">${mem.titleArabic}</span>
-              </button>
-            `;
-          }).join("")}
-        </div>
-      </div>
-
       <!-- Memory Detail Modal -->
       <div class="celestial-modal-overlay" id="gardenModal" style="display: none;">
         <div class="celestial-modal-card memory-detail-card">
@@ -278,18 +261,6 @@ export function renderGardenScene(container, returnToMap) {
       const id = spot.getAttribute("data-id");
       const idx = parseInt(spot.getAttribute("data-idx"), 10);
       const mem = memories.find(m => m.id === id);
-      if (mem) {
-        walkToFlowerAndOpen(mem, idx);
-      }
-    });
-  });
-
-  // Directory buttons (direct jump)
-  container.querySelectorAll(".dir-memory-pill").forEach(btn => {
-    btn.addEventListener("click", () => {
-      const id = btn.getAttribute("data-id");
-      const idx = memories.findIndex(m => m.id === id);
-      const mem = memories[idx];
       if (mem) {
         walkToFlowerAndOpen(mem, idx);
       }

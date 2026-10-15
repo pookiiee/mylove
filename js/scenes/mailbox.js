@@ -160,14 +160,9 @@ export function renderMailboxScene(container, returnToMap) {
             </div>
           </div>
           <div class="voice-note-hint" id="voiceNoteHint">
-            <span>✨ استمعي لفويس أسيل مع قراءة الكلمات بالأسفل ♡</span>
+            <span>✨ استمعي إلى فويس أسيل الصوتي الحنون ♡</span>
           </div>
           <audio id="realVoiceAudio" preload="metadata" src="${letter.audioSrc || ''}"></audio>
-        </div>
-
-        <div class="parchment-body" dir="rtl">
-          <div class="parchment-label">نص الفويس والرسالة:</div>
-          <p class="parchment-text">${letter.bodyArabic.replace(/\n/g, '<br>')}</p>
         </div>
 
         <div class="parchment-footer">

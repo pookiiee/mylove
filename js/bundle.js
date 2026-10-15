@@ -1602,7 +1602,7 @@ function renderWorldScene(container, navigateTo) {
         <!-- Symmetrical Celestial Grid Container -->
         <div class="orbit-nodes-container">
           <!-- Top Center: The Birthday Castle (Grand Peak) -->
-          <div class="destination-node castle-orbit-node ${isCastleOpen ? 'unlocked' : 'locked'}" data-dest="castle" style="top: 14%; left: 50%;">
+          <div class="destination-node castle-orbit-node ${isCastleOpen ? 'unlocked' : 'locked'}" data-dest="castle" style="top: 18%; left: 50%;">
             <div class="node-orbit-glow"></div>
             <div class="node-visual castle-visual">
               <span class="node-emoji">🏰</span>
@@ -1618,7 +1618,7 @@ function renderWorldScene(container, navigateTo) {
           </div>
 
           <!-- Destination 1: Our Little Home (Left Upper Orbit) -->
-          <div class="destination-node planet-orbit-node ${isHomeUnlocked ? 'unlocked' : 'locked'}" data-dest="home" style="top: 42%; left: 16%;">
+          <div class="destination-node planet-orbit-node ${isHomeUnlocked ? 'unlocked' : 'locked'}" data-dest="home" style="top: 48%; left: 18%;">
             <div class="node-orbit-glow"></div>
             <div class="node-visual home-visual">
               <span class="node-emoji">🏡</span>
@@ -1632,7 +1632,7 @@ function renderWorldScene(container, navigateTo) {
           </div>
 
           <!-- Destination 2: Garden of Memories (Right Upper Orbit) -->
-          <div class="destination-node planet-orbit-node ${isGardenUnlocked ? 'unlocked' : 'locked'}" data-dest="garden" style="top: 42%; left: 84%;">
+          <div class="destination-node planet-orbit-node ${isGardenUnlocked ? 'unlocked' : 'locked'}" data-dest="garden" style="top: 48%; left: 82%;">
             <div class="node-orbit-glow"></div>
             <div class="node-visual garden-visual">
               <span class="node-emoji">🌸</span>
@@ -1648,7 +1648,7 @@ function renderWorldScene(container, navigateTo) {
           </div>
 
           <!-- Destination 3: Mailbox of Love (Left Lower Orbit) -->
-          <div class="destination-node planet-orbit-node ${isMailboxUnlocked ? 'unlocked' : 'locked'}" data-dest="mailbox" style="top: 76%; left: 26%;">
+          <div class="destination-node planet-orbit-node ${isMailboxUnlocked ? 'unlocked' : 'locked'}" data-dest="mailbox" style="top: 78%; left: 28%;">
             <div class="node-orbit-glow"></div>
             <div class="node-visual mailbox-visual">
               <span class="node-emoji">💌</span>
@@ -1680,7 +1680,7 @@ function renderWorldScene(container, navigateTo) {
           </div>
 
           <!-- Destination 5: The Lake of Stars (Right Lower Orbit) -->
-          <div class="destination-node planet-orbit-node ${isLakeUnlocked ? 'unlocked' : 'locked'}" data-dest="lake" style="top: 76%; left: 74%;">
+          <div class="destination-node planet-orbit-node ${isLakeUnlocked ? 'unlocked' : 'locked'}" data-dest="lake" style="top: 78%; left: 72%;">
             <div class="node-orbit-glow"></div>
             <div class="node-visual lake-visual">
               <span class="node-emoji">🌊</span>
@@ -1697,13 +1697,8 @@ function renderWorldScene(container, navigateTo) {
         </div>
 
         <!-- Hidden Secret Star Easter Egg -->
-        <div class="secret-star-element" id="secretStarBtn" style="position: absolute; top: 22%; left: 28%; cursor: pointer;" title="A faint mysterious sparkle in the cosmos...">
+        <div class="secret-star-element" id="secretStarBtn" style="position: absolute; top: 25%; left: 30%; cursor: pointer;" title="A faint mysterious sparkle in the cosmos...">
           <span class="secret-sparkle">✧</span>
-        </div>
-
-        <!-- Hidden Shared Word Easter Egg -->
-        <div class="hidden-word-tag" id="hiddenWordBtn" style="position: absolute; bottom: 20px; left: 26px; cursor: pointer;" title="Aseel's special word for you">
-          <span class="tag-pill">حبوبي ♡</span>
         </div>
 
         <!-- Chibi Duo Sitting Together Cutest Corner (Anea & Cute Pink Aseel) -->
@@ -1802,22 +1797,6 @@ function renderWorldScene(container, navigateTo) {
         <p class="egg-arabic" dir="rtl">${CONFIG.secrets.secretStarArabic}</p>
         <p class="egg-english">"${CONFIG.secrets.secretStar}"</p>
         <div class="egg-reward">+1 Golden Star Collected!</div>
-      </div>
-    `);
-    updateStats();
-  });
-
-  // Hidden Word Easter Egg
-  const hiddenWord = container.querySelector("#hiddenWordBtn");
-  hiddenWord.addEventListener("click", () => {
-    stateManager.unlockSecret("hiddenWord");
-    audioManager.playChime(784, 1.2);
-    showModal(`
-      <div class="easter-egg-card">
-        <div class="egg-icon">♡</div>
-        <h3 class="egg-title">حبوبي</h3>
-        <p class="egg-arabic" dir="rtl">${CONFIG.secrets.hiddenWordMessage}</p>
-        <p class="egg-english">"Our softest, sweetest word. You found it hidden in the stars."</p>
       </div>
     `);
     updateStats();
@@ -2183,23 +2162,6 @@ function renderGardenScene(container, returnToMap) {
         </div>
       </div>
 
-      <!-- Quick Memory Directory Carousel at Bottom for Mobile -->
-      <div class="garden-directory-wrapper">
-        <h4 class="directory-title" dir="rtl">قائمة الذكريات المستكشفة (${stateManager.state.memoriesVisited.length} / 6)</h4>
-        <div class="garden-directory-cards">
-          ${memories.map((mem) => {
-            const isVisited = stateManager.state.memoriesVisited.includes(mem.id);
-            return `
-              <button class="dir-memory-pill ${isVisited ? 'visited' : ''}" data-id="${mem.id}">
-                <span class="dir-icon">${isVisited ? '⭐' : '🌸'}</span>
-                <span class="dir-num">${mem.number}</span>
-                <span class="dir-name" dir="rtl">${mem.titleArabic}</span>
-              </button>
-            `;
-          }).join("")}
-        </div>
-      </div>
-
       <!-- Memory Detail Modal -->
       <div class="celestial-modal-overlay" id="gardenModal" style="display: none;">
         <div class="celestial-modal-card memory-detail-card">
@@ -2344,18 +2306,6 @@ function renderGardenScene(container, returnToMap) {
       const id = spot.getAttribute("data-id");
       const idx = parseInt(spot.getAttribute("data-idx"), 10);
       const mem = memories.find(m => m.id === id);
-      if (mem) {
-        walkToFlowerAndOpen(mem, idx);
-      }
-    });
-  });
-
-  // Directory buttons (direct jump)
-  container.querySelectorAll(".dir-memory-pill").forEach(btn => {
-    btn.addEventListener("click", () => {
-      const id = btn.getAttribute("data-id");
-      const idx = memories.findIndex(m => m.id === id);
-      const mem = memories[idx];
       if (mem) {
         walkToFlowerAndOpen(mem, idx);
       }
@@ -2528,14 +2478,9 @@ function renderMailboxScene(container, returnToMap) {
             </div>
           </div>
           <div class="voice-note-hint" id="voiceNoteHint">
-            <span>✨ استمعي لفويس أسيل مع قراءة الكلمات بالأسفل ♡</span>
+            <span>✨ استمعي إلى فويس أسيل الصوتي الحنون ♡</span>
           </div>
           <audio id="realVoiceAudio" preload="metadata" src="${letter.audioSrc || ''}"></audio>
-        </div>
-
-        <div class="parchment-body" dir="rtl">
-          <div class="parchment-label">نص الفويس والرسالة:</div>
-          <p class="parchment-text">${letter.bodyArabic.replace(/\n/g, '<br>')}</p>
         </div>
 
         <div class="parchment-footer">

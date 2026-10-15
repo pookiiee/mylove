@@ -328,3 +328,82 @@
   font-weight: 500;
   margin-bottom: 24px;
 }
+
+/* Responsive Carnival Styles on Mobile */
+@media (max-width: 768px) {
+  .carnival-tabs {
+    gap: 6px;
+    margin: 6px auto 16px;
+    padding: 0 10px;
+  }
+  .carnival-tab-btn {
+    padding: 7px 14px;
+    font-size: 0.8rem;
+    gap: 5px;
+  }
+  .game-stage-container {
+    padding: 0 10px 24px;
+  }
+  .minigame-card {
+    padding: 18px 12px;
+    border-radius: 16px;
+  }
+  .game-title {
+    font-size: 1.25rem;
+  }
+  .game-instruction {
+    font-size: 0.82rem;
+  }
+  #g1Canvas {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+  #constellationSvg {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+  .quiz-question-en {
+    font-size: 1.15rem;
+    line-height: 1.35;
+  }
+  .quiz-question-ar {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  .quiz-options-list {
+    gap: 10px;
+    margin: 18px 0 12px;
+  }
+  .quiz-option-btn {
+    padding: 10px 12px;
+    font-size: 0.86rem;
+    gap: 10px;
+    line-height: 1.4;
+    white-space: normal;
+  }
+  .opt-bullet {
+    width: 24px;
+    height: 24px;
+    font-size: 0.75rem;
+  }
+  .fb-icon {
+    font-size: 1.4rem;
+  }
+  .fb-ar {
+    font-size: 0.92rem;
+  }
+  .fb-en {
+    font-size: 0.78rem;
+  }
+  .results-crown {
+    font-size: 2.2rem;
+  }
+  .results-title {
+    font-size: 1.35rem;
+  }
+  .results-arabic {
+    font-size: 1rem;
+  }
+}

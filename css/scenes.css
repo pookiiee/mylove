@@ -438,33 +438,137 @@
 
 /* Responsive Orbit Layout on Mobile */
 @media (max-width: 768px) {
-  .celestial-orbit-stage {
-    min-height: 500px;
-    height: 520px;
-    transform: scale(0.92);
-    transform-origin: top center;
+  .universe-header {
+    padding: 10px 14px;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: space-between;
   }
-  .node-visual {
-    width: 66px;
-    height: 66px;
-  }
-  .castle-visual {
-    width: 76px;
-    height: 76px;
-  }
-  .node-emoji {
-    font-size: 1.8rem;
-  }
-  .node-title {
+  .universe-title-badge {
     font-size: 0.95rem;
   }
-  .node-arabic {
-    font-size: 0.85rem;
+  .universe-stats {
+    gap: 6px;
+    flex-wrap: wrap;
   }
+  .stat-pill {
+    padding: 4px 8px;
+    font-size: 0.75rem;
+  }
+  .sound-controls {
+    padding: 2px 6px;
+    gap: 4px;
+  }
+  .volume-slider {
+    display: none;
+  }
+  .settings-btn {
+    font-size: 1rem;
+    padding: 2px 6px;
+  }
+  .universe-hero-header {
+    padding: 12px 14px 4px;
+  }
+  .universe-hero-title {
+    font-size: 1.25rem;
+    line-height: 1.3;
+  }
+  .universe-hero-ar {
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+
+  .celestial-orbit-stage {
+    min-height: 640px !important;
+    height: 660px !important;
+    max-width: 100% !important;
+    margin: 0 auto 10px !important;
+    transform: none !important;
+    position: relative;
+    overflow: visible;
+  }
+
+  .celestial-orbit-lines {
+    opacity: 0.18;
+  }
+
+  /* Clear Symmetrical 2-Column Mobile Orbit Layout:
+     Castle at top center (Peak)
+     Row 1: Home (Left) & Garden (Right)
+     Row 2: Mailbox (Left) & Carnival (Right)
+     Row 3: Lake (Center Sanctuary)
+     Mascot: Bottom right corner
+  */
+  .destination-node[data-dest="castle"] {
+    top: 9% !important;
+    left: 50% !important;
+  }
+  .destination-node[data-dest="home"] {
+    top: 31% !important;
+    left: 26% !important;
+  }
+  .destination-node[data-dest="garden"] {
+    top: 31% !important;
+    left: 74% !important;
+  }
+  .destination-node[data-dest="mailbox"] {
+    top: 55% !important;
+    left: 26% !important;
+  }
+  .destination-node[data-dest="carnival"] {
+    top: 55% !important;
+    left: 74% !important;
+  }
+  .destination-node[data-dest="lake"] {
+    top: 79% !important;
+    left: 50% !important;
+  }
+
+  .node-visual {
+    width: 58px;
+    height: 58px;
+  }
+  .castle-visual {
+    width: 70px;
+    height: 70px;
+  }
+  .node-emoji {
+    font-size: 1.6rem;
+  }
+  .castle-visual .node-emoji {
+    font-size: 1.9rem;
+  }
+
+  .node-label {
+    margin-top: 4px;
+    max-width: 115px;
+  }
+  .node-title {
+    font-size: 0.82rem;
+    white-space: normal;
+    line-height: 1.2;
+    text-align: center;
+  }
+  .node-arabic {
+    font-size: 0.78rem;
+    white-space: normal;
+    line-height: 1.2;
+    text-align: center;
+  }
+  .node-badge {
+    font-size: 0.65rem;
+    padding: 2px 6px;
+    white-space: normal;
+    text-align: center;
+    max-width: 100px;
+  }
+
   .chibi-corner-mascot {
-    right: 10px;
-    bottom: 5px;
-    transform: scale(0.85);
+    position: absolute;
+    right: 12px;
+    bottom: 8px;
+    transform: scale(0.78);
+    transform-origin: bottom right;
   }
 }
 
@@ -1990,12 +2094,270 @@
   color: var(--gold-starlight);
 }
 
+/* Responsive Styles for Home, Garden, Mailbox, and Lake on Mobile */
 @media (max-width: 768px) {
-  .enchanted-lake-stage {
+  /* HOME SCENE RESPONSIVE */
+  .home-intro-banner {
+    margin: 8px auto 14px;
+    padding: 0 12px;
+  }
+  .home-intro-quote {
+    font-size: 1.1rem;
+    line-height: 1.5;
+  }
+  .home-intro-reveal {
+    font-size: 0.92rem;
+  }
+  .home-stage-wrapper {
+    padding: 0 10px;
+  }
+  .storybook-room-frame {
     min-height: 480px;
-    height: 490px;
+    padding: 16px 12px;
+  }
+  .room-arch-window {
+    top: 14px;
+    width: 104px;
+    height: 104px;
+    border-radius: 52px 52px 0 0;
+    padding-top: 10px;
+  }
+  .window-sky {
+    height: 60px;
+  }
+  .crescent-moon {
+    width: 16px;
+    height: 16px;
+    top: 6px;
+    right: 14px;
+  }
+  .room-bedside-nook {
+    top: 14px;
+    left: 10px;
+    gap: 8px;
+  }
+  .room-bookshelf-nook {
+    top: 14px;
+    right: 10px;
+    gap: 8px;
+  }
+  .prop-badge-floating {
+    font-size: 0.65rem;
+    padding: 2px 7px;
+    margin-top: 4px;
+  }
+  .folded-letter-sprite {
+    font-size: 1.4rem;
+  }
+  .word-text {
+    font-size: 0.78rem;
+    padding: 2px 8px;
+  }
+  .woven-rug-oval {
+    width: 180px;
+    height: 46px;
+  }
+  .home-chibi-duo-wrapper {
+    transform: scale(0.85);
+    transform-origin: bottom center;
+  }
+  .chibi-mug {
+    width: 28px;
+    height: 32px;
+    font-size: 0.88rem;
+  }
+  .two-cups-tray {
+    gap: 4px;
+  }
+
+  /* GARDEN SCENE RESPONSIVE */
+  .garden-poetic-quote {
+    font-size: 1.05rem;
+    line-height: 1.5;
+    margin: 8px auto 10px;
+    padding: 0 12px;
+  }
+  .garden-instruction-pill span {
+    font-size: 0.76rem;
+    padding: 4px 12px;
+    line-height: 1.4;
+    display: inline-block;
+  }
+  .interactive-garden-stage {
+    height: 430px;
+    border-radius: 20px;
+    margin: 8px auto 18px;
+  }
+  .flower-bloom-visual {
+    width: 44px;
+    height: 44px;
+    font-size: 1.35rem;
+  }
+  .flower-label-tag {
+    margin-top: 4px;
+    padding: 2px 6px;
+    max-width: 80px;
+    white-space: normal;
+    text-align: center;
+    border-radius: 8px;
+    line-height: 1.15;
+    flex-direction: column;
+    gap: 1px;
+  }
+  .flower-num {
+    font-size: 0.62rem;
+  }
+  .flower-title {
+    font-size: 0.66rem;
+  }
+  .garden-anea-avatar {
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+  .anea-bubble-hint {
+    font-size: 0.65rem;
+    padding: 1px 6px;
+    top: -20px;
+  }
+  .garden-directory-wrapper {
+    padding: 0 10px;
+    margin-bottom: 20px;
+  }
+  .garden-directory-cards {
+    gap: 6px;
+    padding-bottom: 6px;
+  }
+  .dir-memory-pill {
+    padding: 6px 10px;
+    font-size: 0.72rem;
+    gap: 5px;
+  }
+
+  /* MAILBOX SCENE RESPONSIVE */
+  .mailbox-header-banner {
+    margin-bottom: 16px;
+    padding: 0 12px;
+  }
+  .mailbox-floating-icon {
+    font-size: 2rem;
+  }
+  .mailbox-poetic-quote {
+    font-size: 1.05rem;
+    line-height: 1.5;
+  }
+  .letters-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    padding: 0 12px 28px;
+  }
+  .letter-envelope-item {
+    padding: 16px 14px;
+  }
+  .envelope-title-en {
+    font-size: 1.02rem;
+  }
+  .envelope-title-ar {
+    font-size: 0.88rem;
+  }
+  .envelope-preview {
+    font-size: 0.78rem;
+    line-height: 1.45;
+    margin-bottom: 10px;
+  }
+  .parchment-title-en {
+    font-size: 1.25rem;
+  }
+  .parchment-title-ar {
+    font-size: 1.02rem;
+  }
+  .parchment-text {
+    font-size: 0.98rem;
+    line-height: 1.8;
+  }
+  .voice-player-card {
+    padding: 12px;
+    margin: 12px 0;
+  }
+  .voice-player-top {
+    gap: 12px;
+  }
+  .voice-play-toggle-btn {
+    width: 42px;
+    height: 42px;
+  }
+  .voice-waveform-container {
+    height: 22px;
+    gap: 2px;
+  }
+
+  /* LAKE SCENE RESPONSIVE */
+  .lake-quote {
+    font-size: 1.05rem;
+    line-height: 1.5;
+    margin: 8px auto 6px;
+    padding: 0 12px;
+  }
+  .lake-instruction-pill {
+    margin-bottom: 14px;
+  }
+  .lake-instruction-pill span {
+    font-size: 0.76rem;
+    padding: 4px 12px;
+    line-height: 1.4;
+  }
+  .enchanted-lake-stage {
+    min-height: 440px;
+    height: 450px;
+    border-radius: 20px;
+    margin-bottom: 18px;
+  }
+  .moon-body {
+    font-size: 2.2rem;
+  }
+  .lake-crescent-moon {
+    top: 14px;
+    right: 30px;
+  }
+  .lotus-lantern-node {
+    transform: translate(-50%, -50%) scale(0.85);
+  }
+  .lotus-lantern-node:hover {
+    transform: translate(-50%, -50%) scale(0.95);
+  }
+  .lotus-pad {
+    font-size: 1.7rem;
+  }
+  .lotus-caption {
+    padding: 2px 6px;
+    font-size: 0.65rem;
+  }
+  .lotus-ar {
+    font-size: 0.65rem;
+  }
+  .lake-wooden-dock {
+    height: 90px;
+  }
+  .dock-characters-container {
+    bottom: 34px;
+    transform: translateX(-50%) scale(0.82);
+  }
+  .lake-interactive-prompt {
+    bottom: 6px;
+  }
+  .starlight-glow-btn {
+    font-size: 0.78rem;
+    padding: 6px 16px;
   }
   .dock-lantern-post { display: none; }
   .lake-shore-reeds { display: none; }
+  .whisper-lotus {
+    font-size: 2.2rem;
+  }
+  .whisper-heading {
+    font-size: 1.25rem;
+  }
+  .whisper-arabic {
+    font-size: 1.05rem;
+    line-height: 1.8;
+  }
 }
 

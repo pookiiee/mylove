@@ -365,13 +365,13 @@ export const CONFIG = {
       {
         id: "photo2",
         src: "assets/images/photo2.png",
-        captionArabic: "قدرتي تخلي قلبيب لك",
+        captionArabic: "قدرتي تخلي قلبي لك",
         captionEnglish: "You Made My Whole Heart Yours"
       },
       {
         id: "photo3",
         src: "assets/images/photo3.png",
-        captionArabic: "كلامك وغرام وحبك ليا الي يخليني اصحى ميته حب ومشاعر لك",
+        captionArabic: "كلامك وغرامك وحبك ليا الي يخليني اصحى ميته حب ومشاعر لك",
         captionEnglish: "Your Loving Words That Warm My Soul"
       },
       {

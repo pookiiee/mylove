@@ -13,13 +13,13 @@ export function renderLakeScene(container, returnToMap) {
   const lakeData = CONFIG.lake;
   let isSittingTogether = false;
 
-  // 5 Romantic Lantern Positions on the Water
+  // 5 Romantic Lantern Positions on the Water (Gracefully positioned in the upper lake)
   const LANTERN_POSITIONS = [
-    { top: 26, left: 22, nameAr: "همسة العيون", label: "01" },
-    { top: 22, left: 52, nameAr: "همسة الدفء", label: "02" },
-    { top: 28, left: 78, nameAr: "همسة الحنان", label: "03" },
-    { top: 46, left: 34, nameAr: "همسة الشوق", label: "04" },
-    { top: 48, left: 66, nameAr: "همسة الأبد", label: "05" }
+    { top: 16, left: 20, nameAr: "همسة العيون", label: "01" },
+    { top: 12, left: 50, nameAr: "همسة الدفء", label: "02" },
+    { top: 16, left: 80, nameAr: "همسة الحنان", label: "03" },
+    { top: 32, left: 30, nameAr: "همسة الشوق", label: "04" },
+    { top: 32, left: 70, nameAr: "همسة الأبد", label: "05" }
   ];
 
   container.innerHTML = `
@@ -136,7 +136,7 @@ export function renderLakeScene(container, returnToMap) {
           <!-- Characters sitting together by the water edge -->
           <div class="dock-characters-container" id="lakeCharWrapper">
             <div class="chibi-dock-sprite">
-              ${Characters.getTogetherSceneSVG("sitting", 210)}
+              ${Characters.getTogetherSceneSVG("sitting", 165)}
             </div>
             <div class="dock-water-reflection"></div>
           </div>

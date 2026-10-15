@@ -162,7 +162,10 @@ export function renderMailboxScene(container, returnToMap) {
           <div class="voice-note-hint" id="voiceNoteHint">
             <span>✨ استمعي إلى فويس أسيل الصوتي الحنون ♡</span>
           </div>
-          <audio id="realVoiceAudio" preload="metadata" src="${letter.audioSrc || ''}"></audio>
+          <audio id="realVoiceAudio" preload="auto" playsinline webkit-playsinline src="${letter.audioSrc || ''}">
+            <source src="${letter.audioSrc || ''}" type="audio/mp4">
+            <source src="${letter.audioSrcMp3 || ''}" type="audio/mpeg">
+          </audio>
         </div>
 
         <div class="parchment-footer">
@@ -216,18 +219,44 @@ export function renderMailboxScene(container, returnToMap) {
         return;
       }
 
-      audioEl.play().then(() => {
-        isPlaying = true;
-        playIcon.textContent = "⏸";
-        playBtn.classList.add("playing");
-        updateWaveBars(true);
-      }).catch(err => {
-        // Fallback if audio file doesn't exist yet on disk
-        console.log("Audio file not found, falling back to gentle synth chimes:", err);
-        isSynthFallback = true;
-        hintEl.innerHTML = `<span>🎵 نغمة دافئة تعزف الآن (يمكنكِ وضع تسجيل صوتكِ في <code>${letter.audioSrc}</code>)</span>`;
-        startSimulatedPlayback();
-      });
+      // Ensure audio context / element is resumed on user gesture
+      const promise = audioEl.play();
+      if (promise !== undefined) {
+        promise.then(() => {
+          isPlaying = true;
+          isSynthFallback = false;
+          playIcon.textContent = "⏸";
+          playBtn.classList.add("playing");
+          updateWaveBars(true);
+          hintEl.innerHTML = `<span>✨ صوت أسيل الحقيقي يملأ المكان دفئاً وحناناً ♡</span>`;
+        }).catch(err => {
+          console.warn("Primary play attempt failed, trying fallback source:", err);
+          // Try loading direct m4a source for iOS
+          try {
+            audioEl.src = letter.audioSrc || "";
+            audioEl.load();
+            const retryPromise = audioEl.play();
+            if (retryPromise !== undefined) {
+              retryPromise.then(() => {
+                isPlaying = true;
+                isSynthFallback = false;
+                playIcon.textContent = "⏸";
+                playBtn.classList.add("playing");
+                updateWaveBars(true);
+                hintEl.innerHTML = `<span>✨ صوت أسيل الحقيقي يملأ المكان دفئاً وحناناً ♡</span>`;
+              }).catch(err2 => {
+                console.warn("Audio playback not supported, falling back to gentle chime:", err2);
+                isSynthFallback = true;
+                hintEl.innerHTML = `<span>🎵 نغمة دافئة تعزف الآن (تعذر تشغيل الصوت المباشر في هذا المتصفح)</span>`;
+                startSimulatedPlayback();
+              });
+            }
+          } catch (e) {
+            isSynthFallback = true;
+            startSimulatedPlayback();
+          }
+        });
+      }
     }
 
     function pauseAudio() {
@@ -308,8 +337,11 @@ export function renderMailboxScene(container, returnToMap) {
     });
 
     audioEl.addEventListener("error", () => {
-      isSynthFallback = true;
-      hintEl.innerHTML = `<span>🎵 نغمة تعزف لحين إضافة ملف التسجيل: <code>${letter.audioSrc}</code></span>`;
+      if (isPlaying) {
+        isSynthFallback = true;
+        hintEl.innerHTML = `<span>🎵 نغمة دافئة تعزف الآن ♡</span>`;
+        startSimulatedPlayback();
+      }
     });
 
     // Seek track

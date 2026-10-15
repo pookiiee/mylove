@@ -168,7 +168,8 @@ export const CONFIG = {
       id: "letter-1",
       titleEnglish: "For the Girl Who Kept Messaging Me",
       titleArabic: "للبنت اللي كانت ترسل لي دايم",
-      audioSrc: "assets/audio/voice1.mp3",
+      audioSrc: "assets/audio/voice1.m4a",
+      audioSrcMp3: "assets/audio/voice1.mp3",
       duration: "1:14",
       preview: "Little did I know what those server DMs would turn into...",
       bodyArabic: `حبيبتي أنيتي،
@@ -182,7 +183,8 @@ export const CONFIG = {
       id: "letter-2",
       titleEnglish: "The Night You Made Me Confess",
       titleArabic: "الليلة اللي خليتيني أعترف فيها",
-      audioSrc: "assets/audio/voice2.mp3",
+      audioSrc: "assets/audio/voice2.m4a",
+      audioSrcMp3: "assets/audio/voice2.mp3",
       duration: "1:28",
       preview: "I was so scared, but you held my hand through the screen...",
       bodyArabic: `حبيبتي أنيتي،
@@ -195,7 +197,8 @@ export const CONFIG = {
       id: "letter-3",
       titleEnglish: "Things I Love About You",
       titleArabic: "أشياء أحبها فيكِ وتأسرني",
-      audioSrc: "assets/audio/voice3.mp3",
+      audioSrc: "assets/audio/voice3.m4a",
+      audioSrcMp3: "assets/audio/voice3.mp3",
       duration: "1:35",
       preview: "Your tenderness, the way you pamper me, and your quiet warmth...",
       bodyArabic: `أنيتي،
@@ -211,7 +214,8 @@ export const CONFIG = {
       id: "letter-4",
       titleEnglish: "For When You Miss Me",
       titleArabic: "لو حسيتِ بشوق أو بعد في أي وقت",
-      audioSrc: "assets/audio/voice4.mp3",
+      audioSrc: "assets/audio/voice4.m4a",
+      audioSrcMp3: "assets/audio/voice4.mp3",
       duration: "1:20",
       preview: "Look up at this little universe whenever you feel far...",
       bodyArabic: `حبيبتي أنيا،
@@ -224,7 +228,8 @@ export const CONFIG = {
       id: "letter-5",
       titleEnglish: "For When You Need a Little Extra Love",
       titleArabic: "لو احتجتِ جرعة حب ودلال إضافية",
-      audioSrc: "assets/audio/voice5.mp3",
+      audioSrc: "assets/audio/voice5.m4a",
+      audioSrcMp3: "assets/audio/voice5.mp3",
       duration: "1:42",
       preview: "A gentle reminder of how precious you truly are...",
       bodyArabic: `أنيتي الجميلة،
@@ -238,7 +243,8 @@ export const CONFIG = {
       id: "letter-6",
       titleEnglish: "A Voice Note for Your 24th Birthday",
       titleArabic: "فويس لعمرك الجديد.. الـ 24",
-      audioSrc: "assets/audio/voice6.mp3",
+      audioSrc: "assets/audio/voice6.m4a",
+      audioSrcMp3: "assets/audio/voice6.mp3",
       duration: "1:55",
       preview: "Happy 24th Birthday, my favorite person in the entire universe...",
       bodyArabic: `إلى أنيتي الغالية في يوم ميلادها الـ ٢٤،

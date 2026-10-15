@@ -178,7 +178,8 @@ const CONFIG = {
       id: "letter-1",
       titleEnglish: "For the Girl Who Kept Messaging Me",
       titleArabic: "للبنت اللي كانت ترسل لي دايم",
-      audioSrc: "assets/audio/voice1.mp3",
+      audioSrc: "assets/audio/voice1.m4a",
+      audioSrcMp3: "assets/audio/voice1.mp3",
       duration: "1:14",
       preview: "Little did I know what those server DMs would turn into...",
       bodyArabic: `حبيبتي أنيتي،
@@ -192,7 +193,8 @@ const CONFIG = {
       id: "letter-2",
       titleEnglish: "The Night You Made Me Confess",
       titleArabic: "الليلة اللي خليتيني أعترف فيها",
-      audioSrc: "assets/audio/voice2.mp3",
+      audioSrc: "assets/audio/voice2.m4a",
+      audioSrcMp3: "assets/audio/voice2.mp3",
       duration: "1:28",
       preview: "I was so scared, but you held my hand through the screen...",
       bodyArabic: `حبيبتي أنيتي،
@@ -205,7 +207,8 @@ const CONFIG = {
       id: "letter-3",
       titleEnglish: "Things I Love About You",
       titleArabic: "أشياء أحبها فيكِ وتأسرني",
-      audioSrc: "assets/audio/voice3.mp3",
+      audioSrc: "assets/audio/voice3.m4a",
+      audioSrcMp3: "assets/audio/voice3.mp3",
       duration: "1:35",
       preview: "Your tenderness, the way you pamper me, and your quiet warmth...",
       bodyArabic: `أنيتي،
@@ -221,7 +224,8 @@ const CONFIG = {
       id: "letter-4",
       titleEnglish: "For When You Miss Me",
       titleArabic: "لو حسيتِ بشوق أو بعد في أي وقت",
-      audioSrc: "assets/audio/voice4.mp3",
+      audioSrc: "assets/audio/voice4.m4a",
+      audioSrcMp3: "assets/audio/voice4.mp3",
       duration: "1:20",
       preview: "Look up at this little universe whenever you feel far...",
       bodyArabic: `حبيبتي أنيا،
@@ -234,7 +238,8 @@ const CONFIG = {
       id: "letter-5",
       titleEnglish: "For When You Need a Little Extra Love",
       titleArabic: "لو احتجتِ جرعة حب ودلال إضافية",
-      audioSrc: "assets/audio/voice5.mp3",
+      audioSrc: "assets/audio/voice5.m4a",
+      audioSrcMp3: "assets/audio/voice5.mp3",
       duration: "1:42",
       preview: "A gentle reminder of how precious you truly are...",
       bodyArabic: `أنيتي الجميلة،
@@ -248,7 +253,8 @@ const CONFIG = {
       id: "letter-6",
       titleEnglish: "A Voice Note for Your 24th Birthday",
       titleArabic: "فويس لعمرك الجديد.. الـ 24",
-      audioSrc: "assets/audio/voice6.mp3",
+      audioSrc: "assets/audio/voice6.m4a",
+      audioSrcMp3: "assets/audio/voice6.mp3",
       duration: "1:55",
       preview: "Happy 24th Birthday, my favorite person in the entire universe...",
       bodyArabic: `إلى أنيتي الغالية في يوم ميلادها الـ ٢٤،
@@ -2519,7 +2525,10 @@ function renderMailboxScene(container, returnToMap) {
           <div class="voice-note-hint" id="voiceNoteHint">
             <span>✨ استمعي إلى فويس أسيل الصوتي الحنون ♡</span>
           </div>
-          <audio id="realVoiceAudio" preload="metadata" src="${letter.audioSrc || ''}"></audio>
+          <audio id="realVoiceAudio" preload="auto" playsinline webkit-playsinline src="${letter.audioSrc || ''}">
+            <source src="${letter.audioSrc || ''}" type="audio/mp4">
+            <source src="${letter.audioSrcMp3 || ''}" type="audio/mpeg">
+          </audio>
         </div>
 
         <div class="parchment-footer">
@@ -2573,18 +2582,44 @@ function renderMailboxScene(container, returnToMap) {
         return;
       }
 
-      audioEl.play().then(() => {
-        isPlaying = true;
-        playIcon.textContent = "⏸";
-        playBtn.classList.add("playing");
-        updateWaveBars(true);
-      }).catch(err => {
-        // Fallback if audio file doesn't exist yet on disk
-        console.log("Audio file not found, falling back to gentle synth chimes:", err);
-        isSynthFallback = true;
-        hintEl.innerHTML = `<span>🎵 نغمة دافئة تعزف الآن (يمكنكِ وضع تسجيل صوتكِ في <code>${letter.audioSrc}</code>)</span>`;
-        startSimulatedPlayback();
-      });
+      // Ensure audio context / element is resumed on user gesture
+      const promise = audioEl.play();
+      if (promise !== undefined) {
+        promise.then(() => {
+          isPlaying = true;
+          isSynthFallback = false;
+          playIcon.textContent = "⏸";
+          playBtn.classList.add("playing");
+          updateWaveBars(true);
+          hintEl.innerHTML = `<span>✨ صوت أسيل الحقيقي يملأ المكان دفئاً وحناناً ♡</span>`;
+        }).catch(err => {
+          console.warn("Primary play attempt failed, trying fallback source:", err);
+          // Try loading direct m4a source for iOS
+          try {
+            audioEl.src = letter.audioSrc || "";
+            audioEl.load();
+            const retryPromise = audioEl.play();
+            if (retryPromise !== undefined) {
+              retryPromise.then(() => {
+                isPlaying = true;
+                isSynthFallback = false;
+                playIcon.textContent = "⏸";
+                playBtn.classList.add("playing");
+                updateWaveBars(true);
+                hintEl.innerHTML = `<span>✨ صوت أسيل الحقيقي يملأ المكان دفئاً وحناناً ♡</span>`;
+              }).catch(err2 => {
+                console.warn("Audio playback not supported, falling back to gentle chime:", err2);
+                isSynthFallback = true;
+                hintEl.innerHTML = `<span>🎵 نغمة دافئة تعزف الآن (تعذر تشغيل الصوت المباشر في هذا المتصفح)</span>`;
+                startSimulatedPlayback();
+              });
+            }
+          } catch (e) {
+            isSynthFallback = true;
+            startSimulatedPlayback();
+          }
+        });
+      }
     }
 
     function pauseAudio() {
@@ -2665,8 +2700,11 @@ function renderMailboxScene(container, returnToMap) {
     });
 
     audioEl.addEventListener("error", () => {
-      isSynthFallback = true;
-      hintEl.innerHTML = `<span>🎵 نغمة تعزف لحين إضافة ملف التسجيل: <code>${letter.audioSrc}</code></span>`;
+      if (isPlaying) {
+        isSynthFallback = true;
+        hintEl.innerHTML = `<span>🎵 نغمة دافئة تعزف الآن ♡</span>`;
+        startSimulatedPlayback();
+      }
     });
 
     // Seek track
@@ -3198,13 +3236,13 @@ function renderLakeScene(container, returnToMap) {
   const lakeData = CONFIG.lake;
   let isSittingTogether = false;
 
-  // 5 Romantic Lantern Positions on the Water
+  // 5 Romantic Lantern Positions on the Water (Gracefully positioned in the upper lake)
   const LANTERN_POSITIONS = [
-    { top: 26, left: 22, nameAr: "همسة العيون", label: "01" },
-    { top: 22, left: 52, nameAr: "همسة الدفء", label: "02" },
-    { top: 28, left: 78, nameAr: "همسة الحنان", label: "03" },
-    { top: 46, left: 34, nameAr: "همسة الشوق", label: "04" },
-    { top: 48, left: 66, nameAr: "همسة الأبد", label: "05" }
+    { top: 16, left: 20, nameAr: "همسة العيون", label: "01" },
+    { top: 12, left: 50, nameAr: "همسة الدفء", label: "02" },
+    { top: 16, left: 80, nameAr: "همسة الحنان", label: "03" },
+    { top: 32, left: 30, nameAr: "همسة الشوق", label: "04" },
+    { top: 32, left: 70, nameAr: "همسة الأبد", label: "05" }
   ];
 
   container.innerHTML = `
@@ -3321,7 +3359,7 @@ function renderLakeScene(container, returnToMap) {
           <!-- Characters sitting together by the water edge -->
           <div class="dock-characters-container" id="lakeCharWrapper">
             <div class="chibi-dock-sprite">
-              ${Characters.getTogetherSceneSVG("sitting", 210)}
+              ${Characters.getTogetherSceneSVG("sitting", 165)}
             </div>
             <div class="dock-water-reflection"></div>
           </div>

@@ -1,0 +1,603 @@
+/**
+ * ANEA'S LITTLE UNIVERSE ♡
+ * The Birthday Castle & Final Surprise Climax Styling
+ */
+
+/* =========================================
+   SCENE: THE BIRTHDAY CASTLE
+========================================= */
+.castle-grand-hall {
+  max-width: 860px;
+  min-height: 520px;
+  margin: 0 auto;
+  border-radius: 28px;
+  border: 1px solid var(--border-starlight);
+  background: radial-gradient(ellipse at 50% 30%, rgba(26, 38, 70, 0.95), rgba(8, 12, 24, 0.98));
+  padding: 36px 24px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), inset 0 0 60px rgba(223, 186, 83, 0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.castle-arches {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.starlight-arch.arch-center {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 6px 20px;
+  background: rgba(223, 186, 83, 0.12);
+  border: 1px solid var(--gold-starlight);
+  border-radius: 999px;
+  box-shadow: 0 0 15px rgba(223, 186, 83, 0.3);
+}
+
+.arch-number {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--gold-starlight);
+}
+
+.arch-star {
+  color: var(--gold-starlight);
+}
+
+.castle-narrative-banner {
+  text-align: center;
+  max-width: 620px;
+  margin: 20px auto;
+}
+
+.castle-line {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.25rem;
+  color: var(--warm-cream);
+  line-height: 1.5;
+}
+
+.castle-greeting {
+  font-size: 2.2rem;
+  color: var(--gold-starlight);
+  text-shadow: var(--text-glow);
+  margin: 10px 0 6px;
+}
+
+.castle-arabic-praise {
+  font-family: var(--font-arabic);
+  font-size: 1.15rem;
+  color: var(--soft-sage);
+}
+
+/* 24th Birthday Cake */
+.birthday-cake-centerpiece {
+  margin: 24px 0;
+  position: relative;
+}
+
+.interactive-cake {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.interactive-cake:hover {
+  transform: scale(1.05);
+}
+
+.cake-candles-row {
+  display: flex;
+  align-items: flex-end;
+  gap: 18px;
+  margin-bottom: -4px;
+}
+
+.candle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.flame {
+  width: 12px;
+  height: 18px;
+  background: radial-gradient(ellipse at 50% 80%, #fff, #dfba53 60%, #e67e22);
+  border-radius: 50% 50% 20% 20%;
+  box-shadow: 0 0 14px #dfba53;
+  animation: flicker 0.25s infinite alternate;
+}
+
+.candle-stick {
+  width: 8px;
+  height: 24px;
+  background: repeating-linear-gradient(45deg, #ede8d0, #ede8d0 4px, #dfba53 4px, #dfba53 8px);
+  border-radius: 2px;
+}
+
+.candle-number-badge {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: var(--gold-starlight);
+  padding: 2px 8px;
+  border-radius: 6px;
+  background: rgba(14, 21, 38, 0.85);
+  border: 1px solid var(--border-starlight);
+}
+
+.cake-tier {
+  border-radius: 12px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
+  position: relative;
+}
+
+.tier-top {
+  width: 140px;
+  height: 48px;
+  background: linear-gradient(180deg, #faf8f2 0%, #ede8d0 100%);
+  border: 2px solid #dfba53;
+}
+
+.tier-bottom {
+  width: 190px;
+  height: 60px;
+  background: linear-gradient(180deg, #ede8d0 0%, #d6cebc 100%);
+  border: 2px solid #dfba53;
+  margin-top: -6px;
+}
+
+.cake-plate {
+  width: 230px;
+  height: 14px;
+  background: #362a22;
+  border-radius: 50%;
+  margin-top: -6px;
+  border: 1px solid var(--border-starlight);
+}
+
+.cake-tap-label {
+  margin-top: 14px;
+  font-size: 0.82rem;
+  color: var(--gold-starlight);
+  letter-spacing: 0.05em;
+  animation: pulseGlow 2.5s infinite;
+}
+
+.candles-blown .flame {
+  display: none;
+}
+
+.candles-blown .candle-number-badge {
+  color: #fff;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+}
+
+@keyframes flicker {
+  0% { transform: rotate(-2deg) scale(1); }
+  100% { transform: rotate(2deg) scale(1.08); }
+}
+
+.magical-present-wrapper {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+  transition: transform 0.25s ease;
+}
+
+.magical-present-wrapper:hover {
+  transform: translateY(-4px) scale(1.04);
+}
+
+.present-box {
+  width: 60px;
+  height: 52px;
+  background: #1b2848;
+  border: 1.5px solid var(--gold-starlight);
+  border-radius: 8px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4), 0 0 20px rgba(223, 186, 83, 0.3);
+}
+
+.box-lid {
+  position: absolute;
+  top: -6px;
+  width: 68px;
+  height: 12px;
+  background: #dfba53;
+  border-radius: 4px;
+}
+
+.box-ribbon-v {
+  position: absolute;
+  width: 10px;
+  height: 100%;
+  background: #dfba53;
+}
+
+.box-sparkles {
+  position: absolute;
+  font-size: 1.2rem;
+  top: -14px;
+}
+
+.present-label {
+  font-size: 0.85rem;
+  color: var(--warm-ivory);
+  margin-top: 8px;
+}
+
+/* =========================================
+   SCENE: THE FINAL SURPRISE & LOVE
+========================================= */
+.final-surprise-scene {
+  padding-bottom: 60px;
+}
+
+.final-intro-banner {
+  text-align: center;
+  max-width: 620px;
+  margin: 12px auto 28px;
+  padding: 0 16px;
+}
+
+.final-gentle-lead {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  font-style: italic;
+  color: var(--warm-ivory);
+}
+
+.final-lead-arabic {
+  font-family: var(--font-arabic);
+  font-size: 1.1rem;
+  color: var(--gold-starlight);
+  margin-top: 4px;
+}
+
+/* 3 Gift Options */
+.gift-options-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  max-width: 860px;
+  margin: 0 auto 36px;
+  padding: 0 20px;
+}
+
+.gift-option-card {
+  background: linear-gradient(145deg, rgba(20, 29, 52, 0.85), rgba(12, 17, 32, 0.95));
+  border: 1px solid var(--border-starlight);
+  border-radius: 20px;
+  padding: 24px 18px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s var(--ease-celestial);
+}
+
+.gift-option-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--gold-starlight);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4), 0 0 25px rgba(223, 186, 83, 0.25);
+}
+
+.gift-card-icon {
+  font-size: 2.4rem;
+  margin-bottom: 10px;
+}
+
+.gift-card-title {
+  font-size: 1.15rem;
+  color: var(--warm-ivory);
+}
+
+.gift-card-arabic {
+  font-size: 0.95rem;
+  color: var(--soft-sage);
+  margin: 4px 0 12px;
+}
+
+.gift-card-tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  color: var(--gold-starlight);
+  padding: 3px 12px;
+  border-radius: 999px;
+  background: rgba(223, 186, 83, 0.12);
+  border: 1px solid rgba(223, 186, 83, 0.3);
+}
+
+/* Full Love Letter Parchment */
+.final-love-letter-container {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.letter-parchment-gold {
+  background: linear-gradient(180deg, rgba(20, 28, 50, 0.95) 0%, rgba(13, 18, 33, 0.98) 100%);
+  border: 2px solid var(--gold-starlight);
+  border-radius: 24px;
+  padding: 44px 38px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), 0 0 35px rgba(223, 186, 83, 0.2);
+}
+
+.letter-top-crest {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  color: var(--gold-starlight);
+  margin-bottom: 18px;
+}
+
+.final-letter-heading {
+  font-size: 2rem;
+  color: var(--warm-ivory);
+  text-align: center;
+}
+
+.final-letter-subheading {
+  font-size: 1.35rem;
+  color: var(--soft-sage);
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.final-letter-body {
+  border-top: 1px solid rgba(223, 186, 83, 0.25);
+  border-bottom: 1px solid rgba(223, 186, 83, 0.25);
+  padding: 24px 0;
+  margin-bottom: 24px;
+}
+
+.final-letter-paragraphs {
+  font-size: 1.25rem;
+  line-height: 2.1;
+  color: var(--warm-cream);
+  margin-bottom: 18px;
+}
+
+.final-letter-signature {
+  text-align: center;
+}
+
+.sig-closing {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-style: italic;
+  color: var(--gold-starlight);
+}
+
+.sig-arabic {
+  font-family: var(--font-arabic);
+  font-size: 1.15rem;
+  color: var(--soft-sage);
+  margin: 4px 0 12px;
+}
+
+.sig-name {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  color: var(--warm-ivory);
+}
+
+/* Stay Together Button */
+.stay-together-action {
+  text-align: center;
+  margin-top: 36px;
+}
+
+.stay-btn {
+  padding: 16px 38px;
+  font-size: 1.1rem;
+  background: linear-gradient(135deg, rgba(223, 186, 83, 0.35), rgba(98, 125, 152, 0.35));
+  border-color: var(--gold-starlight);
+  box-shadow: 0 0 25px rgba(223, 186, 83, 0.4);
+}
+
+.heart-pulse {
+  color: #dfba53;
+  animation: pulseGlow 1.8s infinite;
+}
+
+/* Stay Scene Overlay */
+.stay-scene-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(circle at 50% 50%, rgba(16, 25, 48, 0.98), rgba(5, 8, 15, 0.99));
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 1.2s ease;
+}
+
+.stay-scene-overlay.visible {
+  opacity: 1;
+}
+
+.stay-sky {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 700px;
+  padding: 24px;
+}
+
+.sky-constellation-text {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-family: var(--font-serif);
+  font-size: 2.8rem;
+  color: var(--gold-starlight);
+  letter-spacing: 0.15em;
+  text-shadow: 0 0 30px rgba(223, 186, 83, 0.8), 0 0 60px rgba(223, 186, 83, 0.4);
+  margin-bottom: 12px;
+  transition: all 1.5s ease;
+}
+
+.sky-poetic-quote {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.45rem;
+  color: var(--warm-cream);
+  margin-bottom: 30px;
+}
+
+.stay-characters-center {
+  margin: 10px 0 30px;
+}
+
+.stay-controls {
+  margin-top: 10px;
+}
+
+/* Dedicated Song Card Details */
+.gift-song-box {
+  text-align: center;
+  padding: 10px;
+}
+
+.vinyl-disc {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #222, #0d0d0d);
+  border: 3px solid #dfba53;
+  margin: 0 auto 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 20px rgba(223, 186, 83, 0.3);
+  animation: spinRecord 10s linear infinite;
+}
+
+@keyframes spinRecord {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.vinyl-center {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #dfba53;
+  color: #111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.song-badge {
+  font-size: 0.75rem;
+  color: var(--gold-starlight);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.song-name {
+  font-size: 1.8rem;
+  color: var(--warm-ivory);
+  margin: 4px 0;
+}
+
+.song-artist {
+  font-size: 1.15rem;
+  color: var(--soft-sage);
+  margin-bottom: 18px;
+}
+
+.song-dedication-note {
+  background: rgba(14, 21, 38, 0.8);
+  border-radius: 14px;
+  padding: 16px;
+  border: 1px solid var(--border-starlight);
+  margin-bottom: 22px;
+}
+
+.song-note-ar {
+  font-size: 1.15rem;
+  color: var(--warm-cream);
+  margin-bottom: 8px;
+}
+
+.song-note-en {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.song-listen-links {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Video Player Frame & Placeholder */
+.video-placeholder-frame {
+  background: rgba(14, 21, 38, 0.8);
+  border: 1px dashed var(--border-starlight);
+  border-radius: 16px;
+  padding: 30px 20px;
+  text-align: center;
+}
+
+.film-icon {
+  font-size: 2.8rem;
+  margin-bottom: 12px;
+}
+
+.placeholder-arabic {
+  font-size: 1.1rem;
+  color: var(--warm-cream);
+  margin-bottom: 10px;
+}
+
+.placeholder-english {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+
+.video-instructions-pill {
+  font-size: 0.82rem;
+  color: var(--gold-starlight);
+  background: rgba(223, 186, 83, 0.1);
+  padding: 8px 16px;
+  border-radius: 8px;
+  display: inline-block;
+}
+
+.video-instructions-pill code {
+  color: #fff;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 2px 6px;
+  border-radius: 4px;
+}

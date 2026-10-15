@@ -1,7 +1,8 @@
 /**
  * ANEA'S LITTLE UNIVERSE ♡
  * Destination 1: The Little Planet — "Our Little Home"
- * Re-designed with a neat, cozy storybook diorama and structured discovery cards.
+ * Pure storybook diorama with direct room interactions (Window, Cups with a & a, Bedside Note, Lamp, Bookmark)
+ * Removed bottom deck box as requested by Aseel.
  */
 
 import { CONFIG } from "../config.js";
@@ -31,6 +32,7 @@ export function renderHomeScene(container, returnToMap) {
       <div class="home-intro-banner">
         <p class="home-intro-quote">"${homeData.greeting}"</p>
         <p class="home-intro-reveal">${homeData.reveal}</p>
+        <span class="home-interact-tip">✨ اضغطي على أي شيء داخل الغرفة لتكتشفي ما يخفيه في قلبي ✨</span>
       </div>
 
       <!-- Main Neat Cozy Room Stage -->
@@ -45,8 +47,8 @@ export function renderHomeScene(container, returnToMap) {
             </div>
           </div>
 
-          <!-- Arched Starlit Window (Interactive) -->
-          <div class="room-arch-window interactive-room-prop" id="propWindow" title="Click to gaze through the starlit window">
+          <!-- Arched Starlit Window (Fixed Centered) -->
+          <div class="room-arch-window" id="propWindow" title="اضغطي للتأمل في نافذة النجوم">
             <div class="window-sky">
               <div class="crescent-moon"></div>
               <div class="twinkling-star ts1">✦</div>
@@ -56,113 +58,58 @@ export function renderHomeScene(container, returnToMap) {
             <div class="window-sill">
               <div class="little-potted-flower">🌱</div>
             </div>
-            <div class="prop-badge">🪟 The Window</div>
+            <div class="prop-badge-floating">🪟 النافذة المطلة على النجوم</div>
           </div>
 
-          <!-- Left Bedside Corner with Lamp & Note (Interactive) -->
+          <!-- Left Bedside Corner with Lamp & Note -->
           <div class="room-bedside-nook">
-            <div class="cozy-lamp-fixture interactive-room-prop" id="propLight" title="Click to feel the gentle light">
+            <div class="cozy-lamp-fixture interactive-room-prop" id="propLight" title="اضغطي لتشعري بالنور اللطيف">
               <div class="lamp-warm-shade"></div>
               <div class="lamp-ambient-glow"></div>
-              <div class="prop-badge">🕯️ The Light</div>
+              <div class="prop-badge-floating">🕯️ النور اللطيف</div>
             </div>
 
-            <div class="bedside-table interactive-room-prop" id="propBedside" title="Click to read the bedside note">
+            <div class="bedside-table interactive-room-prop" id="propBedside" title="اضغطي لقراءة رسالة السرير">
               <div class="folded-letter-sprite">📜</div>
-              <div class="prop-badge">💌 Bedside Note</div>
+              <div class="prop-badge-floating">💌 رسالة بجانب السرير</div>
             </div>
           </div>
 
-          <!-- Center Cozy Rug with Chibi Duo & Warm Cups -->
+          <!-- Center Cozy Rug with Chibi Duo & Side-by-Side Cups (a & a) -->
           <div class="room-center-rug">
             <div class="woven-rug-oval"></div>
 
             <!-- Two Cute Chibi Characters Sitting Together -->
             <div class="home-chibi-duo-wrapper">
-              ${Characters.getTogetherSceneSVG("holdingHands", 190)}
+              ${Characters.getTogetherSceneSVG("holdingHands", 195)}
             </div>
 
-            <!-- Two Warm Mugs on Cute Tray (Interactive) -->
-            <div class="two-cups-tray interactive-room-prop" id="propCups" title="Click to look at our two mugs">
-              <div class="chibi-mug mug-anea" title="Anea's Cup">
+            <!-- Two Warm Mugs Side-by-Side with 'a' and 'a' (Interactive) -->
+            <div class="two-cups-tray interactive-room-prop" id="propCups" title="اضغطي لرؤية كوبينا الدافئين معاً">
+              <div class="chibi-mug mug-anea" title="Anea's Cup (a)">
                 <span class="steam-wisp">~</span>
-                <span class="mug-initial">A</span>
+                <span class="mug-initial">a</span>
               </div>
-              <div class="chibi-mug mug-aseel" title="Aseel's Cup">
+              <div class="chibi-mug mug-aseel" title="Aseel's Cup (a)">
                 <span class="steam-wisp">~</span>
-                <span class="mug-initial">S</span>
+                <span class="mug-initial">a</span>
               </div>
-              <div class="prop-badge">☕ Two Cups</div>
+              <div class="prop-badge-floating cups-badge">☕ كوبان دافئان معاً (a & a)</div>
             </div>
           </div>
 
-          <!-- Right Bookshelf Corner with Secret Bookmark (Interactive) -->
+          <!-- Right Bookshelf Corner with Secret Bookmark -->
           <div class="room-bookshelf-nook">
             <div class="mini-bookshelf">
               <div class="shelf-book b1"></div>
               <div class="shelf-book b2"></div>
               <div class="shelf-book b3"></div>
             </div>
-            <div class="secret-bookmark-tag interactive-room-prop" id="propSharedWord" title="Our secret word">
+            <div class="secret-bookmark-tag interactive-room-prop" id="propSharedWord" title="كلمتنا الخاصة">
               <span class="bookmark-ribbon">♡</span>
               <span class="word-text">حبوبي</span>
-              <div class="prop-badge">✨ Our Word</div>
+              <div class="prop-badge-floating">✨ دلالي لكِ</div>
             </div>
-          </div>
-        </div>
-
-        <!-- Clean Organized Interactive Discovery Deck -->
-        <div class="home-discovery-deck">
-          <div class="deck-header">
-            <span class="deck-title">Interactive Keepsakes</span>
-            <span class="deck-sub">اضغطي على أي تذكار لاستكشاف معناه في قلبي</span>
-          </div>
-
-          <div class="deck-cards-grid">
-            <button class="deck-card" data-target="window">
-              <span class="card-icon">🪟</span>
-              <div class="card-text">
-                <span class="card-en">The Window</span>
-                <span class="card-ar" dir="rtl">النافذة المطلة على النجوم</span>
-              </div>
-              <span class="card-arrow">✧</span>
-            </button>
-
-            <button class="deck-card" data-target="bedside">
-              <span class="card-icon">📜</span>
-              <div class="card-text">
-                <span class="card-en">Bedside Note</span>
-                <span class="card-ar" dir="rtl">رسالة بجانب السرير</span>
-              </div>
-              <span class="card-arrow">✧</span>
-            </button>
-
-            <button class="deck-card" data-target="cups">
-              <span class="card-icon">☕</span>
-              <div class="card-text">
-                <span class="card-en">Two Warm Cups</span>
-                <span class="card-ar" dir="rtl">كوبان دافئان وسوالفنا</span>
-              </div>
-              <span class="card-arrow">✧</span>
-            </button>
-
-            <button class="deck-card" data-target="light">
-              <span class="card-icon">🕯️</span>
-              <div class="card-text">
-                <span class="card-en">The Gentle Light</span>
-                <span class="card-ar" dir="rtl">نور حنيتك ودلالك</span>
-              </div>
-              <span class="card-arrow">✧</span>
-            </button>
-
-            <button class="deck-card secret-deck-card" data-target="word">
-              <span class="card-icon">♡</span>
-              <div class="card-text">
-                <span class="card-en">Our Shared Word</span>
-                <span class="card-ar" dir="rtl">حبوبي.. كلمتنا الخاصة</span>
-              </div>
-              <span class="card-arrow">★</span>
-            </button>
           </div>
         </div>
       </div>
@@ -213,29 +160,25 @@ export function renderHomeScene(container, returnToMap) {
 
   const objects = homeData.objects;
 
-  // Handlers
-  const handleWindow = () => openDialog(objects.window.title, objects.window.messageArabic, objects.window.messageEnglish, "star_home_window");
-  const handleBedside = () => { audioManager.playPaperSound(); openDialog(objects.bedsideLetter.title, objects.bedsideLetter.messageArabic, objects.bedsideLetter.messageEnglish, "star_home_bedside"); };
-  const handleCups = () => openDialog(objects.twoCups.title, objects.twoCups.messageArabic, objects.twoCups.messageEnglish, "star_home_cups");
-  const handleLight = () => openDialog(objects.littleLight.title, objects.littleLight.messageArabic, objects.littleLight.messageEnglish, "star_home_light");
-  const handleWord = () => openDialog(objects.sharedWord.title, objects.sharedWord.secretMessage, "Our quiet shared secret.", "star_home_word");
+  // Handlers for room prop clicks
+  container.querySelector("#propWindow").addEventListener("click", () => {
+    openDialog(objects.window.title, objects.window.messageArabic, objects.window.messageEnglish, "star_home_window");
+  });
 
-  // Hook up prop clicks
-  container.querySelector("#propWindow").addEventListener("click", handleWindow);
-  container.querySelector("#propBedside").addEventListener("click", handleBedside);
-  container.querySelector("#propCups").addEventListener("click", handleCups);
-  container.querySelector("#propLight").addEventListener("click", handleLight);
-  container.querySelector("#propSharedWord").addEventListener("click", handleWord);
+  container.querySelector("#propBedside").addEventListener("click", () => {
+    audioManager.playPaperSound();
+    openDialog(objects.bedsideLetter.title, objects.bedsideLetter.messageArabic, objects.bedsideLetter.messageEnglish, "star_home_bedside");
+  });
 
-  // Hook up deck button clicks
-  container.querySelectorAll(".deck-card").forEach(card => {
-    card.addEventListener("click", () => {
-      const target = card.getAttribute("data-target");
-      if (target === "window") handleWindow();
-      else if (target === "bedside") handleBedside();
-      else if (target === "cups") handleCups();
-      else if (target === "light") handleLight();
-      else if (target === "word") handleWord();
-    });
+  container.querySelector("#propCups").addEventListener("click", () => {
+    openDialog("Two Warm Cups (a & a)", "كوبان دافئان لـ a و a جنباً إلى جنب.. جلساتنا البسيطة، سوالفنا الطويلة اللي ما نمل منها، وألعابنا وضحكاتنا سوا.. هذه هي اللحظات اللي ما أبدلها بالدنيا كلها.", objects.twoCups.messageEnglish, "star_home_cups");
+  });
+
+  container.querySelector("#propLight").addEventListener("click", () => {
+    openDialog(objects.littleLight.title, objects.littleLight.messageArabic, objects.littleLight.messageEnglish, "star_home_light");
+  });
+
+  container.querySelector("#propSharedWord").addEventListener("click", () => {
+    openDialog(objects.sharedWord.title, objects.sharedWord.secretMessage, "A tender word from Aseel's heart to yours.", "star_home_word");
   });
 }

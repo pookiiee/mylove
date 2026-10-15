@@ -101,12 +101,12 @@ export const CONFIG = {
     {
       id: "memory-1",
       number: "01",
-      titleEnglish: "The First Message",
-      titleArabic: "أول رسالة خاصة",
+      titleEnglish: "The First Message & Voice",
+      titleArabic: "أول فويس ورسالة خاصة",
       icon: "message",
-      summaryEnglish: "When you were an admin on my server, reaching out quietly...",
+      summaryEnglish: "When we met on voice and you applied for admin...",
       narrativeEnglish: "Little did I know that the messages I sometimes pretended not to care about would become some of my favorite memories.",
-      narrativeArabic: "كنتِ مشرفة في السيرفر، ومن وقت لوقت تجين ترسلين لي على الخاص وتحاولين تسولفين معي.. وأنا في البداية كنت مسوية نفسي ثقيلة وبعيدة ولا معطية الموضوع اهتمام كبير! بس ما كنت أدري إن هذي الرسايل بالذات هي بداية كل الدفء اللي أعيشه معك اليوم."
+      narrativeArabic: "قد قابلتك بفويس وغازلتك وانتِ دختي واستحيتي مرا بس وقتها عجبني صوتك ويوم قدمتي ادمن قلت اوه كبيره هذي مامي وجداوي احح، وأنا في البداية كنت مسوية نفسي ثقيلة وبعيدة ولا معطية الموضوع اهتمام كبير! بس ما كنت أدري إن هذي الرسايل بالذات هي بداية كل الدفء اللي أعيشه معك اليوم."
     },
     {
       id: "memory-2",
@@ -154,43 +154,49 @@ export const CONFIG = {
       id: "memory-6",
       number: "06",
       titleEnglish: "The Way You Love Me",
-      titleArabic: "طريقتك الخاصة في حبي ودلالي",
+      titleArabic: "طريقتك الخاصة بدلالي",
       icon: "blooming-rose",
       summaryEnglish: "Your attentiveness, your pampering, and the way you make me feel uniquely special.",
       narrativeEnglish: "Out of everything in this world, what I cherish most is how you treat me. The way you pamper me, the way you pay attention to the smallest things, and the tenderness with which you love me.",
-      narrativeArabic: "أكثر شيء يسحرني ويذوب قلبي هو اهتمامك الصادق بي، وطريقتك الحنونة في تدليلي.. إنك تخليني أحس إني إنسانة استثنائية ومميزة جداً عندك، بحنية ما لقيت مثلها في أي مكان في هذا العالم."
+      narrativeArabic: "أكثر شي يسحرني ويذوب قلبي هو اهتمامك فيني، وطريقتك الحنونة بأنك تدلليني وتدلعيني، وتخليني أحس إني إنسانة استثنائية ومميزة جداً عندك بحنية ما لقيت مثلها بأي مكان بالعالم ♡"
     }
   ],
 
-  // --- Destination 3: The Mailbox of Love ---
+  // --- Destination 3: The Mailbox of Love (Voice Notes & Letters) ---
   letters: [
     {
       id: "letter-1",
       titleEnglish: "For the Girl Who Kept Messaging Me",
       titleArabic: "للبنت اللي كانت ترسل لي دايم",
+      audioSrc: "assets/audio/voice1.mp3",
+      duration: "1:14",
       preview: "Little did I know what those server DMs would turn into...",
       bodyArabic: `حبيبتي أنيتي،
 أتذكر لما كنتِ مشرفة في السيرفر، وتجين عندي بالخاص تسولفين وأنا أسوي نفسي ثقيلة ومو مهتمة كثير.. 
 والحين لما أرجع أتذكر تلك الأيام، أضحك من قلبي وأحمد ربي ألف مرة إنك ما استسلمتِ وضلّيتي تراسليني. 
 هذيك الرسايل البسيطة هي اللي بنت كل هذا الحب العظيم اللي بقلبي لكِ اليوم. 
 شكراً لأنكِ بديتِ، ولأنكِ دخلتِ عالمي وغيرتِ كل شيء فيه للأجمل.`,
-      date: "From: Aseel ♡"
+      date: "Voice Note from Aseel ♡"
     },
     {
       id: "letter-2",
       titleEnglish: "The Night You Made Me Confess",
       titleArabic: "الليلة اللي خليتيني أعترف فيها",
+      audioSrc: "assets/audio/voice2.mp3",
+      duration: "1:28",
       preview: "I was so scared, but you held my hand through the screen...",
       bodyArabic: `حبيبتي أنيتي،
 تتذكرين ليلة المكالمة الصوتية؟ كنت خايفة أقول اللي بقلبي، خايفة من مشاعري، وكنتِ تلعبين معي بمرح وتحاصريني بلطافة وتخليني أنطق باللي بقلبي.. 
 لما اعترفنا لبعض في هذيك الليلة، حسيت كأن حمل ثقيل انزاح عن صدري وحل مكانه دفء عظيم ما فارقني من وقتها. 
 شجاعتك ولطافتك في هذاك اليوم فتحت لي أجمل باب في حياتي: باب قلبك.`,
-      date: "From: Your Aseel ♡"
+      date: "Voice Note from Aseel ♡"
     },
     {
       id: "letter-3",
       titleEnglish: "Things I Love About You",
       titleArabic: "أشياء أحبها فيكِ وتأسرني",
+      audioSrc: "assets/audio/voice3.mp3",
+      duration: "1:35",
       preview: "Your tenderness, the way you pamper me, and your quiet warmth...",
       bodyArabic: `أنيتي،
 أحب فيكِ أشياء كثيرة صعب أحصرها في ورقة، بس أهمها:
@@ -199,42 +205,48 @@ export const CONFIG = {
 أحب إنك تعامليني بطريقة خاصة ومختلفة عن الكل، وتخليني أحس بقيمتي الكبيرة عندك.
 أحب حنيتك وروحك الهادئة العميقة اللي تشبه سكون النجوم.
 أنتِ نعمة قلبي وأجمل ما فيه يا أغلى إنسانة في حياتي.`,
-      date: "Forever yours ♡"
+      date: "Voice Note from Aseel ♡"
     },
     {
       id: "letter-4",
       titleEnglish: "For When You Miss Me",
       titleArabic: "لو حسيتِ بشوق أو بعد في أي وقت",
+      audioSrc: "assets/audio/voice4.mp3",
+      duration: "1:20",
       preview: "Look up at this little universe whenever you feel far...",
       bodyArabic: `حبيبتي أنيا،
 إذا مر عليكِ وقت حسيتِ فيه بالاشتياق أو التعب أو حسيتِ إنك بعيدة، تذكري دائماً إنك موجودة في أعماق قلبي في كل ثانية. 
 هذا العالم الصغير بنيته لكِ عشان تذكرين في أي وقت إن هناك شخصاً يحبك بكل ما فيه، وممتن لكل نفس يتنفسه بوجودك. 
 أنا معكِ دائماً، حتى لو بيننا مسافات.. قلبي عندك.`,
-      date: "Always with you ♡"
+      date: "Voice Note from Aseel ♡"
     },
     {
       id: "letter-5",
       titleEnglish: "For When You Need a Little Extra Love",
       titleArabic: "لو احتجتِ جرعة حب ودلال إضافية",
+      audioSrc: "assets/audio/voice5.mp3",
+      duration: "1:42",
       preview: "A gentle reminder of how precious you truly are...",
       bodyArabic: `أنيتي الجميلة،
 في الأيام اللي تحسين فيها إنكِ متعبة أو مضغوطة، خذي نفساً عميقاً وتذكري: أنتِ إنسانة نقية، حنونة، ورائعة لدرجة تفوق الخيال. 
 تستاهلين كل الحب والاهتمام والراحة في هذا العالم. 
 ولا تنسين إنكِ حبوبي اللي مدللة عندي دائماً وأبداً. 
 أنا فخورة فيكِ وبقلبك الطيب وبكل تفاصيلك.`,
-      date: "With endless tenderness ♡"
+      date: "Voice Note from Aseel ♡"
     },
     {
       id: "letter-6",
-      titleEnglish: "A Letter for Your 24th Birthday",
-      titleArabic: "رسالة لعمرك الجديد.. الـ 24",
+      titleEnglish: "A Voice Note for Your 24th Birthday",
+      titleArabic: "فويس لعمرك الجديد.. الـ 24",
+      audioSrc: "assets/audio/voice6.mp3",
+      duration: "1:55",
       preview: "Happy 24th Birthday, my favorite person in the entire universe...",
       bodyArabic: `إلى أنيتي الغالية في يوم ميلادها الـ ٢٤،
 اليوم تكملين أربعة وعشرين سنة من الجمال والرقة، وأنا محظوظة وسعيدة جداً إني أشاركك هذي اللحظة من قصة حياتك. 
 يا رب تكون سنتك الجديدة هذي مليانة راحة بال، ونجاحات، وضحكات من القلب، وأيام تشبه حلاوة روحك. 
 أحبك اليوم وبكرة وفي كل سنة جاية يا روحي. 
 كل عام وأنتِ عالمي كله ♡`,
-      date: "October 17 ♡"
+      date: "Voice Note from Aseel ♡"
     }
   ],
 

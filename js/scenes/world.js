@@ -1,7 +1,8 @@
 /**
  * ANEA'S LITTLE UNIVERSE ♡
  * Scene: The Interactive Celestial World Map
- * Centered sequential journey: Stations unlock in order step-by-step!
+ * Symmetrical Celestial Orbit Layout (As requested by Aseel)
+ * with Sequential Station Unlocking (01 -> 02 -> 03 -> 04 -> 05 -> 06)
  */
 
 import { CONFIG } from "../config.js";
@@ -17,74 +18,21 @@ export function renderWorldScene(container, navigateTo) {
   const lettersCount = stateManager.state.lettersOpened.length;
   const carnivalDone = Object.values(stateManager.state.minigames).filter(Boolean).length;
 
-  const STATIONS = [
-    {
-      id: "home",
-      number: "01",
-      numberAr: "المحطة الأولى",
-      emoji: "🏡",
-      titleEn: "Our Little Home",
-      titleAr: "بيتنا الصغير",
-      descAr: "بداية رحلتنا.. بيت دافئ ممتلئ بتفاصيل حبنا الخاصة",
-      badge: "Cozy Haven",
-      prevName: null
-    },
-    {
-      id: "garden",
-      number: "02",
-      numberAr: "المحطة الثانية",
-      emoji: "🌸",
-      titleEn: "Garden of Memories",
-      titleAr: "حديقة الذكريات",
-      descAr: "٦ ذكريات تحكي قصة معرفتنا ومكالمة الاعتراف الخالدة",
-      badge: `${memoriesCount}/6 ذكريات`,
-      prevName: "بيتنا الصغير"
-    },
-    {
-      id: "mailbox",
-      number: "03",
-      numberAr: "المحطة الثالثة",
-      emoji: "💌",
-      titleEn: "Mailbox of Love",
-      titleAr: "صندوق رسائل الحب",
-      descAr: "رسائل شمعية خاصة كُتبت من قلب أسيل لأنيتا",
-      badge: `${lettersCount}/6 رسائل`,
-      prevName: "حديقة الذكريات"
-    },
-    {
-      id: "carnival",
-      number: "04",
-      numberAr: "المحطة الرابعة",
-      emoji: "🎪",
-      titleEn: "The Little Carnival",
-      titleAr: "كرنفال النجوم",
-      descAr: "ألعاب ممتعة وجمع نجوم عيد الميلاد وأسئلة حب لطيفة",
-      badge: `${carnivalDone}/3 ألعاب ممتعة`,
-      prevName: "صندوق رسائل الحب"
-    },
-    {
-      id: "lake",
-      number: "05",
-      numberAr: "المحطة الخامسة",
-      emoji: "🌊",
-      titleEn: "The Lake of Stars",
-      titleAr: "بحيرة النجوم",
-      descAr: "فوانيس عائمة في سكون الليل وجلسة هادئة تحت النجوم",
-      badge: "هدوء وتأمل",
-      prevName: "كرنفال النجوم"
-    },
-    {
-      id: "castle",
-      number: "06",
-      numberAr: "المحطة الختامية",
-      emoji: "🏰",
-      titleEn: "The Birthday Castle",
-      titleAr: "قصر الـ 24 عاماً",
-      descAr: "كعكة عيد الميلاد الـ ٢٤ والهدية الكبرى والمفاجأة الختامية",
-      badge: isCastleUnlocked ? "مفتوح للاحتفال ✨" : "يُفتح بعد البحيرة",
-      prevName: "بحيرة النجوم"
-    }
-  ];
+  const STATIONS_INFO = {
+    home: { titleAr: "بيتنا الصغير", prevName: null },
+    garden: { titleAr: "حديقة الذكريات", prevName: "بيتنا الصغير" },
+    mailbox: { titleAr: "صندوق رسائل الحب", prevName: "حديقة الذكريات" },
+    carnival: { titleAr: "كرنفال النجوم والألعاب", prevName: "صندوق رسائل الحب" },
+    lake: { titleAr: "بحيرة النجوم", prevName: "كرنفال النجوم" },
+    castle: { titleAr: "قصر الـ 24 عاماً", prevName: "بحيرة النجوم" }
+  };
+
+  const isHomeUnlocked = stateManager.isDestinationUnlocked("home");
+  const isGardenUnlocked = stateManager.isDestinationUnlocked("garden");
+  const isMailboxUnlocked = stateManager.isDestinationUnlocked("mailbox");
+  const isCarnivalUnlocked = stateManager.isDestinationUnlocked("carnival");
+  const isLakeUnlocked = stateManager.isDestinationUnlocked("lake");
+  const isCastleOpen = stateManager.isDestinationUnlocked("castle");
 
   container.innerHTML = `
     <div class="world-scene">
@@ -104,9 +52,9 @@ export function renderWorldScene(container, navigateTo) {
             <span class="star-max">${maxStars}</span>
           </div>
 
-          <div class="stat-pill castle-stat ${isCastleUnlocked ? 'unlocked' : 'locked'}" title="${isCastleUnlocked ? 'Birthday Castle Unlocked!' : 'Explore previous stations to unlock'}">
-            <span class="castle-icon">${isCastleUnlocked ? '👑' : '🔒'}</span>
-            <span class="castle-text">${isCastleUnlocked ? 'Castle Open' : 'Castle Sealed'}</span>
+          <div class="stat-pill castle-stat ${isCastleOpen ? 'unlocked' : 'locked'}" title="${isCastleOpen ? 'Birthday Castle Unlocked!' : 'Explore memories & letters to unlock'}">
+            <span class="castle-icon">${isCastleOpen ? '👑' : '🔒'}</span>
+            <span class="castle-text">${isCastleOpen ? 'Castle Open' : 'Castle Sealed'}</span>
           </div>
 
           <!-- Sound Controls -->
@@ -127,76 +75,143 @@ export function renderWorldScene(container, navigateTo) {
       <!-- Center Title Header -->
       <div class="universe-hero-header">
         <h2 class="universe-hero-title">A Journey Written Across the Stars</h2>
-        <p class="universe-hero-ar" dir="rtl">ست محطات صُنعت بكل حب.. استكشفي كل محطة بالترتيب لتنفتح لكِ المحطة التالية ♡</p>
+        <p class="universe-hero-ar" dir="rtl">ست محطات صُنعت بكل حب.. استكشفي عوالمنا بالترتيب خطوة بخطوة ♡</p>
       </div>
 
-      <!-- MAIN CENTERED STATIONS STAGE -->
-      <main class="centered-journey-stage">
-        <!-- Connecting Starlight Path Background -->
-        <div class="starlight-journey-glow"></div>
+      <!-- Main Symmetrical Celestial Orbit Canvas / Layout -->
+      <main class="celestial-orbit-stage">
+        <!-- Background Concentric Orbital Rings & Starlight Lines -->
+        <svg class="celestial-orbit-lines" viewBox="0 0 900 520" preserveAspectRatio="xMidYMid meet">
+          <defs>
+            <linearGradient id="orbit-grad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="rgba(223, 186, 83, 0.45)" />
+              <stop offset="50%" stop-color="rgba(116, 143, 126, 0.3)" />
+              <stop offset="100%" stop-color="rgba(98, 125, 152, 0.45)" />
+            </linearGradient>
+          </defs>
+          <!-- Outer Elliptical Orbit Track -->
+          <ellipse cx="450" cy="280" rx="380" ry="170" fill="none" stroke="url(#orbit-grad)" stroke-width="1.5" stroke-dasharray="6 6" />
+          <!-- Inner Orbit Track -->
+          <ellipse cx="450" cy="280" rx="240" ry="105" fill="none" stroke="rgba(223, 186, 83, 0.25)" stroke-width="1.2" stroke-dasharray="4 4" />
+          <!-- Constellation Rays between Castle and Planets -->
+          <line x1="450" y1="110" x2="160" y2="240" stroke="rgba(223, 186, 83, 0.22)" stroke-width="1" stroke-dasharray="3 3" />
+          <line x1="450" y1="110" x2="740" y2="240" stroke="rgba(223, 186, 83, 0.22)" stroke-width="1" stroke-dasharray="3 3" />
+          <line x1="450" y1="110" x2="270" y2="400" stroke="rgba(223, 186, 83, 0.22)" stroke-width="1" stroke-dasharray="3 3" />
+          <line x1="450" y1="110" x2="630" y2="400" stroke="rgba(223, 186, 83, 0.22)" stroke-width="1" stroke-dasharray="3 3" />
+          <line x1="450" y1="110" x2="450" y2="440" stroke="rgba(223, 186, 83, 0.22)" stroke-width="1" stroke-dasharray="3 3" />
+        </svg>
 
-        <div class="centered-stations-grid">
-          ${STATIONS.map((s, idx) => {
-            const isUnlocked = stateManager.isDestinationUnlocked(s.id);
-            const isExplored = stateManager.isDestinationExplored(s.id);
+        <!-- Symmetrical Celestial Grid Container -->
+        <div class="orbit-nodes-container">
+          <!-- Top Center: The Birthday Castle (Grand Peak) -->
+          <div class="destination-node castle-orbit-node ${isCastleOpen ? 'unlocked' : 'locked'}" data-dest="castle" style="top: 14%; left: 50%;">
+            <div class="node-orbit-glow"></div>
+            <div class="node-visual castle-visual">
+              <span class="node-emoji">🏰</span>
+              ${!isCastleOpen ? '<span class="lock-pip">🔒</span>' : '<span class="crown-pip">👑</span>'}
+            </div>
+            <div class="node-label">
+              <span class="node-title">The Birthday Castle</span>
+              <span class="node-arabic">قصر عيد الميلاد الـ 24</span>
+              <span class="node-badge ${isCastleOpen ? 'badge-open' : 'badge-locked'}">
+                ${isCastleOpen ? 'Open — Tap to Celebrate' : 'Explore to Unlock'}
+              </span>
+            </div>
+          </div>
 
-            return `
-              <div class="centered-station-card ${isUnlocked ? 'station-unlocked' : 'station-locked'} ${isExplored ? 'station-explored' : ''}" data-dest="${s.id}" data-idx="${idx}">
-                <!-- Station Step Pip -->
-                <div class="station-step-pill">
-                  <span class="step-num">${s.number}</span>
-                  <span class="step-ar">${s.numberAr}</span>
-                </div>
+          <!-- Destination 1: Our Little Home (Left Upper Orbit) -->
+          <div class="destination-node planet-orbit-node ${isHomeUnlocked ? 'unlocked' : 'locked'}" data-dest="home" style="top: 42%; left: 16%;">
+            <div class="node-orbit-glow"></div>
+            <div class="node-visual home-visual">
+              <span class="node-emoji">🏡</span>
+              ${!isHomeUnlocked ? '<span class="lock-pip">🔒</span>' : ''}
+            </div>
+            <div class="node-label">
+              <span class="node-title">Our Little Home</span>
+              <span class="node-arabic">بيتنا الصغير</span>
+              <span class="node-badge">Cozy Haven</span>
+            </div>
+          </div>
 
-                <!-- Planet Icon with Starlight Aura -->
-                <div class="station-icon-halo">
-                  <div class="station-halo-glow"></div>
-                  <div class="station-icon-emoji">${s.emoji}</div>
-                  <div class="station-lock-indicator">
-                    ${isUnlocked ? (isExplored ? '⭐' : '✨') : '🔒'}
-                  </div>
-                </div>
+          <!-- Destination 2: Garden of Memories (Right Upper Orbit) -->
+          <div class="destination-node planet-orbit-node ${isGardenUnlocked ? 'unlocked' : 'locked'}" data-dest="garden" style="top: 42%; left: 84%;">
+            <div class="node-orbit-glow"></div>
+            <div class="node-visual garden-visual">
+              <span class="node-emoji">🌸</span>
+              ${!isGardenUnlocked ? '<span class="lock-pip">🔒</span>' : ''}
+            </div>
+            <div class="node-label">
+              <span class="node-title">Garden of Memories</span>
+              <span class="node-arabic">حديقة الذكريات</span>
+              <span class="node-badge ${isGardenUnlocked ? '' : 'badge-locked'}">
+                ${isGardenUnlocked ? `${memoriesCount}/6 Memories` : '🔒 Locked'}
+              </span>
+            </div>
+          </div>
 
-                <!-- Station Titles & Info -->
-                <div class="station-details">
-                  <h3 class="station-title-en">${s.titleEn}</h3>
-                  <h4 class="station-title-ar" dir="rtl">${s.titleAr}</h4>
-                  <p class="station-desc-ar" dir="rtl">${s.descAr}</p>
-                </div>
+          <!-- Destination 3: Mailbox of Love (Left Lower Orbit) -->
+          <div class="destination-node planet-orbit-node ${isMailboxUnlocked ? 'unlocked' : 'locked'}" data-dest="mailbox" style="top: 76%; left: 26%;">
+            <div class="node-orbit-glow"></div>
+            <div class="node-visual mailbox-visual">
+              <span class="node-emoji">💌</span>
+              ${!isMailboxUnlocked ? '<span class="lock-pip">🔒</span>' : ''}
+            </div>
+            <div class="node-label">
+              <span class="node-title">Mailbox of Love</span>
+              <span class="node-arabic">صندوق رسائل الحب</span>
+              <span class="node-badge ${isMailboxUnlocked ? '' : 'badge-locked'}">
+                ${isMailboxUnlocked ? `${lettersCount}/6 Letters` : '🔒 Locked'}
+              </span>
+            </div>
+          </div>
 
-                <!-- Station Action Status -->
-                <div class="station-status-pill">
-                  ${!isUnlocked 
-                    ? `<span class="status-locked"><span class="lock-mini">🔒</span> مغلقة (أكملي ${s.prevName})</span>` 
-                    : isExplored 
-                      ? `<span class="status-explored">تم الاستكشاف ⭐ اضغطي للزيارة</span>` 
-                      : `<span class="status-available">استكشفي الآن ✨</span>`}
-                </div>
-              </div>
-            `;
-          }).join("")}
-        </div>
+          <!-- Destination 4: The Little Carnival (Center Lower Orbit) -->
+          <div class="destination-node planet-orbit-node ${isCarnivalUnlocked ? 'unlocked' : 'locked'}" data-dest="carnival" style="top: 84%; left: 50%;">
+            <div class="node-orbit-glow"></div>
+            <div class="node-visual carnival-visual">
+              <span class="node-emoji">🎪</span>
+              ${!isCarnivalUnlocked ? '<span class="lock-pip">🔒</span>' : ''}
+            </div>
+            <div class="node-label">
+              <span class="node-title">The Little Carnival</span>
+              <span class="node-arabic">كرنفال النجوم والألعاب</span>
+              <span class="node-badge ${isCarnivalUnlocked ? '' : 'badge-locked'}">
+                ${isCarnivalUnlocked ? `${carnivalDone}/3 Games Done` : '🔒 Locked'}
+              </span>
+            </div>
+          </div>
 
-        <!-- Adorable Chibi Duo Mascot Centerpiece (Anea & Cute Pink Aseel) -->
-        <div class="centered-mascot-row">
-          <div class="chibi-center-wrapper">
-            ${Characters.getTogetherSceneSVG("sitting", 200)}
-            <div class="chibi-caption-tag">
-              <span>Anea & Aseel ♡ تحت سماء عيد ميلادك الـ ٢٤</span>
+          <!-- Destination 5: The Lake of Stars (Right Lower Orbit) -->
+          <div class="destination-node planet-orbit-node ${isLakeUnlocked ? 'unlocked' : 'locked'}" data-dest="lake" style="top: 76%; left: 74%;">
+            <div class="node-orbit-glow"></div>
+            <div class="node-visual lake-visual">
+              <span class="node-emoji">🌊</span>
+              ${!isLakeUnlocked ? '<span class="lock-pip">🔒</span>' : ''}
+            </div>
+            <div class="node-label">
+              <span class="node-title">The Lake of Stars</span>
+              <span class="node-arabic">بحيرة النجوم الهادئة</span>
+              <span class="node-badge ${isLakeUnlocked ? '' : 'badge-locked'}">
+                ${isLakeUnlocked ? 'Peace & Reflections' : '🔒 Locked'}
+              </span>
             </div>
           </div>
         </div>
 
-        <!-- Hidden Secret Star & Word Easter Eggs -->
-        <div class="universe-secret-row">
-          <div class="secret-star-element" id="secretStarBtn" title="A faint mysterious sparkle in the cosmos...">
-            <span class="secret-sparkle">✧</span>
-            <span class="secret-hint-text">نجمة سرية</span>
-          </div>
+        <!-- Hidden Secret Star Easter Egg -->
+        <div class="secret-star-element" id="secretStarBtn" style="position: absolute; top: 22%; left: 28%; cursor: pointer;" title="A faint mysterious sparkle in the cosmos...">
+          <span class="secret-sparkle">✧</span>
+        </div>
 
-          <div class="hidden-word-tag" id="hiddenWordBtn" title="Aseel's pet name for you">
-            <span class="tag-pill">حبوبي ♡</span>
-          </div>
+        <!-- Hidden Shared Word Easter Egg -->
+        <div class="hidden-word-tag" id="hiddenWordBtn" style="position: absolute; bottom: 20px; left: 26px; cursor: pointer;" title="Aseel's special word for you">
+          <span class="tag-pill">حبوبي ♡</span>
+        </div>
+
+        <!-- Chibi Duo Sitting Together Cutest Corner (Anea & Cute Pink Aseel) -->
+        <div class="chibi-corner-mascot" title="Anea & Aseel sitting beneath the stars">
+          <div class="mini-moon-asteroid"></div>
+          ${Characters.getTogetherSceneSVG("sitting", 180)}
         </div>
       </main>
 
@@ -210,7 +225,7 @@ export function renderWorldScene(container, navigateTo) {
     </div>
   `;
 
-  // --- Event Handlers ---
+  // --- Event Listeners ---
 
   const modal = container.querySelector("#worldModal");
   const modalSlot = container.querySelector("#modalSlot");
@@ -226,41 +241,41 @@ export function renderWorldScene(container, navigateTo) {
     if (e.target === modal) modal.style.display = "none";
   });
 
-  // Handle station click with sequential locking check
-  container.querySelectorAll(".centered-station-card").forEach(card => {
-    card.addEventListener("click", () => {
-      const destId = card.getAttribute("data-dest");
-      const station = STATIONS.find(s => s.id === destId);
-      const isUnlocked = stateManager.isDestinationUnlocked(destId);
+  const handleNav = (dest) => {
+    const isUnlocked = stateManager.isDestinationUnlocked(dest);
+    const station = STATIONS_INFO[dest];
 
-      if (!isUnlocked) {
-        audioManager.playChime(329.63, 0.6);
-        showModal(`
-          <div class="locked-station-dialog">
-            <div class="locked-bubble-icon">🔒</div>
-            <h3 class="locked-title-en">This World is Sleeping</h3>
-            <h4 class="locked-title-ar" dir="rtl">هذه المحطة مغلقة حالياً ♡</h4>
-            <div class="locked-divider">✧ ✦ ✧</div>
-            <p class="locked-desc-ar" dir="rtl">
-              عالمنا الصغير يُكتشف خطوة بخطوة بكل حب..<br>
-              استكشفي محطة <strong>"${station.prevName}"</strong> أولاً لتفتح لكِ النجوم أبواب محطة <strong>"${station.titleAr}"</strong> بكل دفء ✨
-            </p>
-            <button class="celestial-btn modal-agree-btn" id="lockedDismissBtn">
-              <span>فهمت، سأكمل بالترتيب ♡</span>
-            </button>
-          </div>
-        `);
-        const dismissBtn = container.querySelector("#lockedDismissBtn");
-        if (dismissBtn) dismissBtn.addEventListener("click", () => modal.style.display = "none");
-        return;
-      }
+    if (!isUnlocked) {
+      audioManager.playChime(329.63, 0.6);
+      showModal(`
+        <div class="locked-station-dialog" style="text-align: center; padding: 10px 14px;">
+          <div class="locked-bubble-icon" style="font-size: 2.8rem; margin-bottom: 12px; filter: drop-shadow(0 0 10px rgba(223, 186, 83, 0.5));">🔒</div>
+          <h3 class="locked-title-en" style="font-family: var(--font-serif); font-size: 1.35rem; color: var(--warm-ivory); margin-bottom: 2px;">This World is Sleeping</h3>
+          <h4 class="locked-title-ar" dir="rtl" style="font-family: var(--font-arabic); font-size: 1.25rem; color: var(--gold-starlight); margin-bottom: 12px;">هذه المحطة مغلقة حالياً ♡</h4>
+          <div style="color: var(--gold-starlight); font-size: 0.9rem; letter-spacing: 0.3em; margin-bottom: 14px; opacity: 0.7;">✧ ✦ ✧</div>
+          <p class="locked-desc-ar" dir="rtl" style="font-family: var(--font-arabic); font-size: 1.05rem; color: var(--warm-cream); line-height: 1.8; margin-bottom: 24px;">
+            عالمنا الصغير يُكتشف خطوة بخطوة بكل حب..<br>
+            استكشفي محطة <strong>"${station.prevName}"</strong> أولاً لتفتح لكِ النجوم أبواب محطة <strong>"${station.titleAr}"</strong> بكل دفء ✨
+          </p>
+          <button class="celestial-btn modal-agree-btn" id="lockedDismissBtn" style="padding: 12px 28px; font-family: var(--font-arabic); font-size: 0.95rem;">
+            <span>فهمت، سأكمل الرحلة بالترتيب ♡</span>
+          </button>
+        </div>
+      `);
+      const dismissBtn = container.querySelector("#lockedDismissBtn");
+      if (dismissBtn) dismissBtn.addEventListener("click", () => modal.style.display = "none");
+      return;
+    }
 
-      audioManager.playChime(659.25, 0.8);
-      navigateTo(destId);
-    });
+    audioManager.playChime(659.25, 0.8);
+    navigateTo(dest);
+  };
+
+  container.querySelectorAll(".destination-node").forEach(node => {
+    node.addEventListener("click", () => handleNav(node.getAttribute("data-dest")));
   });
 
-  // Sound Controls
+  // Sound Toggle & Volume Slider
   const soundBtn = container.querySelector("#soundToggleBtn");
   const volumeSlider = container.querySelector("#volumeSlider");
   soundBtn.addEventListener("click", () => {
@@ -334,7 +349,7 @@ export function renderWorldScene(container, navigateTo) {
           <div class="menu-item">🌸 Memories Explored: <strong>${stateManager.state.memoriesVisited.length} / 6</strong></div>
           <div class="menu-item">💌 Letters Opened: <strong>${stateManager.state.lettersOpened.length} / 6</strong></div>
           <div class="menu-item">🎪 Mini-Games Completed: <strong>${Object.values(stateManager.state.minigames).filter(Boolean).length} / 3</strong></div>
-          <div class="menu-item">🏰 Castle Status: <strong>${stateManager.state.castleUnlocked ? 'Unlocked ✨' : 'Explore more to unlock'}</strong></div>
+          <div class="menu-item">🏰 Castle Status: <strong>${isCastleOpen ? 'Unlocked ✨' : 'Explore more to unlock'}</strong></div>
         </div>
 
         <div class="menu-actions">

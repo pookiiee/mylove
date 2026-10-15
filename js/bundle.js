@@ -111,12 +111,12 @@ const CONFIG = {
     {
       id: "memory-1",
       number: "01",
-      titleEnglish: "The First Message",
-      titleArabic: "أول رسالة خاصة",
+      titleEnglish: "The First Message & Voice",
+      titleArabic: "أول فويس ورسالة خاصة",
       icon: "message",
-      summaryEnglish: "When you were an admin on my server, reaching out quietly...",
+      summaryEnglish: "When we met on voice and you applied for admin...",
       narrativeEnglish: "Little did I know that the messages I sometimes pretended not to care about would become some of my favorite memories.",
-      narrativeArabic: "كنتِ مشرفة في السيرفر، ومن وقت لوقت تجين ترسلين لي على الخاص وتحاولين تسولفين معي.. وأنا في البداية كنت مسوية نفسي ثقيلة وبعيدة ولا معطية الموضوع اهتمام كبير! بس ما كنت أدري إن هذي الرسايل بالذات هي بداية كل الدفء اللي أعيشه معك اليوم."
+      narrativeArabic: "قد قابلتك بفويس وغازلتك وانتِ دختي واستحيتي مرا بس وقتها عجبني صوتك ويوم قدمتي ادمن قلت اوه كبيره هذي مامي وجداوي احح، وأنا في البداية كنت مسوية نفسي ثقيلة وبعيدة ولا معطية الموضوع اهتمام كبير! بس ما كنت أدري إن هذي الرسايل بالذات هي بداية كل الدفء اللي أعيشه معك اليوم."
     },
     {
       id: "memory-2",
@@ -164,43 +164,49 @@ const CONFIG = {
       id: "memory-6",
       number: "06",
       titleEnglish: "The Way You Love Me",
-      titleArabic: "طريقتك الخاصة في حبي ودلالي",
+      titleArabic: "طريقتك الخاصة بدلالي",
       icon: "blooming-rose",
       summaryEnglish: "Your attentiveness, your pampering, and the way you make me feel uniquely special.",
       narrativeEnglish: "Out of everything in this world, what I cherish most is how you treat me. The way you pamper me, the way you pay attention to the smallest things, and the tenderness with which you love me.",
-      narrativeArabic: "أكثر شيء يسحرني ويذوب قلبي هو اهتمامك الصادق بي، وطريقتك الحنونة في تدليلي.. إنك تخليني أحس إني إنسانة استثنائية ومميزة جداً عندك، بحنية ما لقيت مثلها في أي مكان في هذا العالم."
+      narrativeArabic: "أكثر شي يسحرني ويذوب قلبي هو اهتمامك فيني، وطريقتك الحنونة بأنك تدلليني وتدلعيني، وتخليني أحس إني إنسانة استثنائية ومميزة جداً عندك بحنية ما لقيت مثلها بأي مكان بالعالم ♡"
     }
   ],
 
-  // --- Destination 3: The Mailbox of Love ---
+  // --- Destination 3: The Mailbox of Love (Voice Notes & Letters) ---
   letters: [
     {
       id: "letter-1",
       titleEnglish: "For the Girl Who Kept Messaging Me",
       titleArabic: "للبنت اللي كانت ترسل لي دايم",
+      audioSrc: "assets/audio/voice1.mp3",
+      duration: "1:14",
       preview: "Little did I know what those server DMs would turn into...",
       bodyArabic: `حبيبتي أنيتي،
 أتذكر لما كنتِ مشرفة في السيرفر، وتجين عندي بالخاص تسولفين وأنا أسوي نفسي ثقيلة ومو مهتمة كثير.. 
 والحين لما أرجع أتذكر تلك الأيام، أضحك من قلبي وأحمد ربي ألف مرة إنك ما استسلمتِ وضلّيتي تراسليني. 
 هذيك الرسايل البسيطة هي اللي بنت كل هذا الحب العظيم اللي بقلبي لكِ اليوم. 
 شكراً لأنكِ بديتِ، ولأنكِ دخلتِ عالمي وغيرتِ كل شيء فيه للأجمل.`,
-      date: "From: Aseel ♡"
+      date: "Voice Note from Aseel ♡"
     },
     {
       id: "letter-2",
       titleEnglish: "The Night You Made Me Confess",
       titleArabic: "الليلة اللي خليتيني أعترف فيها",
+      audioSrc: "assets/audio/voice2.mp3",
+      duration: "1:28",
       preview: "I was so scared, but you held my hand through the screen...",
       bodyArabic: `حبيبتي أنيتي،
 تتذكرين ليلة المكالمة الصوتية؟ كنت خايفة أقول اللي بقلبي، خايفة من مشاعري، وكنتِ تلعبين معي بمرح وتحاصريني بلطافة وتخليني أنطق باللي بقلبي.. 
 لما اعترفنا لبعض في هذيك الليلة، حسيت كأن حمل ثقيل انزاح عن صدري وحل مكانه دفء عظيم ما فارقني من وقتها. 
 شجاعتك ولطافتك في هذاك اليوم فتحت لي أجمل باب في حياتي: باب قلبك.`,
-      date: "From: Your Aseel ♡"
+      date: "Voice Note from Aseel ♡"
     },
     {
       id: "letter-3",
       titleEnglish: "Things I Love About You",
       titleArabic: "أشياء أحبها فيكِ وتأسرني",
+      audioSrc: "assets/audio/voice3.mp3",
+      duration: "1:35",
       preview: "Your tenderness, the way you pamper me, and your quiet warmth...",
       bodyArabic: `أنيتي،
 أحب فيكِ أشياء كثيرة صعب أحصرها في ورقة، بس أهمها:
@@ -209,42 +215,48 @@ const CONFIG = {
 أحب إنك تعامليني بطريقة خاصة ومختلفة عن الكل، وتخليني أحس بقيمتي الكبيرة عندك.
 أحب حنيتك وروحك الهادئة العميقة اللي تشبه سكون النجوم.
 أنتِ نعمة قلبي وأجمل ما فيه يا أغلى إنسانة في حياتي.`,
-      date: "Forever yours ♡"
+      date: "Voice Note from Aseel ♡"
     },
     {
       id: "letter-4",
       titleEnglish: "For When You Miss Me",
       titleArabic: "لو حسيتِ بشوق أو بعد في أي وقت",
+      audioSrc: "assets/audio/voice4.mp3",
+      duration: "1:20",
       preview: "Look up at this little universe whenever you feel far...",
       bodyArabic: `حبيبتي أنيا،
 إذا مر عليكِ وقت حسيتِ فيه بالاشتياق أو التعب أو حسيتِ إنك بعيدة، تذكري دائماً إنك موجودة في أعماق قلبي في كل ثانية. 
 هذا العالم الصغير بنيته لكِ عشان تذكرين في أي وقت إن هناك شخصاً يحبك بكل ما فيه، وممتن لكل نفس يتنفسه بوجودك. 
 أنا معكِ دائماً، حتى لو بيننا مسافات.. قلبي عندك.`,
-      date: "Always with you ♡"
+      date: "Voice Note from Aseel ♡"
     },
     {
       id: "letter-5",
       titleEnglish: "For When You Need a Little Extra Love",
       titleArabic: "لو احتجتِ جرعة حب ودلال إضافية",
+      audioSrc: "assets/audio/voice5.mp3",
+      duration: "1:42",
       preview: "A gentle reminder of how precious you truly are...",
       bodyArabic: `أنيتي الجميلة،
 في الأيام اللي تحسين فيها إنكِ متعبة أو مضغوطة، خذي نفساً عميقاً وتذكري: أنتِ إنسانة نقية، حنونة، ورائعة لدرجة تفوق الخيال. 
 تستاهلين كل الحب والاهتمام والراحة في هذا العالم. 
 ولا تنسين إنكِ حبوبي اللي مدللة عندي دائماً وأبداً. 
 أنا فخورة فيكِ وبقلبك الطيب وبكل تفاصيلك.`,
-      date: "With endless tenderness ♡"
+      date: "Voice Note from Aseel ♡"
     },
     {
       id: "letter-6",
-      titleEnglish: "A Letter for Your 24th Birthday",
-      titleArabic: "رسالة لعمرك الجديد.. الـ 24",
+      titleEnglish: "A Voice Note for Your 24th Birthday",
+      titleArabic: "فويس لعمرك الجديد.. الـ 24",
+      audioSrc: "assets/audio/voice6.mp3",
+      duration: "1:55",
       preview: "Happy 24th Birthday, my favorite person in the entire universe...",
       bodyArabic: `إلى أنيتي الغالية في يوم ميلادها الـ ٢٤،
 اليوم تكملين أربعة وعشرين سنة من الجمال والرقة، وأنا محظوظة وسعيدة جداً إني أشاركك هذي اللحظة من قصة حياتك. 
 يا رب تكون سنتك الجديدة هذي مليانة راحة بال، ونجاحات، وضحكات من القلب، وأيام تشبه حلاوة روحك. 
 أحبك اليوم وبكرة وفي كل سنة جاية يا روحي. 
 كل عام وأنتِ عالمي كله ♡`,
-      date: "October 17 ♡"
+      date: "Voice Note from Aseel ♡"
     }
   ],
 
@@ -1487,7 +1499,8 @@ function renderIntroScene(container, onComplete) {
 /**
  * ANEA'S LITTLE UNIVERSE ♡
  * Scene: The Interactive Celestial World Map
- * Centered sequential journey: Stations unlock in order step-by-step!
+ * Symmetrical Celestial Orbit Layout (As requested by Aseel)
+ * with Sequential Station Unlocking (01 -> 02 -> 03 -> 04 -> 05 -> 06)
  */
 
 
@@ -1503,74 +1516,21 @@ function renderWorldScene(container, navigateTo) {
   const lettersCount = stateManager.state.lettersOpened.length;
   const carnivalDone = Object.values(stateManager.state.minigames).filter(Boolean).length;
 
-  const STATIONS = [
-    {
-      id: "home",
-      number: "01",
-      numberAr: "المحطة الأولى",
-      emoji: "🏡",
-      titleEn: "Our Little Home",
-      titleAr: "بيتنا الصغير",
-      descAr: "بداية رحلتنا.. بيت دافئ ممتلئ بتفاصيل حبنا الخاصة",
-      badge: "Cozy Haven",
-      prevName: null
-    },
-    {
-      id: "garden",
-      number: "02",
-      numberAr: "المحطة الثانية",
-      emoji: "🌸",
-      titleEn: "Garden of Memories",
-      titleAr: "حديقة الذكريات",
-      descAr: "٦ ذكريات تحكي قصة معرفتنا ومكالمة الاعتراف الخالدة",
-      badge: `${memoriesCount}/6 ذكريات`,
-      prevName: "بيتنا الصغير"
-    },
-    {
-      id: "mailbox",
-      number: "03",
-      numberAr: "المحطة الثالثة",
-      emoji: "💌",
-      titleEn: "Mailbox of Love",
-      titleAr: "صندوق رسائل الحب",
-      descAr: "رسائل شمعية خاصة كُتبت من قلب أسيل لأنيتا",
-      badge: `${lettersCount}/6 رسائل`,
-      prevName: "حديقة الذكريات"
-    },
-    {
-      id: "carnival",
-      number: "04",
-      numberAr: "المحطة الرابعة",
-      emoji: "🎪",
-      titleEn: "The Little Carnival",
-      titleAr: "كرنفال النجوم",
-      descAr: "ألعاب ممتعة وجمع نجوم عيد الميلاد وأسئلة حب لطيفة",
-      badge: `${carnivalDone}/3 ألعاب ممتعة`,
-      prevName: "صندوق رسائل الحب"
-    },
-    {
-      id: "lake",
-      number: "05",
-      numberAr: "المحطة الخامسة",
-      emoji: "🌊",
-      titleEn: "The Lake of Stars",
-      titleAr: "بحيرة النجوم",
-      descAr: "فوانيس عائمة في سكون الليل وجلسة هادئة تحت النجوم",
-      badge: "هدوء وتأمل",
-      prevName: "كرنفال النجوم"
-    },
-    {
-      id: "castle",
-      number: "06",
-      numberAr: "المحطة الختامية",
-      emoji: "🏰",
-      titleEn: "The Birthday Castle",
-      titleAr: "قصر الـ 24 عاماً",
-      descAr: "كعكة عيد الميلاد الـ ٢٤ والهدية الكبرى والمفاجأة الختامية",
-      badge: isCastleUnlocked ? "مفتوح للاحتفال ✨" : "يُفتح بعد البحيرة",
-      prevName: "بحيرة النجوم"
-    }
-  ];
+  const STATIONS_INFO = {
+    home: { titleAr: "بيتنا الصغير", prevName: null },
+    garden: { titleAr: "حديقة الذكريات", prevName: "بيتنا الصغير" },
+    mailbox: { titleAr: "صندوق رسائل الحب", prevName: "حديقة الذكريات" },
+    carnival: { titleAr: "كرنفال النجوم والألعاب", prevName: "صندوق رسائل الحب" },
+    lake: { titleAr: "بحيرة النجوم", prevName: "كرنفال النجوم" },
+    castle: { titleAr: "قصر الـ 24 عاماً", prevName: "بحيرة النجوم" }
+  };
+
+  const isHomeUnlocked = stateManager.isDestinationUnlocked("home");
+  const isGardenUnlocked = stateManager.isDestinationUnlocked("garden");
+  const isMailboxUnlocked = stateManager.isDestinationUnlocked("mailbox");
+  const isCarnivalUnlocked = stateManager.isDestinationUnlocked("carnival");
+  const isLakeUnlocked = stateManager.isDestinationUnlocked("lake");
+  const isCastleOpen = stateManager.isDestinationUnlocked("castle");
 
   container.innerHTML = `
     <div class="world-scene">
@@ -1590,9 +1550,9 @@ function renderWorldScene(container, navigateTo) {
             <span class="star-max">${maxStars}</span>
           </div>
 
-          <div class="stat-pill castle-stat ${isCastleUnlocked ? 'unlocked' : 'locked'}" title="${isCastleUnlocked ? 'Birthday Castle Unlocked!' : 'Explore previous stations to unlock'}">
-            <span class="castle-icon">${isCastleUnlocked ? '👑' : '🔒'}</span>
-            <span class="castle-text">${isCastleUnlocked ? 'Castle Open' : 'Castle Sealed'}</span>
+          <div class="stat-pill castle-stat ${isCastleOpen ? 'unlocked' : 'locked'}" title="${isCastleOpen ? 'Birthday Castle Unlocked!' : 'Explore memories & letters to unlock'}">
+            <span class="castle-icon">${isCastleOpen ? '👑' : '🔒'}</span>
+            <span class="castle-text">${isCastleOpen ? 'Castle Open' : 'Castle Sealed'}</span>
           </div>
 
           <!-- Sound Controls -->
@@ -1613,76 +1573,143 @@ function renderWorldScene(container, navigateTo) {
       <!-- Center Title Header -->
       <div class="universe-hero-header">
         <h2 class="universe-hero-title">A Journey Written Across the Stars</h2>
-        <p class="universe-hero-ar" dir="rtl">ست محطات صُنعت بكل حب.. استكشفي كل محطة بالترتيب لتنفتح لكِ المحطة التالية ♡</p>
+        <p class="universe-hero-ar" dir="rtl">ست محطات صُنعت بكل حب.. استكشفي عوالمنا بالترتيب خطوة بخطوة ♡</p>
       </div>
 
-      <!-- MAIN CENTERED STATIONS STAGE -->
-      <main class="centered-journey-stage">
-        <!-- Connecting Starlight Path Background -->
-        <div class="starlight-journey-glow"></div>
+      <!-- Main Symmetrical Celestial Orbit Canvas / Layout -->
+      <main class="celestial-orbit-stage">
+        <!-- Background Concentric Orbital Rings & Starlight Lines -->
+        <svg class="celestial-orbit-lines" viewBox="0 0 900 520" preserveAspectRatio="xMidYMid meet">
+          <defs>
+            <linearGradient id="orbit-grad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="rgba(223, 186, 83, 0.45)" />
+              <stop offset="50%" stop-color="rgba(116, 143, 126, 0.3)" />
+              <stop offset="100%" stop-color="rgba(98, 125, 152, 0.45)" />
+            </linearGradient>
+          </defs>
+          <!-- Outer Elliptical Orbit Track -->
+          <ellipse cx="450" cy="280" rx="380" ry="170" fill="none" stroke="url(#orbit-grad)" stroke-width="1.5" stroke-dasharray="6 6" />
+          <!-- Inner Orbit Track -->
+          <ellipse cx="450" cy="280" rx="240" ry="105" fill="none" stroke="rgba(223, 186, 83, 0.25)" stroke-width="1.2" stroke-dasharray="4 4" />
+          <!-- Constellation Rays between Castle and Planets -->
+          <line x1="450" y1="110" x2="160" y2="240" stroke="rgba(223, 186, 83, 0.22)" stroke-width="1" stroke-dasharray="3 3" />
+          <line x1="450" y1="110" x2="740" y2="240" stroke="rgba(223, 186, 83, 0.22)" stroke-width="1" stroke-dasharray="3 3" />
+          <line x1="450" y1="110" x2="270" y2="400" stroke="rgba(223, 186, 83, 0.22)" stroke-width="1" stroke-dasharray="3 3" />
+          <line x1="450" y1="110" x2="630" y2="400" stroke="rgba(223, 186, 83, 0.22)" stroke-width="1" stroke-dasharray="3 3" />
+          <line x1="450" y1="110" x2="450" y2="440" stroke="rgba(223, 186, 83, 0.22)" stroke-width="1" stroke-dasharray="3 3" />
+        </svg>
 
-        <div class="centered-stations-grid">
-          ${STATIONS.map((s, idx) => {
-            const isUnlocked = stateManager.isDestinationUnlocked(s.id);
-            const isExplored = stateManager.isDestinationExplored(s.id);
+        <!-- Symmetrical Celestial Grid Container -->
+        <div class="orbit-nodes-container">
+          <!-- Top Center: The Birthday Castle (Grand Peak) -->
+          <div class="destination-node castle-orbit-node ${isCastleOpen ? 'unlocked' : 'locked'}" data-dest="castle" style="top: 14%; left: 50%;">
+            <div class="node-orbit-glow"></div>
+            <div class="node-visual castle-visual">
+              <span class="node-emoji">🏰</span>
+              ${!isCastleOpen ? '<span class="lock-pip">🔒</span>' : '<span class="crown-pip">👑</span>'}
+            </div>
+            <div class="node-label">
+              <span class="node-title">The Birthday Castle</span>
+              <span class="node-arabic">قصر عيد الميلاد الـ 24</span>
+              <span class="node-badge ${isCastleOpen ? 'badge-open' : 'badge-locked'}">
+                ${isCastleOpen ? 'Open — Tap to Celebrate' : 'Explore to Unlock'}
+              </span>
+            </div>
+          </div>
 
-            return `
-              <div class="centered-station-card ${isUnlocked ? 'station-unlocked' : 'station-locked'} ${isExplored ? 'station-explored' : ''}" data-dest="${s.id}" data-idx="${idx}">
-                <!-- Station Step Pip -->
-                <div class="station-step-pill">
-                  <span class="step-num">${s.number}</span>
-                  <span class="step-ar">${s.numberAr}</span>
-                </div>
+          <!-- Destination 1: Our Little Home (Left Upper Orbit) -->
+          <div class="destination-node planet-orbit-node ${isHomeUnlocked ? 'unlocked' : 'locked'}" data-dest="home" style="top: 42%; left: 16%;">
+            <div class="node-orbit-glow"></div>
+            <div class="node-visual home-visual">
+              <span class="node-emoji">🏡</span>
+              ${!isHomeUnlocked ? '<span class="lock-pip">🔒</span>' : ''}
+            </div>
+            <div class="node-label">
+              <span class="node-title">Our Little Home</span>
+              <span class="node-arabic">بيتنا الصغير</span>
+              <span class="node-badge">Cozy Haven</span>
+            </div>
+          </div>
 
-                <!-- Planet Icon with Starlight Aura -->
-                <div class="station-icon-halo">
-                  <div class="station-halo-glow"></div>
-                  <div class="station-icon-emoji">${s.emoji}</div>
-                  <div class="station-lock-indicator">
-                    ${isUnlocked ? (isExplored ? '⭐' : '✨') : '🔒'}
-                  </div>
-                </div>
+          <!-- Destination 2: Garden of Memories (Right Upper Orbit) -->
+          <div class="destination-node planet-orbit-node ${isGardenUnlocked ? 'unlocked' : 'locked'}" data-dest="garden" style="top: 42%; left: 84%;">
+            <div class="node-orbit-glow"></div>
+            <div class="node-visual garden-visual">
+              <span class="node-emoji">🌸</span>
+              ${!isGardenUnlocked ? '<span class="lock-pip">🔒</span>' : ''}
+            </div>
+            <div class="node-label">
+              <span class="node-title">Garden of Memories</span>
+              <span class="node-arabic">حديقة الذكريات</span>
+              <span class="node-badge ${isGardenUnlocked ? '' : 'badge-locked'}">
+                ${isGardenUnlocked ? `${memoriesCount}/6 Memories` : '🔒 Locked'}
+              </span>
+            </div>
+          </div>
 
-                <!-- Station Titles & Info -->
-                <div class="station-details">
-                  <h3 class="station-title-en">${s.titleEn}</h3>
-                  <h4 class="station-title-ar" dir="rtl">${s.titleAr}</h4>
-                  <p class="station-desc-ar" dir="rtl">${s.descAr}</p>
-                </div>
+          <!-- Destination 3: Mailbox of Love (Left Lower Orbit) -->
+          <div class="destination-node planet-orbit-node ${isMailboxUnlocked ? 'unlocked' : 'locked'}" data-dest="mailbox" style="top: 76%; left: 26%;">
+            <div class="node-orbit-glow"></div>
+            <div class="node-visual mailbox-visual">
+              <span class="node-emoji">💌</span>
+              ${!isMailboxUnlocked ? '<span class="lock-pip">🔒</span>' : ''}
+            </div>
+            <div class="node-label">
+              <span class="node-title">Mailbox of Love</span>
+              <span class="node-arabic">صندوق رسائل الحب</span>
+              <span class="node-badge ${isMailboxUnlocked ? '' : 'badge-locked'}">
+                ${isMailboxUnlocked ? `${lettersCount}/6 Letters` : '🔒 Locked'}
+              </span>
+            </div>
+          </div>
 
-                <!-- Station Action Status -->
-                <div class="station-status-pill">
-                  ${!isUnlocked 
-                    ? `<span class="status-locked"><span class="lock-mini">🔒</span> مغلقة (أكملي ${s.prevName})</span>` 
-                    : isExplored 
-                      ? `<span class="status-explored">تم الاستكشاف ⭐ اضغطي للزيارة</span>` 
-                      : `<span class="status-available">استكشفي الآن ✨</span>`}
-                </div>
-              </div>
-            `;
-          }).join("")}
-        </div>
+          <!-- Destination 4: The Little Carnival (Center Lower Orbit) -->
+          <div class="destination-node planet-orbit-node ${isCarnivalUnlocked ? 'unlocked' : 'locked'}" data-dest="carnival" style="top: 84%; left: 50%;">
+            <div class="node-orbit-glow"></div>
+            <div class="node-visual carnival-visual">
+              <span class="node-emoji">🎪</span>
+              ${!isCarnivalUnlocked ? '<span class="lock-pip">🔒</span>' : ''}
+            </div>
+            <div class="node-label">
+              <span class="node-title">The Little Carnival</span>
+              <span class="node-arabic">كرنفال النجوم والألعاب</span>
+              <span class="node-badge ${isCarnivalUnlocked ? '' : 'badge-locked'}">
+                ${isCarnivalUnlocked ? `${carnivalDone}/3 Games Done` : '🔒 Locked'}
+              </span>
+            </div>
+          </div>
 
-        <!-- Adorable Chibi Duo Mascot Centerpiece (Anea & Cute Pink Aseel) -->
-        <div class="centered-mascot-row">
-          <div class="chibi-center-wrapper">
-            ${Characters.getTogetherSceneSVG("sitting", 200)}
-            <div class="chibi-caption-tag">
-              <span>Anea & Aseel ♡ تحت سماء عيد ميلادك الـ ٢٤</span>
+          <!-- Destination 5: The Lake of Stars (Right Lower Orbit) -->
+          <div class="destination-node planet-orbit-node ${isLakeUnlocked ? 'unlocked' : 'locked'}" data-dest="lake" style="top: 76%; left: 74%;">
+            <div class="node-orbit-glow"></div>
+            <div class="node-visual lake-visual">
+              <span class="node-emoji">🌊</span>
+              ${!isLakeUnlocked ? '<span class="lock-pip">🔒</span>' : ''}
+            </div>
+            <div class="node-label">
+              <span class="node-title">The Lake of Stars</span>
+              <span class="node-arabic">بحيرة النجوم الهادئة</span>
+              <span class="node-badge ${isLakeUnlocked ? '' : 'badge-locked'}">
+                ${isLakeUnlocked ? 'Peace & Reflections' : '🔒 Locked'}
+              </span>
             </div>
           </div>
         </div>
 
-        <!-- Hidden Secret Star & Word Easter Eggs -->
-        <div class="universe-secret-row">
-          <div class="secret-star-element" id="secretStarBtn" title="A faint mysterious sparkle in the cosmos...">
-            <span class="secret-sparkle">✧</span>
-            <span class="secret-hint-text">نجمة سرية</span>
-          </div>
+        <!-- Hidden Secret Star Easter Egg -->
+        <div class="secret-star-element" id="secretStarBtn" style="position: absolute; top: 22%; left: 28%; cursor: pointer;" title="A faint mysterious sparkle in the cosmos...">
+          <span class="secret-sparkle">✧</span>
+        </div>
 
-          <div class="hidden-word-tag" id="hiddenWordBtn" title="Aseel's pet name for you">
-            <span class="tag-pill">حبوبي ♡</span>
-          </div>
+        <!-- Hidden Shared Word Easter Egg -->
+        <div class="hidden-word-tag" id="hiddenWordBtn" style="position: absolute; bottom: 20px; left: 26px; cursor: pointer;" title="Aseel's special word for you">
+          <span class="tag-pill">حبوبي ♡</span>
+        </div>
+
+        <!-- Chibi Duo Sitting Together Cutest Corner (Anea & Cute Pink Aseel) -->
+        <div class="chibi-corner-mascot" title="Anea & Aseel sitting beneath the stars">
+          <div class="mini-moon-asteroid"></div>
+          ${Characters.getTogetherSceneSVG("sitting", 180)}
         </div>
       </main>
 
@@ -1696,7 +1723,7 @@ function renderWorldScene(container, navigateTo) {
     </div>
   `;
 
-  // --- Event Handlers ---
+  // --- Event Listeners ---
 
   const modal = container.querySelector("#worldModal");
   const modalSlot = container.querySelector("#modalSlot");
@@ -1712,41 +1739,41 @@ function renderWorldScene(container, navigateTo) {
     if (e.target === modal) modal.style.display = "none";
   });
 
-  // Handle station click with sequential locking check
-  container.querySelectorAll(".centered-station-card").forEach(card => {
-    card.addEventListener("click", () => {
-      const destId = card.getAttribute("data-dest");
-      const station = STATIONS.find(s => s.id === destId);
-      const isUnlocked = stateManager.isDestinationUnlocked(destId);
+  const handleNav = (dest) => {
+    const isUnlocked = stateManager.isDestinationUnlocked(dest);
+    const station = STATIONS_INFO[dest];
 
-      if (!isUnlocked) {
-        audioManager.playChime(329.63, 0.6);
-        showModal(`
-          <div class="locked-station-dialog">
-            <div class="locked-bubble-icon">🔒</div>
-            <h3 class="locked-title-en">This World is Sleeping</h3>
-            <h4 class="locked-title-ar" dir="rtl">هذه المحطة مغلقة حالياً ♡</h4>
-            <div class="locked-divider">✧ ✦ ✧</div>
-            <p class="locked-desc-ar" dir="rtl">
-              عالمنا الصغير يُكتشف خطوة بخطوة بكل حب..<br>
-              استكشفي محطة <strong>"${station.prevName}"</strong> أولاً لتفتح لكِ النجوم أبواب محطة <strong>"${station.titleAr}"</strong> بكل دفء ✨
-            </p>
-            <button class="celestial-btn modal-agree-btn" id="lockedDismissBtn">
-              <span>فهمت، سأكمل بالترتيب ♡</span>
-            </button>
-          </div>
-        `);
-        const dismissBtn = container.querySelector("#lockedDismissBtn");
-        if (dismissBtn) dismissBtn.addEventListener("click", () => modal.style.display = "none");
-        return;
-      }
+    if (!isUnlocked) {
+      audioManager.playChime(329.63, 0.6);
+      showModal(`
+        <div class="locked-station-dialog" style="text-align: center; padding: 10px 14px;">
+          <div class="locked-bubble-icon" style="font-size: 2.8rem; margin-bottom: 12px; filter: drop-shadow(0 0 10px rgba(223, 186, 83, 0.5));">🔒</div>
+          <h3 class="locked-title-en" style="font-family: var(--font-serif); font-size: 1.35rem; color: var(--warm-ivory); margin-bottom: 2px;">This World is Sleeping</h3>
+          <h4 class="locked-title-ar" dir="rtl" style="font-family: var(--font-arabic); font-size: 1.25rem; color: var(--gold-starlight); margin-bottom: 12px;">هذه المحطة مغلقة حالياً ♡</h4>
+          <div style="color: var(--gold-starlight); font-size: 0.9rem; letter-spacing: 0.3em; margin-bottom: 14px; opacity: 0.7;">✧ ✦ ✧</div>
+          <p class="locked-desc-ar" dir="rtl" style="font-family: var(--font-arabic); font-size: 1.05rem; color: var(--warm-cream); line-height: 1.8; margin-bottom: 24px;">
+            عالمنا الصغير يُكتشف خطوة بخطوة بكل حب..<br>
+            استكشفي محطة <strong>"${station.prevName}"</strong> أولاً لتفتح لكِ النجوم أبواب محطة <strong>"${station.titleAr}"</strong> بكل دفء ✨
+          </p>
+          <button class="celestial-btn modal-agree-btn" id="lockedDismissBtn" style="padding: 12px 28px; font-family: var(--font-arabic); font-size: 0.95rem;">
+            <span>فهمت، سأكمل الرحلة بالترتيب ♡</span>
+          </button>
+        </div>
+      `);
+      const dismissBtn = container.querySelector("#lockedDismissBtn");
+      if (dismissBtn) dismissBtn.addEventListener("click", () => modal.style.display = "none");
+      return;
+    }
 
-      audioManager.playChime(659.25, 0.8);
-      navigateTo(destId);
-    });
+    audioManager.playChime(659.25, 0.8);
+    navigateTo(dest);
+  };
+
+  container.querySelectorAll(".destination-node").forEach(node => {
+    node.addEventListener("click", () => handleNav(node.getAttribute("data-dest")));
   });
 
-  // Sound Controls
+  // Sound Toggle & Volume Slider
   const soundBtn = container.querySelector("#soundToggleBtn");
   const volumeSlider = container.querySelector("#volumeSlider");
   soundBtn.addEventListener("click", () => {
@@ -1820,7 +1847,7 @@ function renderWorldScene(container, navigateTo) {
           <div class="menu-item">🌸 Memories Explored: <strong>${stateManager.state.memoriesVisited.length} / 6</strong></div>
           <div class="menu-item">💌 Letters Opened: <strong>${stateManager.state.lettersOpened.length} / 6</strong></div>
           <div class="menu-item">🎪 Mini-Games Completed: <strong>${Object.values(stateManager.state.minigames).filter(Boolean).length} / 3</strong></div>
-          <div class="menu-item">🏰 Castle Status: <strong>${stateManager.state.castleUnlocked ? 'Unlocked ✨' : 'Explore more to unlock'}</strong></div>
+          <div class="menu-item">🏰 Castle Status: <strong>${isCastleOpen ? 'Unlocked ✨' : 'Explore more to unlock'}</strong></div>
         </div>
 
         <div class="menu-actions">
@@ -1852,7 +1879,8 @@ function renderWorldScene(container, navigateTo) {
 /**
  * ANEA'S LITTLE UNIVERSE ♡
  * Destination 1: The Little Planet — "Our Little Home"
- * Re-designed with a neat, cozy storybook diorama and structured discovery cards.
+ * Pure storybook diorama with direct room interactions (Window, Cups with a & a, Bedside Note, Lamp, Bookmark)
+ * Removed bottom deck box as requested by Aseel.
  */
 
 
@@ -1882,6 +1910,7 @@ function renderHomeScene(container, returnToMap) {
       <div class="home-intro-banner">
         <p class="home-intro-quote">"${homeData.greeting}"</p>
         <p class="home-intro-reveal">${homeData.reveal}</p>
+        <span class="home-interact-tip">✨ اضغطي على أي شيء داخل الغرفة لتكتشفي ما يخفيه في قلبي ✨</span>
       </div>
 
       <!-- Main Neat Cozy Room Stage -->
@@ -1896,8 +1925,8 @@ function renderHomeScene(container, returnToMap) {
             </div>
           </div>
 
-          <!-- Arched Starlit Window (Interactive) -->
-          <div class="room-arch-window interactive-room-prop" id="propWindow" title="Click to gaze through the starlit window">
+          <!-- Arched Starlit Window (Fixed Centered) -->
+          <div class="room-arch-window" id="propWindow" title="اضغطي للتأمل في نافذة النجوم">
             <div class="window-sky">
               <div class="crescent-moon"></div>
               <div class="twinkling-star ts1">✦</div>
@@ -1907,113 +1936,58 @@ function renderHomeScene(container, returnToMap) {
             <div class="window-sill">
               <div class="little-potted-flower">🌱</div>
             </div>
-            <div class="prop-badge">🪟 The Window</div>
+            <div class="prop-badge-floating">🪟 النافذة المطلة على النجوم</div>
           </div>
 
-          <!-- Left Bedside Corner with Lamp & Note (Interactive) -->
+          <!-- Left Bedside Corner with Lamp & Note -->
           <div class="room-bedside-nook">
-            <div class="cozy-lamp-fixture interactive-room-prop" id="propLight" title="Click to feel the gentle light">
+            <div class="cozy-lamp-fixture interactive-room-prop" id="propLight" title="اضغطي لتشعري بالنور اللطيف">
               <div class="lamp-warm-shade"></div>
               <div class="lamp-ambient-glow"></div>
-              <div class="prop-badge">🕯️ The Light</div>
+              <div class="prop-badge-floating">🕯️ النور اللطيف</div>
             </div>
 
-            <div class="bedside-table interactive-room-prop" id="propBedside" title="Click to read the bedside note">
+            <div class="bedside-table interactive-room-prop" id="propBedside" title="اضغطي لقراءة رسالة السرير">
               <div class="folded-letter-sprite">📜</div>
-              <div class="prop-badge">💌 Bedside Note</div>
+              <div class="prop-badge-floating">💌 رسالة بجانب السرير</div>
             </div>
           </div>
 
-          <!-- Center Cozy Rug with Chibi Duo & Warm Cups -->
+          <!-- Center Cozy Rug with Chibi Duo & Side-by-Side Cups (a & a) -->
           <div class="room-center-rug">
             <div class="woven-rug-oval"></div>
 
             <!-- Two Cute Chibi Characters Sitting Together -->
             <div class="home-chibi-duo-wrapper">
-              ${Characters.getTogetherSceneSVG("holdingHands", 190)}
+              ${Characters.getTogetherSceneSVG("holdingHands", 195)}
             </div>
 
-            <!-- Two Warm Mugs on Cute Tray (Interactive) -->
-            <div class="two-cups-tray interactive-room-prop" id="propCups" title="Click to look at our two mugs">
-              <div class="chibi-mug mug-anea" title="Anea's Cup">
+            <!-- Two Warm Mugs Side-by-Side with 'a' and 'a' (Interactive) -->
+            <div class="two-cups-tray interactive-room-prop" id="propCups" title="اضغطي لرؤية كوبينا الدافئين معاً">
+              <div class="chibi-mug mug-anea" title="Anea's Cup (a)">
                 <span class="steam-wisp">~</span>
-                <span class="mug-initial">A</span>
+                <span class="mug-initial">a</span>
               </div>
-              <div class="chibi-mug mug-aseel" title="Aseel's Cup">
+              <div class="chibi-mug mug-aseel" title="Aseel's Cup (a)">
                 <span class="steam-wisp">~</span>
-                <span class="mug-initial">S</span>
+                <span class="mug-initial">a</span>
               </div>
-              <div class="prop-badge">☕ Two Cups</div>
+              <div class="prop-badge-floating cups-badge">☕ كوبان دافئان معاً (a & a)</div>
             </div>
           </div>
 
-          <!-- Right Bookshelf Corner with Secret Bookmark (Interactive) -->
+          <!-- Right Bookshelf Corner with Secret Bookmark -->
           <div class="room-bookshelf-nook">
             <div class="mini-bookshelf">
               <div class="shelf-book b1"></div>
               <div class="shelf-book b2"></div>
               <div class="shelf-book b3"></div>
             </div>
-            <div class="secret-bookmark-tag interactive-room-prop" id="propSharedWord" title="Our secret word">
+            <div class="secret-bookmark-tag interactive-room-prop" id="propSharedWord" title="كلمتنا الخاصة">
               <span class="bookmark-ribbon">♡</span>
               <span class="word-text">حبوبي</span>
-              <div class="prop-badge">✨ Our Word</div>
+              <div class="prop-badge-floating">✨ دلالي لكِ</div>
             </div>
-          </div>
-        </div>
-
-        <!-- Clean Organized Interactive Discovery Deck -->
-        <div class="home-discovery-deck">
-          <div class="deck-header">
-            <span class="deck-title">Interactive Keepsakes</span>
-            <span class="deck-sub">اضغطي على أي تذكار لاستكشاف معناه في قلبي</span>
-          </div>
-
-          <div class="deck-cards-grid">
-            <button class="deck-card" data-target="window">
-              <span class="card-icon">🪟</span>
-              <div class="card-text">
-                <span class="card-en">The Window</span>
-                <span class="card-ar" dir="rtl">النافذة المطلة على النجوم</span>
-              </div>
-              <span class="card-arrow">✧</span>
-            </button>
-
-            <button class="deck-card" data-target="bedside">
-              <span class="card-icon">📜</span>
-              <div class="card-text">
-                <span class="card-en">Bedside Note</span>
-                <span class="card-ar" dir="rtl">رسالة بجانب السرير</span>
-              </div>
-              <span class="card-arrow">✧</span>
-            </button>
-
-            <button class="deck-card" data-target="cups">
-              <span class="card-icon">☕</span>
-              <div class="card-text">
-                <span class="card-en">Two Warm Cups</span>
-                <span class="card-ar" dir="rtl">كوبان دافئان وسوالفنا</span>
-              </div>
-              <span class="card-arrow">✧</span>
-            </button>
-
-            <button class="deck-card" data-target="light">
-              <span class="card-icon">🕯️</span>
-              <div class="card-text">
-                <span class="card-en">The Gentle Light</span>
-                <span class="card-ar" dir="rtl">نور حنيتك ودلالك</span>
-              </div>
-              <span class="card-arrow">✧</span>
-            </button>
-
-            <button class="deck-card secret-deck-card" data-target="word">
-              <span class="card-icon">♡</span>
-              <div class="card-text">
-                <span class="card-en">Our Shared Word</span>
-                <span class="card-ar" dir="rtl">حبوبي.. كلمتنا الخاصة</span>
-              </div>
-              <span class="card-arrow">★</span>
-            </button>
           </div>
         </div>
       </div>
@@ -2064,30 +2038,26 @@ function renderHomeScene(container, returnToMap) {
 
   const objects = homeData.objects;
 
-  // Handlers
-  const handleWindow = () => openDialog(objects.window.title, objects.window.messageArabic, objects.window.messageEnglish, "star_home_window");
-  const handleBedside = () => { audioManager.playPaperSound(); openDialog(objects.bedsideLetter.title, objects.bedsideLetter.messageArabic, objects.bedsideLetter.messageEnglish, "star_home_bedside"); };
-  const handleCups = () => openDialog(objects.twoCups.title, objects.twoCups.messageArabic, objects.twoCups.messageEnglish, "star_home_cups");
-  const handleLight = () => openDialog(objects.littleLight.title, objects.littleLight.messageArabic, objects.littleLight.messageEnglish, "star_home_light");
-  const handleWord = () => openDialog(objects.sharedWord.title, objects.sharedWord.secretMessage, "Our quiet shared secret.", "star_home_word");
+  // Handlers for room prop clicks
+  container.querySelector("#propWindow").addEventListener("click", () => {
+    openDialog(objects.window.title, objects.window.messageArabic, objects.window.messageEnglish, "star_home_window");
+  });
 
-  // Hook up prop clicks
-  container.querySelector("#propWindow").addEventListener("click", handleWindow);
-  container.querySelector("#propBedside").addEventListener("click", handleBedside);
-  container.querySelector("#propCups").addEventListener("click", handleCups);
-  container.querySelector("#propLight").addEventListener("click", handleLight);
-  container.querySelector("#propSharedWord").addEventListener("click", handleWord);
+  container.querySelector("#propBedside").addEventListener("click", () => {
+    audioManager.playPaperSound();
+    openDialog(objects.bedsideLetter.title, objects.bedsideLetter.messageArabic, objects.bedsideLetter.messageEnglish, "star_home_bedside");
+  });
 
-  // Hook up deck button clicks
-  container.querySelectorAll(".deck-card").forEach(card => {
-    card.addEventListener("click", () => {
-      const target = card.getAttribute("data-target");
-      if (target === "window") handleWindow();
-      else if (target === "bedside") handleBedside();
-      else if (target === "cups") handleCups();
-      else if (target === "light") handleLight();
-      else if (target === "word") handleWord();
-    });
+  container.querySelector("#propCups").addEventListener("click", () => {
+    openDialog("Two Warm Cups (a & a)", "كوبان دافئان لـ a و a جنباً إلى جنب.. جلساتنا البسيطة، سوالفنا الطويلة اللي ما نمل منها، وألعابنا وضحكاتنا سوا.. هذه هي اللحظات اللي ما أبدلها بالدنيا كلها.", objects.twoCups.messageEnglish, "star_home_cups");
+  });
+
+  container.querySelector("#propLight").addEventListener("click", () => {
+    openDialog(objects.littleLight.title, objects.littleLight.messageArabic, objects.littleLight.messageEnglish, "star_home_light");
+  });
+
+  container.querySelector("#propSharedWord").addEventListener("click", () => {
+    openDialog(objects.sharedWord.title, objects.sharedWord.secretMessage, "A tender word from Aseel's heart to yours.", "star_home_word");
   });
 }
 
@@ -2097,7 +2067,9 @@ function renderHomeScene(container, returnToMap) {
 /**
  * ANEA'S LITTLE UNIVERSE ♡
  * Destination 2: The Garden of Memories
+ * Interactive Storybook Garden with Chibi Anea walking to each glowing memory flower!
  */
+
 
 
 
@@ -2106,8 +2078,19 @@ function renderHomeScene(container, returnToMap) {
 function renderGardenScene(container, returnToMap) {
   const memories = CONFIG.memories;
 
+  // Garden flower coordinates (% based for responsiveness)
+  const FLOWER_COORDS = [
+    { x: 16, y: 22 }, // Memory 1: First Message & Voice
+    { x: 50, y: 15 }, // Memory 2: Slowly Falling
+    { x: 84, y: 22 }, // Memory 3: Our Little Routine
+    { x: 20, y: 72 }, // Memory 4: March 31 (Golden Milestone)
+    { x: 50, y: 80 }, // Memory 5: The Voice Call
+    { x: 80, y: 72 }  // Memory 6: The Way You Love Me
+  ];
+
   container.innerHTML = `
     <div class="destination-scene garden-scene">
+      <!-- Navigation Bar -->
       <nav class="scene-nav">
         <button class="celestial-back-btn" id="gardenBackBtn">
           <span>←</span>
@@ -2120,44 +2103,101 @@ function renderGardenScene(container, returnToMap) {
         <div class="stars-counter-small">⭐ ${stateManager.state.starsCollected}</div>
       </nav>
 
+      <!-- Atmospheric Introduction Banner -->
       <div class="garden-header-text">
         <p class="garden-poetic-quote">"Each flower here bloomed from a moment that made me fall a little more in love with you."</p>
+        <div class="garden-instruction-pill">
+          <span>🌸 اضغطي على أي زهرة لتمشي أنيتا نحوها وتفتح ذكراها مع أسيل ♡</span>
+        </div>
       </div>
 
-      <!-- Glowing Plant Grid / Garden Walkway -->
-      <div class="garden-grid">
-        ${memories.map((mem) => {
-          const isVisited = stateManager.state.memoriesVisited.includes(mem.id);
-          const isGolden = mem.isGolden;
-          const isHighlight = mem.isHighlight;
+      <!-- INTERACTIVE STORYBOOK CELESTIAL GARDEN STAGE -->
+      <div class="interactive-garden-stage" id="gardenStage">
+        <!-- Celestial Night Garden Sky & Glow -->
+        <div class="garden-sky-ambience"></div>
 
-          return `
-            <div class="memory-plant-card ${isVisited ? 'visited' : 'unvisited'} ${isGolden ? 'golden-memory' : ''} ${isHighlight ? 'highlight-memory' : ''}" data-id="${mem.id}">
-              <div class="plant-visual-wrapper">
-                <div class="plant-glow"></div>
-                <div class="plant-icon-art">
-                  ${mem.icon === 'golden-flower' ? '🌼' :
-                    mem.icon === 'soundwave' ? '🎙️' :
+        <!-- Winding Stepping Stone Pathway (SVG) -->
+        <svg class="garden-pathway-svg" viewBox="0 0 900 500" preserveAspectRatio="none">
+          <path d="M150 140 Q 300 80 450 120 T 750 140 Q 820 280 720 380 Q 550 440 450 410 T 180 380 Q 90 260 150 140 Z" 
+                fill="none" stroke="rgba(223, 186, 83, 0.25)" stroke-width="26" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M150 140 Q 300 80 450 120 T 750 140 Q 820 280 720 380 Q 550 440 450 410 T 180 380 Q 90 260 150 140 Z" 
+                fill="none" stroke="rgba(116, 143, 126, 0.35)" stroke-width="18" stroke-dasharray="10 16" stroke-linecap="round" />
+        </svg>
+
+        <!-- Garden Grass & Celestial Flower Tufts -->
+        <div class="garden-flora-tufts">
+          <span class="grass-tuft t1">🌿</span>
+          <span class="grass-tuft t2">✨</span>
+          <span class="grass-tuft t3">🍃</span>
+          <span class="grass-tuft t4">🌱</span>
+          <span class="grass-tuft t5">✨</span>
+          <span class="grass-tuft t6">🌿</span>
+        </div>
+
+        <!-- 6 Interactive Glowing Memory Flowers -->
+        <div class="garden-flowers-layer">
+          ${memories.map((mem, i) => {
+            const isVisited = stateManager.state.memoriesVisited.includes(mem.id);
+            const coord = FLOWER_COORDS[i];
+            const isGolden = mem.isGolden;
+            const isHighlight = mem.isHighlight;
+
+            return `
+              <div class="garden-flower-spot ${isVisited ? 'visited' : 'unvisited'} ${isGolden ? 'golden-flower-spot' : ''} ${isHighlight ? 'highlight-flower-spot' : ''}" 
+                   id="flowerSpot_${mem.id}"
+                   data-id="${mem.id}" 
+                   data-idx="${i}"
+                   style="left: ${coord.x}%; top: ${coord.y}%;"
+                   title="اضغطي لتمشي أنيتا نحو: ${mem.titleArabic}">
+                
+                <div class="flower-aura-glow"></div>
+                
+                <div class="flower-bloom-visual">
+                  ${isGolden ? '🌼' :
+                    isHighlight ? '🎙️' :
                     mem.icon === 'blooming-rose' ? '🌹' :
                     mem.icon === 'message' ? '💬' :
                     mem.icon === 'orbit' ? '✨' : '🎮'}
                 </div>
-                ${isGolden ? '<span class="golden-crown-tag">March 31</span>' : ''}
-                ${isHighlight ? '<span class="highlight-tag">Voice Call</span>' : ''}
-              </div>
 
-              <div class="plant-info">
-                <div class="plant-number">${mem.number}</div>
-                <h3 class="plant-title-english">${mem.titleEnglish}</h3>
-                <h4 class="plant-title-arabic" dir="rtl">${mem.titleArabic}</h4>
-                <p class="plant-summary">${mem.summaryEnglish}</p>
-                <div class="plant-status-pill">
-                  ${isVisited ? '<span>Visited ✓</span>' : '<span>Tap to Reveal ✧</span>'}
+                <!-- Flower Label Tag -->
+                <div class="flower-label-tag">
+                  <span class="flower-num">${mem.number}</span>
+                  <span class="flower-title" dir="rtl">${mem.titleArabic}</span>
+                  ${isVisited ? '<span class="flower-check">✓</span>' : '<span class="flower-spark">✦</span>'}
                 </div>
               </div>
-            </div>
-          `;
-        }).join("")}
+            `;
+          }).join("")}
+        </div>
+
+        <!-- CHIBI ANEA WALKING CHARACTER (Initially Center-Stage) -->
+        <div class="garden-anea-avatar" id="gardenAnea" style="left: 50%; top: 48%;">
+          <div class="anea-starlight-pedestal"></div>
+          <div class="anea-sprite-box">
+            ${Characters.getAneaSVG("standing", 115)}
+          </div>
+          <div class="anea-bubble-hint" id="aneaBubble">
+            <span>أنيتي ♡</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Memory Directory Carousel at Bottom for Mobile -->
+      <div class="garden-directory-wrapper">
+        <h4 class="directory-title" dir="rtl">قائمة الذكريات المستكشفة (${stateManager.state.memoriesVisited.length} / 6)</h4>
+        <div class="garden-directory-cards">
+          ${memories.map((mem) => {
+            const isVisited = stateManager.state.memoriesVisited.includes(mem.id);
+            return `
+              <button class="dir-memory-pill ${isVisited ? 'visited' : ''}" data-id="${mem.id}">
+                <span class="dir-icon">${isVisited ? '⭐' : '🌸'}</span>
+                <span class="dir-num">${mem.number}</span>
+                <span class="dir-name" dir="rtl">${mem.titleArabic}</span>
+              </button>
+            `;
+          }).join("")}
+        </div>
       </div>
 
       <!-- Memory Detail Modal -->
@@ -2170,7 +2210,7 @@ function renderGardenScene(container, returnToMap) {
     </div>
   `;
 
-  // Back button
+  // Navigation: Back Button
   container.querySelector("#gardenBackBtn").addEventListener("click", () => {
     stateManager.markDestinationExplored("garden");
     audioManager.playChime(440, 0.5);
@@ -2180,25 +2220,74 @@ function renderGardenScene(container, returnToMap) {
   const modal = container.querySelector("#gardenModal");
   const modalSlot = container.querySelector("#gardenModalSlot");
   const modalClose = container.querySelector("#gardenModalClose");
+  const aneaAvatar = container.querySelector("#gardenAnea");
+  const aneaBubble = container.querySelector("#aneaBubble");
+
+  let isWalking = false;
+
+  // Function to walk Anea to a flower and open the memory
+  function walkToFlowerAndOpen(mem, flowerIdx) {
+    if (isWalking) return;
+    isWalking = true;
+
+    const targetCoord = FLOWER_COORDS[flowerIdx];
+    const currentLeft = parseFloat(aneaAvatar.style.left || "50");
+
+    // Face direction: left or right
+    const facingRight = targetCoord.x >= currentLeft;
+    const spriteBox = aneaAvatar.querySelector(".anea-sprite-box");
+    if (spriteBox) {
+      spriteBox.style.transform = facingRight ? "scaleX(1)" : "scaleX(-1)";
+    }
+
+    // Play footstep/starlight chimes
+    audioManager.playChime(523.25, 0.4);
+
+    // Add walking motion animation
+    aneaAvatar.classList.add("walking");
+    if (aneaBubble) aneaBubble.innerHTML = `<span>ذاهبة إلى: ${mem.titleArabic} ✨</span>`;
+
+    // Move to target position smoothly (offset slightly so she stands beside the flower)
+    const offsetX = targetCoord.x > 50 ? targetCoord.x - 7 : targetCoord.x + 7;
+    const offsetY = targetCoord.y + 2;
+
+    aneaAvatar.style.left = `${offsetX}%`;
+    aneaAvatar.style.top = `${offsetY}%`;
+
+    // After walk duration (700ms), stop walking and open memory
+    setTimeout(() => {
+      aneaAvatar.classList.remove("walking");
+      isWalking = false;
+      if (aneaBubble) aneaBubble.innerHTML = `<span>أنيتي ♡</span>`;
+
+      // Sparkle chime on flower
+      audioManager.playChime(mem.isGolden ? 880 : 659.25, 1.2);
+
+      // Open memory modal
+      openMemory(mem);
+    }, 750);
+  }
 
   function openMemory(mem) {
-    audioManager.playChime(mem.isGolden ? 880 : 587.33, 1.2);
     stateManager.visitMemory(mem.id);
     stateManager.collectStar(`star_${mem.id}`);
     stateManager.markDestinationExplored("garden");
 
-    // Update UI card visited status
-    const cardEl = container.querySelector(`[data-id="${mem.id}"]`);
-    if (cardEl) {
-      cardEl.classList.remove("unvisited");
-      cardEl.classList.add("visited");
-      const statusPill = cardEl.querySelector(".plant-status-pill");
-      if (statusPill) statusPill.innerHTML = "<span>Visited ✓</span>";
+    // Update UI flower visited state
+    const spot = container.querySelector(`#flowerSpot_${mem.id}`);
+    if (spot) {
+      spot.classList.remove("unvisited");
+      spot.classList.add("visited");
+      const check = spot.querySelector(".flower-spark");
+      if (check) check.outerHTML = '<span class="flower-check">✓</span>';
     }
+
+    // Update directory button state
+    const dirBtn = container.querySelector(`.dir-memory-pill[data-id="${mem.id}"]`);
+    if (dirBtn) dirBtn.classList.add("visited");
 
     container.querySelector(".stars-counter-small").textContent = `⭐ ${stateManager.state.starsCollected}`;
 
-    // Special sound wave interactive animation for The Voice Call
     const isVoiceCall = mem.id === "memory-5";
 
     modalSlot.innerHTML = `
@@ -2222,7 +2311,7 @@ function renderGardenScene(container, returnToMap) {
               <span class="bar b2"></span>
               <span class="bar b1"></span>
             </div>
-            <div class="voice-call-tagline">"That one night..."</div>
+            <div class="voice-call-tagline">"تلك الليلة في المكالمة الصوتية.. حين اعترفنا ♡"</div>
           </div>
         ` : ''}
 
@@ -2236,7 +2325,7 @@ function renderGardenScene(container, returnToMap) {
         </div>
 
         <div class="opened-memory-footer">
-          <span class="star-blessing">⭐ Memory preserved forever in Anea's Universe</span>
+          <span class="star-blessing">⭐ تم حفظ هذه الذكرى في عالم أنيا إلى الأبد</span>
         </div>
       </div>
     `;
@@ -2249,11 +2338,27 @@ function renderGardenScene(container, returnToMap) {
     if (e.target === modal) modal.style.display = "none";
   });
 
-  container.querySelectorAll(".memory-plant-card").forEach(card => {
-    card.addEventListener("click", () => {
-      const id = card.getAttribute("data-id");
+  // Attach click listener to each flower spot on the garden stage
+  container.querySelectorAll(".garden-flower-spot").forEach(spot => {
+    spot.addEventListener("click", () => {
+      const id = spot.getAttribute("data-id");
+      const idx = parseInt(spot.getAttribute("data-idx"), 10);
       const mem = memories.find(m => m.id === id);
-      if (mem) openMemory(mem);
+      if (mem) {
+        walkToFlowerAndOpen(mem, idx);
+      }
+    });
+  });
+
+  // Directory buttons (direct jump)
+  container.querySelectorAll(".dir-memory-pill").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const id = btn.getAttribute("data-id");
+      const idx = memories.findIndex(m => m.id === id);
+      const mem = memories[idx];
+      if (mem) {
+        walkToFlowerAndOpen(mem, idx);
+      }
     });
   });
 }
@@ -2263,7 +2368,7 @@ function renderGardenScene(container, returnToMap) {
 
 /**
  * ANEA'S LITTLE UNIVERSE ♡
- * Destination 3: The Mailbox of Love
+ * Destination 3: The Mailbox of Love (Voice Notes & Letters)
  */
 
 
@@ -2272,6 +2377,8 @@ function renderGardenScene(container, returnToMap) {
 
 function renderMailboxScene(container, returnToMap) {
   const letters = CONFIG.letters;
+  let activeAudio = null;
+  let animFrameId = null;
 
   container.innerHTML = `
     <div class="destination-scene mailbox-scene">
@@ -2282,7 +2389,7 @@ function renderMailboxScene(container, returnToMap) {
         </button>
         <div class="scene-title-wrapper">
           <h2 class="scene-title">The Mailbox of Love</h2>
-          <span class="scene-subtitle">صندوق رسائل الحب من أسيل</span>
+          <span class="scene-subtitle">صندوق رسايل وفويسات الحب من أسيل ♡</span>
         </div>
         <div class="stars-counter-small">⭐ ${stateManager.state.starsCollected}</div>
       </nav>
@@ -2292,26 +2399,31 @@ function renderMailboxScene(container, returnToMap) {
           <span class="box-icon">📬</span>
           <span class="box-sparkle">✧</span>
         </div>
-        <p class="mailbox-poetic-quote">"Written softly in the quiet hours of the night, just for you to hold."</p>
+        <p class="mailbox-poetic-quote">"Voice notes & letters recorded in the quiet hours of the night, whispered just for your heart."</p>
       </div>
 
-      <!-- Letters Grid -->
+      <!-- Letters & Voice Notes Grid -->
       <div class="letters-grid">
         ${letters.map((letter, idx) => {
           const isOpened = stateManager.state.lettersOpened.includes(letter.id);
           return `
             <div class="letter-envelope-item ${isOpened ? 'opened' : 'unopened'}" data-id="${letter.id}">
               <div class="envelope-outer">
-                <div class="envelope-flap"></div>
                 <div class="wax-seal">
-                  <span>${isOpened ? '♡' : '✉'}</span>
+                  <span>${isOpened ? '🎙️' : '✉️'}</span>
                 </div>
                 <div class="envelope-body">
-                  <div class="envelope-number">Letter 0${idx + 1}</div>
+                  <div class="envelope-top-meta">
+                    <span class="envelope-number">Note 0${idx + 1}</span>
+                    <span class="voice-badge">🎙️ فويس صوتي</span>
+                  </div>
                   <h3 class="envelope-title-en">${letter.titleEnglish}</h3>
                   <h4 class="envelope-title-ar" dir="rtl">${letter.titleArabic}</h4>
                   <p class="envelope-preview">${letter.preview}</p>
-                  <span class="envelope-status">${isOpened ? 'Read Again ♡' : 'Open Envelope ✧'}</span>
+                  <div class="envelope-action-row">
+                    <span class="envelope-duration">⏱️ ${letter.duration || '0:45'}</span>
+                    <span class="envelope-status">${isOpened ? 'Listen Again ♡' : 'Play Voice Note ✧'}</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -2319,7 +2431,7 @@ function renderMailboxScene(container, returnToMap) {
         }).join("")}
       </div>
 
-      <!-- Letter Reader Modal -->
+      <!-- Voice Note Reader Modal -->
       <div class="celestial-modal-overlay" id="letterModal" style="display: none;">
         <div class="celestial-modal-card letter-paper-modal">
           <button class="modal-close-btn" id="letterModalClose">✕</button>
@@ -2329,8 +2441,22 @@ function renderMailboxScene(container, returnToMap) {
     </div>
   `;
 
+  // Stop any active audio and animation
+  function cleanupAudio() {
+    if (activeAudio) {
+      activeAudio.pause();
+      activeAudio.currentTime = 0;
+      activeAudio = null;
+    }
+    if (animFrameId) {
+      cancelAnimationFrame(animFrameId);
+      animFrameId = null;
+    }
+  }
+
   // Navigation
   container.querySelector("#mailboxBackBtn").addEventListener("click", () => {
+    cleanupAudio();
     stateManager.markDestinationExplored("mailbox");
     audioManager.playChime(440, 0.5);
     returnToMap();
@@ -2340,9 +2466,17 @@ function renderMailboxScene(container, returnToMap) {
   const modalSlot = container.querySelector("#letterModalSlot");
   const modalClose = container.querySelector("#letterModalClose");
 
+  function formatTime(seconds) {
+    if (isNaN(seconds)) return "00:00";
+    const mins = Math.floor(seconds / 60);
+    const secs = Math.floor(seconds % 60);
+    return `${mins.toString().padStart(2, "0")}:${secs.toString().padStart(2, "0")}`;
+  }
+
   function openLetter(letter) {
+    cleanupAudio();
     audioManager.playPaperSound();
-    audioManager.playChime(784, 1.0);
+    audioManager.playChime(784, 0.8);
     stateManager.openLetter(letter.id);
     stateManager.collectStar(`star_${letter.id}`);
     stateManager.markDestinationExplored("mailbox");
@@ -2353,38 +2487,231 @@ function renderMailboxScene(container, returnToMap) {
       el.classList.remove("unopened");
       el.classList.add("opened");
       const status = el.querySelector(".envelope-status");
-      if (status) status.textContent = "Read Again ♡";
+      if (status) status.textContent = "Listen Again ♡";
       const seal = el.querySelector(".wax-seal span");
-      if (seal) seal.textContent = "♡";
+      if (seal) seal.textContent = "🎙️";
     }
 
     container.querySelector(".stars-counter-small").textContent = `⭐ ${stateManager.state.starsCollected}`;
 
+    // Waveform bars count
+    const numBars = 22;
+    const waveBarsHtml = Array.from({ length: numBars })
+      .map((_, i) => `<span class="wave-bar" style="--bar-i: ${i}; height: ${12 + Math.sin(i * 0.5) * 14}px;"></span>`)
+      .join("");
+
     modalSlot.innerHTML = `
       <div class="parchment-letter-wrapper">
         <div class="parchment-header">
-          <span class="parchment-stamp">ANEA'S MAILBOX ♡</span>
+          <span class="parchment-stamp">ANEA'S VOICE MAILBOX ♡</span>
           <h2 class="parchment-title-en">${letter.titleEnglish}</h2>
           <h3 class="parchment-title-ar" dir="rtl">${letter.titleArabic}</h3>
         </div>
 
+        <!-- Voice Note Player Card -->
+        <div class="voice-player-card">
+          <div class="voice-player-top">
+            <button class="voice-play-toggle-btn" id="voicePlayBtn" title="Play Voice Note">
+              <span class="voice-play-icon">▶</span>
+            </button>
+            <div class="voice-player-info">
+              <div class="voice-label-row">
+                <span class="voice-author-tag">🎙️ تسجيل صوتي من أسيل</span>
+                <span class="voice-time-display" id="voiceTimeDisplay">00:00 / ${letter.duration || '0:45'}</span>
+              </div>
+              <div class="voice-waveform-container" id="waveformWrapper">
+                ${waveBarsHtml}
+              </div>
+              <div class="voice-progress-track" id="voiceProgressTrack">
+                <div class="voice-progress-fill" id="voiceProgressFill"></div>
+              </div>
+            </div>
+          </div>
+          <div class="voice-note-hint" id="voiceNoteHint">
+            <span>✨ استمعي لفويس أسيل مع قراءة الكلمات بالأسفل ♡</span>
+          </div>
+          <audio id="realVoiceAudio" preload="metadata" src="${letter.audioSrc || ''}"></audio>
+        </div>
+
         <div class="parchment-body" dir="rtl">
+          <div class="parchment-label">نص الفويس والرسالة:</div>
           <p class="parchment-text">${letter.bodyArabic.replace(/\n/g, '<br>')}</p>
         </div>
 
         <div class="parchment-footer">
-          <div class="parchment-sign">${letter.date}</div>
-          <div class="parchment-star">⭐ A keepsake for your heart</div>
+          <div class="parchment-sign">${letter.date} ♡</div>
+          <div class="parchment-star">⭐ صوت محفوظ في مجرتنا للأبد</div>
         </div>
       </div>
     `;
 
     modal.style.display = "flex";
+
+    // Setup Audio Player Logic
+    const audioEl = modalSlot.querySelector("#realVoiceAudio");
+    const playBtn = modalSlot.querySelector("#voicePlayBtn");
+    const playIcon = playBtn.querySelector(".voice-play-icon");
+    const timeDisplay = modalSlot.querySelector("#voiceTimeDisplay");
+    const progressFill = modalSlot.querySelector("#voiceProgressFill");
+    const progressTrack = modalSlot.querySelector("#voiceProgressTrack");
+    const waveformWrapper = modalSlot.querySelector("#waveformWrapper");
+    const waveBars = modalSlot.querySelectorAll(".wave-bar");
+    const hintEl = modalSlot.querySelector("#voiceNoteHint");
+
+    let isPlaying = false;
+    let isSynthFallback = false;
+    let synthTimer = null;
+    let simulatedCurrent = 0;
+    const durationParts = (letter.duration || "0:45").split(":");
+    const simulatedDuration = parseInt(durationParts[0], 10) * 60 + parseInt(durationParts[1], 10);
+
+    activeAudio = audioEl;
+
+    function updateWaveBars(active) {
+      if (active) {
+        waveformWrapper.classList.add("playing");
+      } else {
+        waveformWrapper.classList.remove("playing");
+      }
+    }
+
+    function togglePlay() {
+      if (isPlaying) {
+        pauseAudio();
+      } else {
+        playAudio();
+      }
+    }
+
+    function playAudio() {
+      if (isSynthFallback) {
+        startSimulatedPlayback();
+        return;
+      }
+
+      audioEl.play().then(() => {
+        isPlaying = true;
+        playIcon.textContent = "⏸";
+        playBtn.classList.add("playing");
+        updateWaveBars(true);
+      }).catch(err => {
+        // Fallback if audio file doesn't exist yet on disk
+        console.log("Audio file not found, falling back to gentle synth chimes:", err);
+        isSynthFallback = true;
+        hintEl.innerHTML = `<span>🎵 نغمة دافئة تعزف الآن (يمكنكِ وضع تسجيل صوتكِ في <code>${letter.audioSrc}</code>)</span>`;
+        startSimulatedPlayback();
+      });
+    }
+
+    function pauseAudio() {
+      isPlaying = false;
+      playIcon.textContent = "▶";
+      playBtn.classList.remove("playing");
+      updateWaveBars(false);
+
+      if (isSynthFallback) {
+        if (synthTimer) clearInterval(synthTimer);
+      } else {
+        audioEl.pause();
+      }
+    }
+
+    function startSimulatedPlayback() {
+      isPlaying = true;
+      playIcon.textContent = "⏸";
+      playBtn.classList.add("playing");
+      updateWaveBars(true);
+
+      // Play a lovely romantic harp chime sequence
+      audioManager.playChime(523.25, 0.6); // C5
+      setTimeout(() => isPlaying && audioManager.playChime(659.25, 0.6), 400); // E5
+      setTimeout(() => isPlaying && audioManager.playChime(783.99, 0.7), 800); // G5
+      setTimeout(() => isPlaying && audioManager.playChime(1046.5, 0.8), 1200); // C6
+
+      if (synthTimer) clearInterval(synthTimer);
+      synthTimer = setInterval(() => {
+        simulatedCurrent += 0.5;
+        if (simulatedCurrent >= simulatedDuration) {
+          simulatedCurrent = 0;
+          pauseAudio();
+          timeDisplay.textContent = `00:00 / ${letter.duration || '0:45'}`;
+          progressFill.style.width = "0%";
+          return;
+        }
+        const pct = (simulatedCurrent / simulatedDuration) * 100;
+        progressFill.style.width = `${pct}%`;
+        timeDisplay.textContent = `${formatTime(simulatedCurrent)} / ${letter.duration || '0:45'}`;
+
+        // Occasional gentle tone while playing
+        if (Math.floor(simulatedCurrent) % 4 === 0 && simulatedCurrent % 1 === 0) {
+          const notes = [440, 523.25, 587.33, 659.25, 783.99];
+          const note = notes[Math.floor(Math.random() * notes.length)];
+          audioManager.playChime(note, 0.4);
+        }
+      }, 500);
+    }
+
+    playBtn.addEventListener("click", togglePlay);
+
+    // Audio element events
+    audioEl.addEventListener("loadedmetadata", () => {
+      if (audioEl.duration && !isNaN(audioEl.duration)) {
+        timeDisplay.textContent = `00:00 / ${formatTime(audioEl.duration)}`;
+      }
+    });
+
+    audioEl.addEventListener("playing", () => {
+      hintEl.innerHTML = `<span>✨ صوت أسيل الحقيقي يملأ المكان دفئاً وحناناً ♡</span>`;
+    });
+
+    audioEl.addEventListener("timeupdate", () => {
+      if (isSynthFallback) return;
+      const current = audioEl.currentTime;
+      const dur = audioEl.duration || simulatedDuration;
+      const pct = (current / dur) * 100;
+      progressFill.style.width = `${pct}%`;
+      timeDisplay.textContent = `${formatTime(current)} / ${formatTime(dur)}`;
+    });
+
+    audioEl.addEventListener("ended", () => {
+      pauseAudio();
+      progressFill.style.width = "0%";
+      const dur = audioEl.duration || simulatedDuration;
+      timeDisplay.textContent = `00:00 / ${formatTime(dur)}`;
+    });
+
+    audioEl.addEventListener("error", () => {
+      isSynthFallback = true;
+      hintEl.innerHTML = `<span>🎵 نغمة تعزف لحين إضافة ملف التسجيل: <code>${letter.audioSrc}</code></span>`;
+    });
+
+    // Seek track
+    progressTrack.addEventListener("click", (e) => {
+      const rect = progressTrack.getBoundingClientRect();
+      const clickX = e.clientX - rect.left;
+      const pct = Math.max(0, Math.min(1, clickX / rect.width));
+
+      if (isSynthFallback) {
+        simulatedCurrent = pct * simulatedDuration;
+        progressFill.style.width = `${pct * 100}%`;
+        timeDisplay.textContent = `${formatTime(simulatedCurrent)} / ${letter.duration || '0:45'}`;
+      } else if (audioEl.duration) {
+        audioEl.currentTime = pct * audioEl.duration;
+      }
+    });
+
+    // Auto-attempt playback with safe catch
+    playAudio();
   }
 
-  modalClose.addEventListener("click", () => modal.style.display = "none");
+  function closeModal() {
+    cleanupAudio();
+    modal.style.display = "none";
+  }
+
+  modalClose.addEventListener("click", closeModal);
   modal.addEventListener("click", (e) => {
-    if (e.target === modal) modal.style.display = "none";
+    if (e.target === modal) closeModal();
   });
 
   container.querySelectorAll(".letter-envelope-item").forEach(item => {

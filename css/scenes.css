@@ -664,30 +664,33 @@
   animation: floatGentle 4s ease-in-out infinite;
 }
 
-/* Arched Window (Top Center) */
+/* Arched Window (Top Center - Stays Centered on Hover) */
 .room-arch-window {
   position: absolute;
-  top: 26px;
+  top: 24px;
   left: 50%;
-  transform: translateX(-50%);
-  width: 150px;
-  height: 150px;
-  border-radius: 75px 75px 0 0;
-  border: 3px solid #4a382c;
-  background: radial-gradient(circle at 50% 50%, #152442, #080d1a);
+  transform: translateX(-50%) !important;
+  width: 154px;
+  height: 154px;
+  border-radius: 77px 77px 0 0;
+  border: 3.5px solid #4a382c;
+  background: radial-gradient(circle at 50% 50%, #172647, #080d1a);
   overflow: hidden;
-  box-shadow: inset 0 0 20px rgba(223, 186, 83, 0.25);
+  box-shadow: inset 0 0 20px rgba(223, 186, 83, 0.3);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   padding-top: 20px;
   cursor: pointer;
-  transition: transform 0.25s ease;
+  transition: all 0.25s ease;
+  z-index: 5;
 }
 
 .room-arch-window:hover {
-  transform: translateX(-50%) scale(1.05);
+  transform: translateX(-50%) scale(1.04) !important;
+  border-color: var(--gold-starlight);
+  box-shadow: inset 0 0 24px rgba(223, 186, 83, 0.45), 0 0 20px rgba(223, 186, 83, 0.3);
 }
 
 .window-sky {
@@ -752,15 +755,34 @@
   transform: scale(1.08);
 }
 
-.prop-badge {
-  font-size: 0.72rem;
-  background: rgba(14, 21, 38, 0.85);
+.prop-badge-floating {
+  font-family: var(--font-arabic);
+  font-size: 0.76rem;
+  background: rgba(14, 21, 38, 0.92);
   border: 1px solid var(--border-starlight);
   color: var(--gold-starlight);
-  padding: 2px 8px;
+  padding: 3px 10px;
   border-radius: 999px;
-  margin-top: 4px;
+  margin-top: 6px;
   white-space: nowrap;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.45);
+  transition: all 0.25s ease;
+}
+
+.interactive-room-prop:hover .prop-badge-floating,
+.room-arch-window:hover .prop-badge-floating {
+  background: rgba(223, 186, 83, 0.25);
+  color: #fff;
+  border-color: var(--gold-starlight);
+  transform: translateY(-2px);
+}
+
+.home-interact-tip {
+  display: block;
+  font-family: var(--font-arabic);
+  font-size: 0.85rem;
+  color: var(--soft-sage);
+  margin-top: 8px;
 }
 
 .lamp-warm-shade {
@@ -812,36 +834,56 @@
   margin-bottom: -10px;
 }
 
+/* Two Cups Side-by-Side (a & a) */
 .two-cups-tray {
   position: relative;
   z-index: 3;
   display: flex;
-  gap: 12px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
   margin-top: 4px;
+  flex-wrap: wrap;
 }
 
 .chibi-mug {
-  width: 32px;
-  height: 36px;
+  width: 33px;
+  height: 37px;
   border-radius: 4px 4px 8px 8px;
   border: 1.5px solid var(--warm-ivory);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: bold;
-  font-size: 0.85rem;
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 1.05rem;
   position: relative;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
 }
-.chibi-mug.mug-anea { background: #556c60; color: #fff; }
-.chibi-mug.mug-aseel { background: #1f2c4d; color: var(--gold-starlight); }
+
+.chibi-mug.mug-anea {
+  background: #4a6252;
+  color: #fff;
+}
+
+.chibi-mug.mug-aseel {
+  background: #faa8c0;
+  color: #3e2230;
+  border-color: #fedde6;
+}
 
 .steam-wisp {
   position: absolute;
   top: -12px;
-  font-size: 0.8rem;
-  color: rgba(255, 255, 255, 0.6);
-  animation: floatGentle 2s infinite;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.7);
+  animation: floatGentle 2s infinite alternate;
+}
+
+.cups-badge {
+  flex-basis: 100%;
+  text-align: center;
 }
 
 /* Right Bookshelf Nook */
@@ -868,7 +910,7 @@
 .shelf-book { width: 8px; border-radius: 2px; }
 .shelf-book.b1 { height: 28px; background: #556c60; }
 .shelf-book.b2 { height: 34px; background: #dfba53; }
-.shelf-book.b3 { height: 24px; background: #1f2c4d; }
+.shelf-book.b3 { height: 24px; background: #faa8c0; }
 
 .secret-bookmark-tag {
   display: flex;
@@ -886,202 +928,271 @@
   border: 1px dashed var(--gold-starlight);
 }
 
-/* Neat Discovery Deck below room */
-.home-discovery-deck {
-  margin-top: 24px;
-  background: rgba(14, 21, 38, 0.7);
-  border: 1px solid var(--border-starlight);
-  border-radius: 20px;
-  padding: 20px;
-  backdrop-filter: blur(8px);
-}
-
-.deck-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  border-bottom: 1px solid var(--border-subtle);
-  padding-bottom: 10px;
-  margin-bottom: 16px;
-}
-
-.deck-title {
-  font-family: var(--font-serif);
-  font-size: 1.15rem;
-  color: var(--gold-starlight);
-}
-
-.deck-sub {
-  font-family: var(--font-arabic);
-  font-size: 0.85rem;
-  color: var(--text-muted);
-}
-
-.deck-cards-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 12px;
-}
-
-.deck-card {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 12px 14px;
-  background: rgba(18, 27, 48, 0.8);
-  border: 1px solid var(--border-starlight);
-  border-radius: 12px;
-  color: var(--warm-cream);
-  cursor: pointer;
-  transition: all 0.25s ease;
-  text-align: left;
-}
-
-.deck-card:hover {
-  background: rgba(28, 42, 74, 0.95);
-  border-color: var(--gold-starlight);
-  transform: translateY(-2px);
-}
-
-.card-icon {
-  font-size: 1.4rem;
-}
-
-.card-text {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-.card-en {
-  font-size: 0.88rem;
-  font-weight: 500;
-  color: var(--warm-ivory);
-}
-
-.card-ar {
-  font-size: 0.75rem;
-  color: var(--soft-sage);
-}
-
-.card-arrow {
-  color: var(--gold-starlight);
-  font-size: 0.85rem;
-}
-
-.secret-deck-card {
-  border-style: dashed;
-  border-color: var(--gold-starlight);
-}
-
 /* =========================================
-   SCENE: THE GARDEN OF MEMORIES
+   SCENE: THE GARDEN OF MEMORIES (INTERACTIVE STORYBOOK GARDEN)
 ========================================= */
 .garden-poetic-quote {
   font-family: var(--font-serif);
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   color: var(--warm-ivory);
   text-align: center;
   font-style: italic;
-  margin: 12px auto 28px;
+  margin: 12px auto 10px;
   max-width: 640px;
   padding: 0 16px;
 }
 
-.garden-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 22px;
-  max-width: 980px;
-  margin: 0 auto;
-  padding: 0 20px 40px;
+.garden-instruction-pill {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 16px;
 }
 
-.memory-plant-card {
-  background: linear-gradient(145deg, rgba(16, 24, 44, 0.8), rgba(10, 15, 29, 0.9));
+.garden-instruction-pill span {
+  font-family: var(--font-arabic);
+  font-size: 0.88rem;
+  color: var(--gold-starlight);
+  background: rgba(14, 21, 38, 0.9);
   border: 1px solid var(--border-starlight);
-  border-radius: 18px;
-  padding: 24px 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  cursor: pointer;
-  transition: all 0.3s var(--ease-celestial);
+  padding: 6px 20px;
+  border-radius: 999px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.4);
+}
+
+/* Interactive Garden Stage */
+.interactive-garden-stage {
   position: relative;
+  width: 100%;
+  max-width: 900px;
+  height: 500px;
+  margin: 10px auto 25px;
+  border-radius: 28px;
+  background: radial-gradient(circle at 50% 50%, #15223a, #0b1122 80%);
+  border: 2px solid var(--border-starlight);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.6), inset 0 0 50px rgba(116, 143, 126, 0.15);
   overflow: hidden;
 }
 
-.memory-plant-card:hover {
-  transform: translateY(-5px);
-  border-color: var(--gold-starlight);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4), 0 0 20px rgba(223, 186, 83, 0.2);
+.garden-pathway-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
 }
 
-.memory-plant-card.golden-memory {
-  border-color: var(--gold-starlight);
-  background: linear-gradient(145deg, rgba(38, 44, 25, 0.85), rgba(15, 20, 30, 0.95));
+.garden-flora-tufts {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 3;
 }
 
-.memory-plant-card.highlight-memory {
-  border-color: var(--dusty-blue);
-  background: linear-gradient(145deg, rgba(20, 34, 58, 0.85), rgba(11, 17, 31, 0.95));
+.grass-tuft {
+  position: absolute;
+  font-size: 1.2rem;
+  opacity: 0.65;
+  filter: drop-shadow(0 0 6px rgba(116, 143, 126, 0.6));
+}
+.grass-tuft.t1 { top: 18%; left: 34%; }
+.grass-tuft.t2 { top: 35%; left: 68%; }
+.grass-tuft.t3 { top: 62%; left: 38%; }
+.grass-tuft.t4 { top: 82%; left: 32%; }
+.grass-tuft.t5 { top: 40%; left: 14%; }
+.grass-tuft.t6 { top: 70%; left: 65%; }
+
+.garden-flowers-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 6;
 }
 
-.plant-visual-wrapper {
+.garden-flower-spot {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.25s ease;
+}
+
+.garden-flower-spot:hover {
+  transform: translate(-50%, -55%) scale(1.12);
+}
+
+.flower-bloom-visual {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #24394d, #101c29 80%);
+  border: 2px solid var(--border-starlight);
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  margin-bottom: 14px;
+  justify-content: center;
+  font-size: 1.8rem;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5), 0 0 16px rgba(223, 186, 83, 0.25);
+  transition: all 0.3s ease;
+  position: relative;
 }
 
-.plant-icon-art {
-  font-size: 2.2rem;
-  filter: drop-shadow(0 0 10px rgba(223, 186, 83, 0.4));
+.garden-flower-spot:hover .flower-bloom-visual {
+  border-color: var(--gold-starlight);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6), 0 0 24px rgba(223, 186, 83, 0.6);
 }
 
-.golden-crown-tag, .highlight-tag {
-  font-size: 0.72rem;
+.golden-flower-spot .flower-bloom-visual {
+  border-color: var(--gold-starlight);
+  background: radial-gradient(circle at 35% 35%, #423b20, #1c180a 80%);
+  box-shadow: 0 0 22px rgba(223, 186, 83, 0.5);
+}
+
+.highlight-flower-spot .flower-bloom-visual {
+  border-color: #8da4c4;
+  background: radial-gradient(circle at 35% 35%, #233454, #0e1726 80%);
+  box-shadow: 0 0 22px rgba(141, 164, 196, 0.5);
+}
+
+.flower-label-tag {
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(14, 21, 38, 0.92);
+  border: 1px solid var(--border-starlight);
   padding: 3px 10px;
   border-radius: 999px;
-  background: rgba(223, 186, 83, 0.2);
-  color: var(--gold-starlight);
-  border: 1px solid var(--gold-starlight);
+  box-shadow: 0 3px 8px rgba(0,0,0,0.5);
+  white-space: nowrap;
 }
 
-.plant-number {
-  font-size: 0.75rem;
+.flower-num {
+  font-size: 0.72rem;
   color: var(--gold-starlight);
-  letter-spacing: 0.1em;
   font-weight: 600;
 }
 
-.plant-title-english {
-  font-size: 1.15rem;
+.flower-title {
+  font-family: var(--font-arabic);
+  font-size: 0.78rem;
   color: var(--warm-ivory);
-  margin: 4px 0 2px;
 }
 
-.plant-title-arabic {
-  font-size: 0.95rem;
+.flower-check {
+  color: #748f7e;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+.flower-spark {
+  color: var(--gold-starlight);
+  font-size: 0.75rem;
+}
+
+/* Chibi Anea Avatar walking across garden */
+.garden-anea-avatar {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  transition: left 0.75s cubic-bezier(0.4, 0, 0.2, 1), top 0.75s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  pointer-events: none;
+}
+
+.anea-starlight-pedestal {
+  position: absolute;
+  bottom: 0;
+  width: 44px;
+  height: 14px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at 50% 50%, rgba(223, 186, 83, 0.6), transparent 70%);
+  filter: blur(3px);
+}
+
+.anea-sprite-box {
+  position: relative;
+  transition: transform 0.25s ease;
+}
+
+@keyframes aneaWalkBob {
+  0% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(-4deg); }
+  100% { transform: translateY(0) rotate(4deg); }
+}
+
+.garden-anea-avatar.walking .anea-sprite-box {
+  animation: aneaWalkBob 0.22s infinite ease-in-out alternate;
+}
+
+.anea-bubble-hint {
+  position: absolute;
+  top: -26px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(14, 21, 38, 0.95);
+  border: 1px solid var(--gold-starlight);
+  color: var(--gold-starlight);
+  font-family: var(--font-arabic);
+  font-size: 0.75rem;
+  padding: 2px 10px;
+  border-radius: 999px;
+  white-space: nowrap;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+}
+
+/* Garden Directory Carousel */
+.garden-directory-wrapper {
+  max-width: 900px;
+  margin: 0 auto 30px;
+  padding: 0 16px;
+}
+
+.directory-title {
+  font-family: var(--font-arabic);
+  font-size: 0.9rem;
   color: var(--soft-sage);
   margin-bottom: 8px;
+  text-align: right;
 }
 
-.plant-summary {
-  font-size: 0.85rem;
-  color: var(--text-muted);
-  line-height: 1.5;
-  margin-bottom: 14px;
+.garden-directory-cards {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+  scrollbar-width: thin;
 }
 
-.plant-status-pill {
-  align-self: flex-start;
-  font-size: 0.75rem;
-  color: var(--gold-starlight);
-  padding: 3px 10px;
-  border-radius: 999px;
-  background: rgba(223, 186, 83, 0.08);
+.dir-memory-pill {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  background: rgba(16, 24, 44, 0.85);
+  border: 1px solid var(--border-starlight);
+  border-radius: 12px;
+  color: var(--warm-ivory);
+  cursor: pointer;
+  transition: all 0.25s ease;
 }
+
+.dir-memory-pill:hover {
+  background: rgba(26, 38, 66, 0.95);
+  border-color: var(--gold-starlight);
+  transform: translateY(-2px);
+}
+
+.dir-memory-pill.visited {
+  border-color: rgba(116, 143, 126, 0.5);
+}
+
+.dir-icon { font-size: 1.1rem; }
+.dir-num { font-size: 0.75rem; color: var(--gold-starlight); font-weight: 600; }
+.dir-name { font-family: var(--font-arabic); font-size: 0.8rem; }
 
 /* Voice Call Soundwave inside modal */
 .voice-call-scene-interactive {
@@ -1242,10 +1353,27 @@
   margin-bottom: 12px;
 }
 
+.envelope-top-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
 .envelope-number {
   font-size: 0.72rem;
   color: var(--gold-starlight);
   letter-spacing: 0.1em;
+}
+
+.voice-badge {
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 10px;
+  background: rgba(223, 186, 83, 0.12);
+  border: 1px solid rgba(223, 186, 83, 0.35);
+  color: var(--gold-starlight);
+  font-weight: 500;
 }
 
 .envelope-title-en {
@@ -1267,13 +1395,25 @@
   margin-bottom: 14px;
 }
 
+.envelope-action-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.78rem;
+}
+
+.envelope-duration {
+  color: var(--text-muted);
+  font-size: 0.75rem;
+}
+
 .envelope-status {
   font-size: 0.78rem;
   color: var(--gold-starlight);
   font-weight: 500;
 }
 
-/* Letter Parchment Modal */
+/* Letter Parchment Modal & Voice Player */
 .letter-paper-modal {
   background: linear-gradient(180deg, #18223c 0%, #11182c 100%) !important;
   border: 2px solid var(--gold-starlight) !important;
@@ -1287,26 +1427,175 @@
 }
 
 .parchment-title-en {
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   color: var(--warm-ivory);
   margin-top: 4px;
 }
 
 .parchment-title-ar {
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   color: var(--soft-sage);
-  margin-bottom: 16px;
+  margin-bottom: 14px;
+}
+
+/* Voice Player Card */
+.voice-player-card {
+  background: linear-gradient(135deg, rgba(28, 40, 70, 0.85), rgba(16, 22, 42, 0.95));
+  border: 1px solid rgba(223, 186, 83, 0.35);
+  border-radius: 16px;
+  padding: 16px 20px;
+  margin: 16px 0;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.voice-player-top {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.voice-play-toggle-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: none;
+  background: linear-gradient(135deg, #dfba53 0%, #d48b3b 100%);
+  color: #0b1120;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(223, 186, 83, 0.35);
+  transition: transform 0.2s, box-shadow 0.2s;
+  flex-shrink: 0;
+}
+
+.voice-play-toggle-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 20px rgba(223, 186, 83, 0.55);
+}
+
+.voice-play-toggle-btn.playing {
+  animation: pulseGlow 2s infinite;
+}
+
+.voice-play-icon {
+  font-size: 1.15rem;
+  margin-left: 2px;
+}
+
+.voice-play-toggle-btn.playing .voice-play-icon {
+  margin-left: 0;
+}
+
+.voice-player-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.voice-label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.78rem;
+  margin-bottom: 6px;
+}
+
+.voice-author-tag {
+  color: var(--warm-ivory);
+  font-weight: 500;
+}
+
+.voice-time-display {
+  color: var(--gold-starlight);
+  font-family: monospace;
+  font-size: 0.76rem;
+}
+
+.voice-waveform-container {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  height: 28px;
+  margin-bottom: 8px;
+}
+
+.wave-bar {
+  width: 3px;
+  min-height: 4px;
+  background: rgba(223, 186, 83, 0.35);
+  border-radius: 2px;
+  transition: height 0.15s ease;
+}
+
+.voice-waveform-container.playing .wave-bar {
+  animation: waveBarBounce 0.9s ease-in-out infinite alternate;
+  animation-delay: calc(var(--bar-i) * 0.045s);
+  background: #dfba53;
+}
+
+@keyframes waveBarBounce {
+  0% {
+    transform: scaleY(0.3);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scaleY(1.35);
+    opacity: 1;
+    box-shadow: 0 0 6px rgba(223, 186, 83, 0.6);
+  }
+}
+
+.voice-progress-track {
+  width: 100%;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 2px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.voice-progress-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #dfba53, #f5d77f);
+  border-radius: 2px;
+  transition: width 0.1s linear;
+}
+
+.voice-note-hint {
+  margin-top: 10px;
+  font-size: 0.74rem;
+  color: var(--text-muted);
+  text-align: center;
+  border-top: 1px dashed rgba(223, 186, 83, 0.2);
+  padding-top: 8px;
+}
+
+.voice-note-hint code {
+  color: var(--gold-starlight);
+  background: rgba(0, 0, 0, 0.3);
+  padding: 1px 5px;
+  border-radius: 4px;
+}
+
+.parchment-label {
+  font-size: 0.8rem;
+  color: var(--gold-starlight);
+  margin-bottom: 8px;
+  letter-spacing: 0.05em;
 }
 
 .parchment-body {
-  margin: 18px 0;
-  padding: 16px 0;
+  margin: 16px 0;
+  padding: 14px 0;
   border-top: 1px solid rgba(223, 186, 83, 0.2);
   border-bottom: 1px solid rgba(223, 186, 83, 0.2);
 }
 
 .parchment-text {
-  font-size: 1.15rem;
+  font-size: 1.12rem;
   line-height: 2;
   color: var(--warm-cream);
 }

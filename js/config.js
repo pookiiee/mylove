@@ -282,47 +282,40 @@ export const CONFIG = {
         {
           questionEnglish: "Which date marks the very beginning of our little story?",
           questionArabic: "ما هو التاريخ الذي بدأت فيه حكايتنا الجميلة؟",
-          options: ["March 31", "October 17", "December 25", "April 14"],
-          correctIndex: 0,
-          explanationArabic: "صح! ٣١ مارس، اليوم اللي بدأت فيه أجمل صدفة ♡"
+          options: ["October 17", "March 31", "December 25", "April 14"],
+          correctIndex: 1,
+          explanationArabic: "صح! ٣١ مارس، اليوم اللي بدأت فيه أجمل صدفة في عالمنا ♡"
         },
         {
           questionEnglish: "Where did we first get to know each other?",
           questionArabic: "أين تعرفنا على بعضنا لأول مرة؟",
           options: [
-            "Anea was an administrator on Aseel's server",
             "At a coffee shop under the rain",
-            "In a library reading The Little Prince",
+            "In Pookiiee's Discord server",
+            "In a library reading stories",
             "Through a random gaming lobby"
           ],
-          correctIndex: 0,
-          explanationArabic: "بالضبط! لما كنتِ مشرفة في السيرفر وتراسليني بالخاص ♡"
+          correctIndex: 1,
+          explanationArabic: "صح! في سيرفر ديسكورد بوكي (In Pookiiee's Discord server) ♡"
         },
         {
           questionEnglish: "What happened during that unforgettable voice call?",
           questionArabic: "ماذا حدث في تلك الليلة التي جمعتنا في المكالمة الصوتية؟",
           options: [
-            "Anea playfully encouraged Aseel until they both confessed their feelings",
-            "They fell asleep listening to music",
+            "They fell asleep listening to midnight rain",
             "They argued about which game was better",
-            "They studied for an exam together"
+            "شجعت أنيا أسيل فاعترفا كلاهما مع بعضهما واكتشفا أن كلاهما معجب بالآخر",
+            "They were just studying for an exam together"
           ],
-          correctIndex: 0,
-          explanationArabic: "أحلى مكالمة! لما حاصرتيني بدلال وخليتيني أعترف بمشاعري ♡"
+          correctIndex: 2,
+          explanationArabic: "أحلى لحظة! شجعت أنيا أسيل فاعترفا كلاهما مع بعضهما واكتشفا أن كلاهما معجب بالآخر ♡"
         },
         {
           questionEnglish: "What is the special pet name Aseel loves to call you with?",
           questionArabic: "ما هي الكلمة اللطيفة اللي أسيل دايماً تحب تناديكِ وتدلعك فيها؟",
-          options: ["حبوبي", "وردتي", "قمر", "نجمتي"],
-          correctIndex: 0,
-          explanationArabic: "حبوبي.. أحلى كلمة تدلعك فيها أسيل من كل قلبها ♡"
-        },
-        {
-          questionEnglish: "Which song did Aseel specifically dedicate to Anea?",
-          questionArabic: "ما هي الأغنية التي أهدتها أسيل لـ أنيا بكل حب؟",
-          options: ["'love.' by wave to earth", "'Yellow' by Coldplay", "'Golden Hour' by JVKE", "'Until I Found You' by Stephen Sanchez"],
-          correctIndex: 0,
-          explanationArabic: "أغنية 'love.' الهادئة والدافئة من wave to earth ♡"
+          options: ["وردتي", "قمر", "نجمتي", "حبوبي"],
+          correctIndex: 3,
+          explanationArabic: "حبوبي.. الكلمة اللي أسيل دايماً تحب تدلعك فيها بكل حب ♡"
         }
       ]
     }

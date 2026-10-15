@@ -1586,7 +1586,7 @@
 }
 
 /* =========================================
-   SCENE: THE LAKE OF STARS
+   SCENE: THE LAKE OF STARS (ENCHANTED ROMANTIC TWILIGHT)
 ========================================= */
 .lake-quote {
   font-family: var(--font-serif);
@@ -1594,90 +1594,408 @@
   font-style: italic;
   color: var(--warm-ivory);
   text-align: center;
-  margin: 12px auto 26px;
+  margin: 12px auto 8px;
   max-width: 620px;
   padding: 0 16px;
 }
 
-.lake-body-container {
-  max-width: 860px;
-  min-height: 460px;
-  margin: 0 auto;
+.lake-instruction-pill {
+  text-align: center;
+  margin-bottom: 22px;
+}
+
+.lake-instruction-pill span {
+  display: inline-block;
+  padding: 6px 18px;
+  border-radius: 999px;
+  background: rgba(14, 21, 38, 0.85);
+  border: 1px solid rgba(223, 186, 83, 0.35);
+  font-family: var(--font-arabic);
+  font-size: 0.86rem;
+  color: var(--gold-starlight);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+}
+
+.enchanted-lake-stage {
+  max-width: 960px;
+  min-height: 520px;
+  height: 540px;
+  margin: 0 auto 30px;
   border-radius: 28px;
-  border: 1px solid var(--border-starlight);
-  background: radial-gradient(ellipse at 50% 60%, rgba(20, 34, 62, 0.95), rgba(8, 12, 24, 0.98));
+  border: 1.5px solid var(--border-starlight);
+  background: linear-gradient(180deg, #070c1a 0%, #0d1a33 35%, #0d284a 65%, #051020 100%);
   position: relative;
   overflow: hidden;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), inset 0 0 50px rgba(98, 125, 152, 0.15);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  transition: box-shadow 1s ease;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6), inset 0 0 60px rgba(98, 125, 152, 0.2);
+  transition: box-shadow 1.2s ease;
 }
 
-.lake-body-container.starlight-illumination {
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), inset 0 0 80px rgba(223, 186, 83, 0.35);
+.enchanted-lake-stage.starlight-illumination {
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.7), inset 0 0 90px rgba(223, 186, 83, 0.45);
 }
 
-.star-lantern-item {
+/* Sky & Moon */
+.lake-sky-backdrop {
   position: absolute;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  transition: transform 0.3s ease;
-  animation: floatGentle 4s ease-in-out infinite;
-}
-
-.star-lantern-item:hover {
-  transform: scale(1.15);
-}
-
-.lantern-glow {
-  position: absolute;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(223, 186, 83, 0.5) 0%, rgba(223, 186, 83, 0) 70%);
-}
-
-.lantern-flame {
-  font-size: 1.4rem;
-  filter: drop-shadow(0 0 8px #dfba53);
-}
-
-.lantern-tag {
-  font-size: 0.68rem;
-  color: var(--gold-starlight);
-  background: rgba(14, 21, 38, 0.85);
-  padding: 1px 6px;
-  border-radius: 999px;
-  border: 1px solid rgba(223, 186, 83, 0.3);
-  margin-top: 4px;
-}
-
-.lake-shoreline {
-  position: absolute;
-  bottom: 60px;
+  top: 0;
+  left: 0;
   width: 100%;
+  height: 36%;
+  pointer-events: none;
+  background: radial-gradient(ellipse at 80% 30%, rgba(223, 186, 83, 0.12) 0%, transparent 60%);
+}
+
+.lake-crescent-moon {
+  position: absolute;
+  top: 20px;
+  right: 50px;
   display: flex;
-  align-items: flex-end;
-  justify-content: space-around;
+  align-items: center;
+  justify-content: center;
+}
+
+.moon-body {
+  font-size: 2.8rem;
+  line-height: 1;
+  filter: drop-shadow(0 0 16px rgba(223, 186, 83, 0.85));
+  animation: floatGentle 5s ease-in-out infinite;
+}
+
+.moon-aura {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(223, 186, 83, 0.25) 0%, transparent 70%);
+  filter: blur(8px);
+}
+
+/* Water Surface */
+.lake-water-surface {
+  position: absolute;
+  top: 28%;
+  left: 0;
+  width: 100%;
+  height: 72%;
+  background: radial-gradient(ellipse at 50% 20%, rgba(18, 48, 88, 0.8) 0%, rgba(6, 14, 30, 0.95) 85%);
+  overflow: hidden;
+}
+
+.moon-water-reflection {
+  position: absolute;
+  top: 0;
+  right: 68px;
+  width: 32px;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(223, 186, 83, 0.35) 0%, rgba(223, 186, 83, 0.08) 70%, transparent 100%);
+  filter: blur(8px);
+  opacity: 0.75;
+  animation: shimmerWave 3.5s ease-in-out infinite alternate;
+}
+
+@keyframes shimmerWave {
+  0% { transform: scaleX(0.85) skewX(-2deg); opacity: 0.6; }
+  100% { transform: scaleX(1.2) skewX(2deg); opacity: 0.9; }
+}
+
+.water-ripples-layer {
+  position: absolute;
+  inset: 0;
   pointer-events: none;
 }
 
-.lake-characters-wrapper {
+.water-wave {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 25px;
+  border-radius: 50%;
+  border-top: 1.5px solid rgba(223, 186, 83, 0.2);
+}
+
+.water-wave.w1 { top: 18%; animation: waveDrift 7s ease-in-out infinite alternate; }
+.water-wave.w2 { top: 38%; animation: waveDrift 9s ease-in-out infinite alternate-reverse; }
+.water-wave.w3 { top: 58%; animation: waveDrift 8s ease-in-out infinite alternate; }
+
+@keyframes waveDrift {
+  0% { transform: translateY(0) scaleY(1); opacity: 0.4; }
+  100% { transform: translateY(8px) scaleY(1.3); opacity: 0.8; }
+}
+
+/* Fireflies */
+.lake-fireflies {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.firefly {
+  position: absolute;
+  color: var(--gold-starlight);
+  font-size: 0.85rem;
+  filter: drop-shadow(0 0 6px #dfba53);
+  animation: fireflyFloat 4.5s ease-in-out infinite alternate;
+}
+
+.firefly.f1 { top: 15%; left: 15%; animation-delay: 0s; }
+.firefly.f2 { top: 35%; left: 45%; animation-delay: 1.2s; }
+.firefly.f3 { top: 25%; left: 70%; animation-delay: 2.4s; }
+.firefly.f4 { top: 55%; left: 20%; animation-delay: 0.8s; }
+.firefly.f5 { top: 45%; left: 85%; animation-delay: 1.8s; }
+.firefly.f6 { top: 60%; left: 60%; animation-delay: 3s; }
+
+@keyframes fireflyFloat {
+  0% { transform: translateY(0) scale(0.7); opacity: 0.3; }
+  100% { transform: translateY(-16px) scale(1.2); opacity: 1; }
+}
+
+/* Lotus Star Lanterns */
+.floating-lotus-group {
+  position: absolute;
+  inset: 0;
   pointer-events: auto;
 }
 
-.lake-interactive-prompt {
+.lotus-lantern-node {
   position: absolute;
-  bottom: 16px;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+  z-index: 10;
+  user-select: none;
+  animation: lotusFloat 4.5s ease-in-out infinite alternate;
+}
+
+.lotus-lantern-node:nth-child(even) {
+  animation-delay: 1.8s;
+}
+
+.lotus-lantern-node:hover {
+  transform: translate(-50%, -50%) scale(1.22);
+}
+
+@keyframes lotusFloat {
+  0% { transform: translate(-50%, -50%) translateY(0); }
+  100% { transform: translate(-50%, -50%) translateY(-8px); }
+}
+
+.lotus-glow-halo {
+  position: absolute;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(223, 186, 83, 0.5) 0%, rgba(223, 186, 83, 0) 70%);
+  pointer-events: none;
+  transition: transform 0.3s ease;
+}
+
+.lotus-lantern-node:hover .lotus-glow-halo {
+  transform: scale(1.3);
+}
+
+.lotus-pad {
+  font-size: 2.2rem;
+  line-height: 1;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.6));
+}
+
+.lantern-star-flame {
+  position: absolute;
+  top: -10px;
+  font-size: 1.15rem;
+  filter: drop-shadow(0 0 10px #dfba53);
+  animation: pulseGlow 2s infinite;
+}
+
+.lotus-caption {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(10, 16, 32, 0.9);
+  border: 1px solid rgba(223, 186, 83, 0.4);
+  padding: 3px 10px;
+  border-radius: 999px;
+  margin-top: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  white-space: nowrap;
+}
+
+.lotus-num {
+  font-size: 0.68rem;
+  color: var(--gold-starlight);
+  font-family: monospace;
+}
+
+.lotus-ar {
+  font-family: var(--font-arabic);
+  font-size: 0.74rem;
+  color: var(--warm-ivory);
+}
+
+/* The Wooden Shore Dock */
+.lake-wooden-dock {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 110px;
+  background: linear-gradient(180deg, rgba(26, 20, 15, 0.95) 0%, rgba(14, 11, 8, 0.98) 100%);
+  border-top: 2px solid rgba(223, 186, 83, 0.4);
+  box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  z-index: 12;
+}
+
+.dock-characters-container {
+  position: absolute;
+  bottom: 38px;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 15;
+}
+
+.chibi-dock-sprite {
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.dock-floating-hearts {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.6rem;
+  animation: floatHearts 2s ease-in-out infinite;
+}
+
+@keyframes floatHearts {
+  0% { transform: translateX(-50%) translateY(0) scale(0.8); opacity: 0.5; }
+  50% { transform: translateX(-50%) translateY(-10px) scale(1.15); opacity: 1; }
+  100% { transform: translateX(-50%) translateY(-20px) scale(0.9); opacity: 0; }
+}
+
+.dock-water-reflection {
+  width: 140px;
+  height: 12px;
+  background: radial-gradient(ellipse, rgba(223, 186, 83, 0.35) 0%, transparent 70%);
+  filter: blur(4px);
+  margin-top: -6px;
+}
+
+.dock-lantern-post {
+  position: absolute;
+  bottom: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dock-lantern-post.left-post { left: 45px; }
+.dock-lantern-post.right-post { right: 45px; }
+
+.dock-lantern-lamp {
+  font-size: 1.8rem;
+  filter: drop-shadow(0 0 14px rgba(223, 186, 83, 0.75));
+}
+
+.lake-shore-reeds {
+  position: absolute;
+  bottom: 10px;
+  font-size: 1.4rem;
+  opacity: 0.75;
+}
+
+.lake-shore-reeds.left-reeds { left: 110px; }
+.lake-shore-reeds.right-reeds { right: 110px; }
+
+.lake-interactive-prompt {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
 }
 
 .starlight-glow-btn {
-  box-shadow: 0 0 20px rgba(223, 186, 83, 0.3);
+  box-shadow: 0 0 20px rgba(223, 186, 83, 0.35);
+  font-size: 0.88rem;
+  padding: 9px 24px;
 }
+
+.btn-active-glow {
+  background: linear-gradient(135deg, rgba(223, 186, 83, 0.35), rgba(212, 139, 59, 0.35)) !important;
+  border-color: var(--gold-starlight) !important;
+  box-shadow: 0 0 28px rgba(223, 186, 83, 0.65) !important;
+}
+
+/* Whisper Modal Content */
+.whisper-content-box {
+  text-align: center;
+  padding: 10px 14px;
+}
+
+.whisper-lotus {
+  font-size: 2.8rem;
+  margin-bottom: 8px;
+  filter: drop-shadow(0 0 12px rgba(223, 186, 83, 0.6));
+}
+
+.whisper-tag {
+  display: inline-block;
+  padding: 3px 12px;
+  border-radius: 999px;
+  background: rgba(223, 186, 83, 0.15);
+  border: 1px solid rgba(223, 186, 83, 0.4);
+  color: var(--gold-starlight);
+  font-size: 0.76rem;
+  font-family: var(--font-arabic);
+  margin-bottom: 12px;
+}
+
+.whisper-heading {
+  font-family: var(--font-serif);
+  font-size: 1.45rem;
+  color: var(--warm-ivory);
+  margin-bottom: 14px;
+}
+
+.whisper-arabic {
+  font-family: var(--font-arabic);
+  font-size: 1.18rem;
+  line-height: 2;
+  color: var(--warm-cream);
+  margin-bottom: 12px;
+  padding: 14px 0;
+  border-top: 1px solid rgba(223, 186, 83, 0.2);
+  border-bottom: 1px solid rgba(223, 186, 83, 0.2);
+}
+
+.whisper-english {
+  font-size: 0.95rem;
+  font-style: italic;
+  color: var(--soft-sage);
+  margin-bottom: 18px;
+}
+
+.whisper-star-tag {
+  font-size: 0.8rem;
+  color: var(--gold-starlight);
+}
+
+@media (max-width: 768px) {
+  .enchanted-lake-stage {
+    min-height: 480px;
+    height: 490px;
+  }
+  .dock-lantern-post { display: none; }
+  .lake-shore-reeds { display: none; }
+}
+

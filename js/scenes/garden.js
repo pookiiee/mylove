@@ -41,7 +41,7 @@ export function renderGardenScene(container, returnToMap) {
       <div class="garden-header-text">
         <p class="garden-poetic-quote">"Each flower here bloomed from a moment that made me fall a little more in love with you."</p>
         <div class="garden-instruction-pill">
-          <span>🌸 اضغطي على أي زهرة لتمشي أنيتا نحوها وتفتح ذكراها مع أسيل ♡</span>
+          <span>🌸 اضغطي على أي زهرة لتمشي نحوها وتفتحي ذكراها الجميلة ♡</span>
         </div>
       </div>
 
@@ -112,7 +112,7 @@ export function renderGardenScene(container, returnToMap) {
             ${Characters.getAneaSVG("standing", 115)}
           </div>
           <div class="anea-bubble-hint" id="aneaBubble">
-            <span>أنيتي ♡</span>
+            <span>✨ ♡</span>
           </div>
         </div>
       </div>

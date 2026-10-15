@@ -61,7 +61,27 @@ class StateManager {
   }
 
   reset() {
-    this.state = { ...DEFAULT_STATE };
+    this.state = {
+      ...DEFAULT_STATE,
+      starsCollected: 0,
+      collectedStarIds: [],
+      memoriesVisited: [],
+      lettersOpened: [],
+      minigames: {
+        collectStars: false,
+        constellation: false,
+        quiz: false
+      },
+      secrets: {
+        secretStar: false,
+        hiddenWord: false,
+        tinyGift: false
+      },
+      castleUnlocked: false,
+      finalGiftOpened: false,
+      unlockedDestinations: ["home"],
+      exploredDestinations: []
+    };
     try {
       localStorage.removeItem(STORAGE_KEY);
     } catch (e) {}
@@ -129,25 +149,21 @@ class StateManager {
   }
 
   checkCastleUnlock() {
-    // Castle is unlocked if lake is explored or sequentially unlocked
-    if (this.isDestinationUnlocked("castle")) {
+    const explored = this.state.exploredDestinations || [];
+    if (explored.includes("lake") || explored.length >= 5) {
       this.state.castleUnlocked = true;
     }
   }
 
   isDestinationUnlocked(destId) {
     if (destId === "home") return true;
-    if (!this.state.unlockedDestinations) {
-      this.state.unlockedDestinations = ["home"];
-    }
-    // Backward compatibility for existing saves:
-    if (destId === "garden" && (this.state.exploredDestinations?.includes("home") || this.state.memoriesVisited.length > 0)) return true;
-    if (destId === "mailbox" && (this.state.exploredDestinations?.includes("garden") || this.state.lettersOpened.length > 0)) return true;
-    if (destId === "carnival" && (this.state.exploredDestinations?.includes("mailbox") || Object.values(this.state.minigames).some(Boolean))) return true;
-    if (destId === "lake" && (this.state.exploredDestinations?.includes("carnival") || this.state.starsCollected >= 10)) return true;
-    if (destId === "castle" && (this.state.exploredDestinations?.includes("lake") || this.state.castleUnlocked)) return true;
-
-    return this.state.unlockedDestinations.includes(destId);
+    const explored = this.state.exploredDestinations || [];
+    if (destId === "garden") return explored.includes("home");
+    if (destId === "mailbox") return explored.includes("garden");
+    if (destId === "carnival") return explored.includes("mailbox");
+    if (destId === "lake") return explored.includes("carnival");
+    if (destId === "castle") return explored.includes("lake") || explored.length >= 5;
+    return false;
   }
 
   isDestinationExplored(destId) {

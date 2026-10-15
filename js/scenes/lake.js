@@ -83,8 +83,38 @@ export function renderLakeScene(container, returnToMap) {
               return `
                 <div class="lotus-lantern-node" data-index="${idx}" style="top: ${pos.top}%; left: ${pos.left}%;" title="${pos.nameAr}">
                   <div class="lotus-glow-halo"></div>
-                  <div class="lotus-pad">🪷</div>
-                  <div class="lantern-star-flame">✨</div>
+                  <div class="lotus-svg-box">
+                    <svg class="lotus-svg" viewBox="0 0 64 52" width="62" height="50">
+                      <defs>
+                        <linearGradient id="lotusGrad_${idx}" x1="0%" y1="100%" x2="0%" y2="0%">
+                          <stop offset="0%" stop-color="#dfba53" />
+                          <stop offset="35%" stop-color="#e8a87c" />
+                          <stop offset="70%" stop-color="#ffccd5" />
+                          <stop offset="100%" stop-color="#ffffff" />
+                        </linearGradient>
+                        <radialGradient id="flameGrad_${idx}" cx="50%" cy="50%" r="50%">
+                          <stop offset="0%" stop-color="#ffffff" />
+                          <stop offset="35%" stop-color="#ffe066" />
+                          <stop offset="75%" stop-color="#ff922b" />
+                          <stop offset="100%" stop-color="transparent" />
+                        </radialGradient>
+                      </defs>
+                      <!-- Lotus Lily Pad Base -->
+                      <ellipse cx="32" cy="42" rx="26" ry="7" fill="#18362e" stroke="#dfba53" stroke-width="0.8" opacity="0.9" />
+                      <!-- Back Petals -->
+                      <path d="M12 36 C14 20 25 18 32 30 C23 23 16 27 12 36 Z" fill="url(#lotusGrad_${idx})" opacity="0.85" />
+                      <path d="M52 36 C50 20 39 18 32 30 C41 23 48 27 52 36 Z" fill="url(#lotusGrad_${idx})" opacity="0.85" />
+                      <!-- Main Blooming Petals -->
+                      <path d="M18 38 C20 16 30 14 32 36 C24 22 19 28 18 38 Z" fill="url(#lotusGrad_${idx})" />
+                      <path d="M46 38 C44 16 34 14 32 36 C40 22 45 28 46 38 Z" fill="url(#lotusGrad_${idx})" />
+                      <!-- Center Crown Petal -->
+                      <path d="M26 40 C28 14 36 14 38 40 C35 24 29 24 26 40 Z" fill="#fff" opacity="0.95" />
+                      <!-- Golden Candle Flame -->
+                      <circle cx="32" cy="18" r="9" fill="url(#flameGrad_${idx})" />
+                      <path d="M32 9 C34 14 36 18 32 23 C28 18 30 14 32 9 Z" fill="#fffbe6" />
+                      <circle cx="32" cy="18" r="2.5" fill="#ffffff" />
+                    </svg>
+                  </div>
                   <div class="lotus-caption">
                     <span class="lotus-num">${pos.label}</span>
                     <span class="lotus-ar" dir="rtl">${pos.nameAr}</span>
@@ -165,7 +195,7 @@ export function renderLakeScene(container, returnToMap) {
 
     modalSlot.innerHTML = `
       <div class="whisper-content-box">
-        <div class="whisper-lotus">🪷✨</div>
+        <div class="whisper-lotus">✨ 🏮 ✨</div>
         <span class="whisper-tag">${pos ? pos.nameAr : `Whisper 0${idx + 1}`}</span>
         <h3 class="whisper-heading">A Quiet Thought from Aseel</h3>
         <p class="whisper-arabic" dir="rtl">${w.arabic}</p>

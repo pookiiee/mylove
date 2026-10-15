@@ -304,16 +304,16 @@ export const CONFIG = {
           options: [
             "They fell asleep listening to midnight rain",
             "They argued about which game was better",
-            "شجعت أنيا أسيل فاعترفا كلاهما مع بعضهما واكتشفا أن كلاهما معجب بالآخر",
+            "Anea encouraged Aseel to confess, and they discovered their mutual feelings",
             "They were just studying for an exam together"
           ],
           correctIndex: 2,
-          explanationArabic: "أحلى لحظة! شجعت أنيا أسيل فاعترفا كلاهما مع بعضهما واكتشفا أن كلاهما معجب بالآخر ♡"
+          explanationArabic: "أحلى لحظة! شجعت أنيا أسيل فاعترفا لبعضهما واكتشفا مشاعرهما المتبادلة ♡"
         },
         {
           questionEnglish: "What is the special pet name Aseel loves to call you with?",
           questionArabic: "ما هي الكلمة اللطيفة اللي أسيل دايماً تحب تناديكِ وتدلعك فيها؟",
-          options: ["وردتي", "قمر", "نجمتي", "حبوبي"],
+          options: ["My Rose", "My Moon", "My Little Star", "Haboubi ♡"],
           correctIndex: 3,
           explanationArabic: "حبوبي.. الكلمة اللي أسيل دايماً تحب تدلعك فيها بكل حب ♡"
         }
@@ -327,12 +327,12 @@ export const CONFIG = {
     subtitle: "بحيرة النجوم الهادئة",
     whispers: [
       {
-        english: "You make me feel uniquely special, in a way no one else ever could.",
-        arabic: "طريقتك في الاهتمام بي تخليني أحس إني استثنائية جداً عندك."
+        english: "The way you care for me makes me feel so uniquely special to you.",
+        arabic: "طريقتك بالاهتمام فيني تخليني احس اني استثنائية عندك"
       },
       {
-        english: "I love the tenderness you give me without even trying.",
-        arabic: "حنيتك العفوية تعني لقلبي أكثر بكثير مما تتصورين."
+        english: "Your tenderness means the world to my heart, far more than you could ever imagine.",
+        arabic: "حنيتك لي تعني لقلبي الكثير اكثر مما تتصورين"
       },
       {
         english: "Our quietest conversations remain my warmest memories.",
@@ -354,24 +354,54 @@ export const CONFIG = {
     title: "The Birthday Castle",
     subtitle: "قصر الـ 24 عاماً",
     unlockedMessage: "Twenty-four years of you. And somehow, I get to love you in this little moment of your story. Happy Birthday, my Anity. ♡",
-    unlockedMessageArabic: "أربعة وعشرون عاماً من وجودك في هذه الحياة.. ومن حسن حظي وقدري إني أحبك في هذا الفصل الجميل من قصتك. كل عام وأنتِ بخير يا أنيتي ♡"
+    unlockedMessageArabic: "أربعة وعشرون عاماً من وجودك في هذه الحياة.. ومن حسن حظي وقدري إني أحبك في هذا الفصل الجميل من قصتك. كل عام وأنتِ بخير يا أنيتي ♡",
+    gallery: [
+      {
+        id: "photo1",
+        src: "assets/images/photo1.png",
+        captionArabic: "تطقيمنا الي داخل قلبي",
+        captionEnglish: "Our Matching Icons in My Heart"
+      },
+      {
+        id: "photo2",
+        src: "assets/images/photo2.png",
+        captionArabic: "قدرتي تخلي قلبيب لك",
+        captionEnglish: "You Made My Whole Heart Yours"
+      },
+      {
+        id: "photo3",
+        src: "assets/images/photo3.png",
+        captionArabic: "كلامك وغرام وحبك ليا الي يخليني اصحى ميته حب ومشاعر لك",
+        captionEnglish: "Your Loving Words That Warm My Soul"
+      },
+      {
+        id: "photo4",
+        src: "assets/images/photo4.png",
+        captionArabic: "كولاتنا الطويله الي كنت فيها اقدر اسمع صوتك النعسان وانا مستانسه",
+        captionEnglish: "Our Long Midnight Calls & Sleepy Voice"
+      },
+      {
+        id: "photo5",
+        src: "assets/images/photo5.png",
+        captionArabic: "جملة للحين بقلبي ومابنساها",
+        captionEnglish: "Words Kept Deep in My Heart Forever"
+      },
+      {
+        id: "photo6",
+        src: "assets/images/photo6.png",
+        captionArabic: "تطقيمنا الهوتت بالدس كنت وللان مبسوطه عليه",
+        captionEnglish: "Our Cute Matching Discord Avatars"
+      }
+    ]
   },
 
   // --- Final Surprise Content ---
   finalSurprise: {
-    headingEnglish: "For My Favorite Person in This Universe",
-    headingArabic: "لأحب وأغلى شخص في هذا الكون كله",
-    letterArabic: `حبيبتي وأنيتي الغالية،
+    headingEnglish: "To My Beautiful Anity ♡",
+    headingArabic: "الى انيتي الحلوه ♡",
+    letterArabic: `ماميتي صارت 24 وانا معاها مامي تصير مامي اكثر من قبل يميميميميميي، جتني ذكرايات وقاعده اتذكر وابتسم كيف بدايتنا كيف تعرفنا كيف صرنا ندخل فويسات وكل وحده مغرمه بالثانيه وساكته كيف قلبك كان يدق لي وكيف كانت كلمت احبك تخليك تنجننين من الحب، كيف كنت انتظر منك تقولي لنا ندخل فويس وانبسط يوم تقولي ( لوحدنا اول ) اهخخ قلبي فكرة اني كنت ثقيله عيلك وانتِ ترسلي لي وكيف شوي شوي لقيت قلبي يلين معاك وصرت انا الي ادورك وابيك، كيف حسستيني بالامان بكل لحظه كنتها معاك كيف كنتي لي كل حاجه من ام اخت صديقه حبيبه وروح وقلب  انا ممتنه لوجودك فحياتي وممتنه لكل مره دللتيني ودلعتيني فيها ولكل اهتمام حسستيني فيه اني شخص مميز فعيونك حنيتك وحبك هم الي خلوني اعرف معنى الحب والامان حرفيا.
 
-اليوم وأنتِ تطفئين شمعتك الـ ٢٤، تذكرت كيف بدأت كل هذي الحكاية برسالة عادية جداً في الخاص.. كيف كنتِ تجين تكلميني وأنا أسوي نفسي بعيدة وثقيلة، وكيف شوي شوي لقيت قلبي يلين وينجرف وراكِ بدون أي مقاومة.
-
-أتذكر مكالمتنا الصوتية، يوم كنت خايفة أعترف بحبي لكِ، وكيف حاصرتيني بحنيتك ودلالك ولطافتك لحد ما انكسر حاجز الخوف واعترفنا لبعض.. ومن هذاك اليوم وعالمي كله صار أدفأ وأحلى.
-
-أنا ممتنة جداً لوجودك في حياتي، وممتنة لكل مرة دللتيني فيها، ولكل اهتمام حسستيني فيه إني شخص مميز وفريد في عينك. حنيتك هذي هي اللي خلتني أعرف معنى الأمان الحقيقي.
-
-أتمنى لكِ في عامك الجديد الـ ٢٤ أيام مليانة فرح يشبه فرحة قلبي لما أشوفك، وراحة بال تدوم، ونجاحات تفرحك. تستاهلين تنحبين وتتدللين وتعيشين مبسوطة في كل ثانية.
-
-Happy 24th Birthday, my Anity. I love you, حبوبي. ♡`,
+اتمنى لك ف سنتك الجديده ايام مليانه فرح يشبه فرحك قلبي لما اشوفك وراحة بال تدوم ونجاحات تفرحك تستاهلين كل الخير والحب والدلال تستاهلين تعيشين مبسوطه في كل ثانيه، احبك ♡`,
     closingLineEnglish: "In every little universe, I'd still find my way to you.",
     closingLineArabic: "في كل كون وفي كل زمان، سأجد طريقي دائماً إليكِ."
   },

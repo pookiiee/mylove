@@ -314,16 +314,16 @@ const CONFIG = {
           options: [
             "They fell asleep listening to midnight rain",
             "They argued about which game was better",
-            "شجعت أنيا أسيل فاعترفا كلاهما مع بعضهما واكتشفا أن كلاهما معجب بالآخر",
+            "Anea encouraged Aseel to confess, and they discovered their mutual feelings",
             "They were just studying for an exam together"
           ],
           correctIndex: 2,
-          explanationArabic: "أحلى لحظة! شجعت أنيا أسيل فاعترفا كلاهما مع بعضهما واكتشفا أن كلاهما معجب بالآخر ♡"
+          explanationArabic: "أحلى لحظة! شجعت أنيا أسيل فاعترفا لبعضهما واكتشفا مشاعرهما المتبادلة ♡"
         },
         {
           questionEnglish: "What is the special pet name Aseel loves to call you with?",
           questionArabic: "ما هي الكلمة اللطيفة اللي أسيل دايماً تحب تناديكِ وتدلعك فيها؟",
-          options: ["وردتي", "قمر", "نجمتي", "حبوبي"],
+          options: ["My Rose", "My Moon", "My Little Star", "Haboubi ♡"],
           correctIndex: 3,
           explanationArabic: "حبوبي.. الكلمة اللي أسيل دايماً تحب تدلعك فيها بكل حب ♡"
         }
@@ -337,12 +337,12 @@ const CONFIG = {
     subtitle: "بحيرة النجوم الهادئة",
     whispers: [
       {
-        english: "You make me feel uniquely special, in a way no one else ever could.",
-        arabic: "طريقتك في الاهتمام بي تخليني أحس إني استثنائية جداً عندك."
+        english: "The way you care for me makes me feel so uniquely special to you.",
+        arabic: "طريقتك بالاهتمام فيني تخليني احس اني استثنائية عندك"
       },
       {
-        english: "I love the tenderness you give me without even trying.",
-        arabic: "حنيتك العفوية تعني لقلبي أكثر بكثير مما تتصورين."
+        english: "Your tenderness means the world to my heart, far more than you could ever imagine.",
+        arabic: "حنيتك لي تعني لقلبي الكثير اكثر مما تتصورين"
       },
       {
         english: "Our quietest conversations remain my warmest memories.",
@@ -364,24 +364,54 @@ const CONFIG = {
     title: "The Birthday Castle",
     subtitle: "قصر الـ 24 عاماً",
     unlockedMessage: "Twenty-four years of you. And somehow, I get to love you in this little moment of your story. Happy Birthday, my Anity. ♡",
-    unlockedMessageArabic: "أربعة وعشرون عاماً من وجودك في هذه الحياة.. ومن حسن حظي وقدري إني أحبك في هذا الفصل الجميل من قصتك. كل عام وأنتِ بخير يا أنيتي ♡"
+    unlockedMessageArabic: "أربعة وعشرون عاماً من وجودك في هذه الحياة.. ومن حسن حظي وقدري إني أحبك في هذا الفصل الجميل من قصتك. كل عام وأنتِ بخير يا أنيتي ♡",
+    gallery: [
+      {
+        id: "photo1",
+        src: "assets/images/photo1.png",
+        captionArabic: "تطقيمنا الي داخل قلبي",
+        captionEnglish: "Our Matching Icons in My Heart"
+      },
+      {
+        id: "photo2",
+        src: "assets/images/photo2.png",
+        captionArabic: "قدرتي تخلي قلبيب لك",
+        captionEnglish: "You Made My Whole Heart Yours"
+      },
+      {
+        id: "photo3",
+        src: "assets/images/photo3.png",
+        captionArabic: "كلامك وغرام وحبك ليا الي يخليني اصحى ميته حب ومشاعر لك",
+        captionEnglish: "Your Loving Words That Warm My Soul"
+      },
+      {
+        id: "photo4",
+        src: "assets/images/photo4.png",
+        captionArabic: "كولاتنا الطويله الي كنت فيها اقدر اسمع صوتك النعسان وانا مستانسه",
+        captionEnglish: "Our Long Midnight Calls & Sleepy Voice"
+      },
+      {
+        id: "photo5",
+        src: "assets/images/photo5.png",
+        captionArabic: "جملة للحين بقلبي ومابنساها",
+        captionEnglish: "Words Kept Deep in My Heart Forever"
+      },
+      {
+        id: "photo6",
+        src: "assets/images/photo6.png",
+        captionArabic: "تطقيمنا الهوتت بالدس كنت وللان مبسوطه عليه",
+        captionEnglish: "Our Cute Matching Discord Avatars"
+      }
+    ]
   },
 
   // --- Final Surprise Content ---
   finalSurprise: {
-    headingEnglish: "For My Favorite Person in This Universe",
-    headingArabic: "لأحب وأغلى شخص في هذا الكون كله",
-    letterArabic: `حبيبتي وأنيتي الغالية،
+    headingEnglish: "To My Beautiful Anity ♡",
+    headingArabic: "الى انيتي الحلوه ♡",
+    letterArabic: `ماميتي صارت 24 وانا معاها مامي تصير مامي اكثر من قبل يميميميميميي، جتني ذكرايات وقاعده اتذكر وابتسم كيف بدايتنا كيف تعرفنا كيف صرنا ندخل فويسات وكل وحده مغرمه بالثانيه وساكته كيف قلبك كان يدق لي وكيف كانت كلمت احبك تخليك تنجننين من الحب، كيف كنت انتظر منك تقولي لنا ندخل فويس وانبسط يوم تقولي ( لوحدنا اول ) اهخخ قلبي فكرة اني كنت ثقيله عيلك وانتِ ترسلي لي وكيف شوي شوي لقيت قلبي يلين معاك وصرت انا الي ادورك وابيك، كيف حسستيني بالامان بكل لحظه كنتها معاك كيف كنتي لي كل حاجه من ام اخت صديقه حبيبه وروح وقلب  انا ممتنه لوجودك فحياتي وممتنه لكل مره دللتيني ودلعتيني فيها ولكل اهتمام حسستيني فيه اني شخص مميز فعيونك حنيتك وحبك هم الي خلوني اعرف معنى الحب والامان حرفيا.
 
-اليوم وأنتِ تطفئين شمعتك الـ ٢٤، تذكرت كيف بدأت كل هذي الحكاية برسالة عادية جداً في الخاص.. كيف كنتِ تجين تكلميني وأنا أسوي نفسي بعيدة وثقيلة، وكيف شوي شوي لقيت قلبي يلين وينجرف وراكِ بدون أي مقاومة.
-
-أتذكر مكالمتنا الصوتية، يوم كنت خايفة أعترف بحبي لكِ، وكيف حاصرتيني بحنيتك ودلالك ولطافتك لحد ما انكسر حاجز الخوف واعترفنا لبعض.. ومن هذاك اليوم وعالمي كله صار أدفأ وأحلى.
-
-أنا ممتنة جداً لوجودك في حياتي، وممتنة لكل مرة دللتيني فيها، ولكل اهتمام حسستيني فيه إني شخص مميز وفريد في عينك. حنيتك هذي هي اللي خلتني أعرف معنى الأمان الحقيقي.
-
-أتمنى لكِ في عامك الجديد الـ ٢٤ أيام مليانة فرح يشبه فرحة قلبي لما أشوفك، وراحة بال تدوم، ونجاحات تفرحك. تستاهلين تنحبين وتتدللين وتعيشين مبسوطة في كل ثانية.
-
-Happy 24th Birthday, my Anity. I love you, حبوبي. ♡`,
+اتمنى لك ف سنتك الجديده ايام مليانه فرح يشبه فرحك قلبي لما اشوفك وراحة بال تدوم ونجاحات تفرحك تستاهلين كل الخير والحب والدلال تستاهلين تعيشين مبسوطه في كل ثانيه، احبك ♡`,
     closingLineEnglish: "In every little universe, I'd still find my way to you.",
     closingLineArabic: "في كل كون وفي كل زمان، سأجد طريقي دائماً إليكِ."
   },
@@ -461,7 +491,27 @@ class StateManager {
   }
 
   reset() {
-    this.state = { ...DEFAULT_STATE };
+    this.state = {
+      ...DEFAULT_STATE,
+      starsCollected: 0,
+      collectedStarIds: [],
+      memoriesVisited: [],
+      lettersOpened: [],
+      minigames: {
+        collectStars: false,
+        constellation: false,
+        quiz: false
+      },
+      secrets: {
+        secretStar: false,
+        hiddenWord: false,
+        tinyGift: false
+      },
+      castleUnlocked: false,
+      finalGiftOpened: false,
+      unlockedDestinations: ["home"],
+      exploredDestinations: []
+    };
     try {
       localStorage.removeItem(STORAGE_KEY);
     } catch (e) {}
@@ -529,25 +579,21 @@ class StateManager {
   }
 
   checkCastleUnlock() {
-    // Castle is unlocked if lake is explored or sequentially unlocked
-    if (this.isDestinationUnlocked("castle")) {
+    const explored = this.state.exploredDestinations || [];
+    if (explored.includes("lake") || explored.length >= 5) {
       this.state.castleUnlocked = true;
     }
   }
 
   isDestinationUnlocked(destId) {
     if (destId === "home") return true;
-    if (!this.state.unlockedDestinations) {
-      this.state.unlockedDestinations = ["home"];
-    }
-    // Backward compatibility for existing saves:
-    if (destId === "garden" && (this.state.exploredDestinations?.includes("home") || this.state.memoriesVisited.length > 0)) return true;
-    if (destId === "mailbox" && (this.state.exploredDestinations?.includes("garden") || this.state.lettersOpened.length > 0)) return true;
-    if (destId === "carnival" && (this.state.exploredDestinations?.includes("mailbox") || Object.values(this.state.minigames).some(Boolean))) return true;
-    if (destId === "lake" && (this.state.exploredDestinations?.includes("carnival") || this.state.starsCollected >= 10)) return true;
-    if (destId === "castle" && (this.state.exploredDestinations?.includes("lake") || this.state.castleUnlocked)) return true;
-
-    return this.state.unlockedDestinations.includes(destId);
+    const explored = this.state.exploredDestinations || [];
+    if (destId === "garden") return explored.includes("home");
+    if (destId === "mailbox") return explored.includes("garden");
+    if (destId === "carnival") return explored.includes("mailbox");
+    if (destId === "lake") return explored.includes("carnival");
+    if (destId === "castle") return explored.includes("lake") || explored.length >= 5;
+    return false;
   }
 
   isDestinationExplored(destId) {
@@ -3222,8 +3268,38 @@ function renderLakeScene(container, returnToMap) {
               return `
                 <div class="lotus-lantern-node" data-index="${idx}" style="top: ${pos.top}%; left: ${pos.left}%;" title="${pos.nameAr}">
                   <div class="lotus-glow-halo"></div>
-                  <div class="lotus-pad">🪷</div>
-                  <div class="lantern-star-flame">✨</div>
+                  <div class="lotus-svg-box">
+                    <svg class="lotus-svg" viewBox="0 0 64 52" width="62" height="50">
+                      <defs>
+                        <linearGradient id="lotusGrad_${idx}" x1="0%" y1="100%" x2="0%" y2="0%">
+                          <stop offset="0%" stop-color="#dfba53" />
+                          <stop offset="35%" stop-color="#e8a87c" />
+                          <stop offset="70%" stop-color="#ffccd5" />
+                          <stop offset="100%" stop-color="#ffffff" />
+                        </linearGradient>
+                        <radialGradient id="flameGrad_${idx}" cx="50%" cy="50%" r="50%">
+                          <stop offset="0%" stop-color="#ffffff" />
+                          <stop offset="35%" stop-color="#ffe066" />
+                          <stop offset="75%" stop-color="#ff922b" />
+                          <stop offset="100%" stop-color="transparent" />
+                        </radialGradient>
+                      </defs>
+                      <!-- Lotus Lily Pad Base -->
+                      <ellipse cx="32" cy="42" rx="26" ry="7" fill="#18362e" stroke="#dfba53" stroke-width="0.8" opacity="0.9" />
+                      <!-- Back Petals -->
+                      <path d="M12 36 C14 20 25 18 32 30 C23 23 16 27 12 36 Z" fill="url(#lotusGrad_${idx})" opacity="0.85" />
+                      <path d="M52 36 C50 20 39 18 32 30 C41 23 48 27 52 36 Z" fill="url(#lotusGrad_${idx})" opacity="0.85" />
+                      <!-- Main Blooming Petals -->
+                      <path d="M18 38 C20 16 30 14 32 36 C24 22 19 28 18 38 Z" fill="url(#lotusGrad_${idx})" />
+                      <path d="M46 38 C44 16 34 14 32 36 C40 22 45 28 46 38 Z" fill="url(#lotusGrad_${idx})" />
+                      <!-- Center Crown Petal -->
+                      <path d="M26 40 C28 14 36 14 38 40 C35 24 29 24 26 40 Z" fill="#fff" opacity="0.95" />
+                      <!-- Golden Candle Flame -->
+                      <circle cx="32" cy="18" r="9" fill="url(#flameGrad_${idx})" />
+                      <path d="M32 9 C34 14 36 18 32 23 C28 18 30 14 32 9 Z" fill="#fffbe6" />
+                      <circle cx="32" cy="18" r="2.5" fill="#ffffff" />
+                    </svg>
+                  </div>
                   <div class="lotus-caption">
                     <span class="lotus-num">${pos.label}</span>
                     <span class="lotus-ar" dir="rtl">${pos.nameAr}</span>
@@ -3304,7 +3380,7 @@ function renderLakeScene(container, returnToMap) {
 
     modalSlot.innerHTML = `
       <div class="whisper-content-box">
-        <div class="whisper-lotus">🪷✨</div>
+        <div class="whisper-lotus">✨ 🏮 ✨</div>
         <span class="whisper-tag">${pos ? pos.nameAr : `Whisper 0${idx + 1}`}</span>
         <h3 class="whisper-heading">A Quiet Thought from Aseel</h3>
         <p class="whisper-arabic" dir="rtl">${w.arabic}</p>
@@ -3501,7 +3577,7 @@ function renderCastleScene(container, returnToMap, goToFinalSurprise) {
 
 /**
  * ANEA'S LITTLE UNIVERSE ♡
- * The Final Surprise: Aseel's Letter, Video, Song, and Love
+ * The Final Surprise: Castle Photo Gallery (6 Memories), Love Letter, and Climax
  */
 
 
@@ -3512,7 +3588,7 @@ function renderCastleScene(container, returnToMap, goToFinalSurprise) {
 function renderFinalSurpriseScene(container, returnToMap) {
   const finalData = CONFIG.finalSurprise;
   const musicData = CONFIG.music;
-  const videoData = CONFIG.video;
+  const gallery = CONFIG.castle.gallery || [];
 
   container.innerHTML = `
     <div class="destination-scene final-surprise-scene" id="finalSurpriseRoot">
@@ -3524,45 +3600,52 @@ function renderFinalSurpriseScene(container, returnToMap) {
         </button>
         <div class="scene-title-wrapper">
           <h2 class="scene-title">The Heart of the Universe</h2>
-          <span class="scene-subtitle">هدية من القلب إلى القلب</span>
+          <span class="scene-subtitle">معرض ذكرياتنا الـ 6 الخاصة ♡</span>
         </div>
         <div class="stars-counter-small">⭐ ${stateManager.state.starsCollected}</div>
       </nav>
 
-      <!-- Atmospheric Opening for the Final Surprise -->
-      <div class="final-intro-banner" id="finalIntroBanner">
-        <p class="final-gentle-lead">"Before you go, there's one last little thing..."</p>
-        <p class="final-lead-arabic" dir="rtl">وقبل أن ينتهي عيد ميلادك، هناك تفاصيل صغيرة صُنعت فقط لقلبك..</p>
+      <!-- Atmospheric Opening -->
+      <div class="final-intro-banner">
+        <p class="final-gentle-lead">"Six moments captured in time, held forever in my heart."</p>
+        <p class="final-lead-arabic" dir="rtl">ست لحظات استثنائية من حكايتنا.. محفورة بقلبي إلى الأبد ♡</p>
       </div>
 
-      <!-- Interactive 3 Gift Portals -->
-      <div class="gift-options-row">
-        <!-- Option 1: A Letter From Aseel -->
-        <div class="gift-option-card" id="optLetterBtn">
-          <div class="gift-card-icon">💌</div>
-          <h3 class="gift-card-title">A Letter From Aseel</h3>
-          <p class="gift-card-arabic" dir="rtl">رسالة حب خاصة لكِ</p>
-          <span class="gift-card-tag">Open Letter ✧</span>
-        </div>
+      <!-- 6-PHOTO MEMORY GALLERY -->
+      <div class="castle-photo-grid">
+        ${gallery.map((item, idx) => `
+          <div class="photo-memory-card" data-idx="${idx}">
+            <div class="photo-frame-wrapper">
+              <img src="${item.src}" alt="${item.captionArabic}" class="photo-img" />
+              <div class="photo-zoom-hint">
+                <span>🔍 اضغطي للتكبير</span>
+              </div>
+            </div>
+            <div class="photo-meta">
+              <span class="photo-number">صورة 0${idx + 1} ✧</span>
+              <p class="photo-caption-ar" dir="rtl">${item.captionArabic}</p>
+            </div>
+          </div>
+        `).join("")}
+      </div>
 
-        <!-- Option 2: Personal Video -->
-        <div class="gift-option-card" id="optVideoBtn">
-          <div class="gift-card-icon">📽️</div>
-          <h3 class="gift-card-title">Our Little Video</h3>
-          <p class="gift-card-arabic" dir="rtl">مقطع فيديو الذكريات</p>
-          <span class="gift-card-tag">Watch Video ✧</span>
-        </div>
-
-        <!-- Option 3: Our Little Song ("love." by wave to earth) -->
-        <div class="gift-option-card" id="optSongBtn">
-          <div class="gift-card-icon">🎵</div>
-          <h3 class="gift-card-title">Our Little Song</h3>
-          <p class="gift-card-arabic" dir="rtl">"love." by wave to earth</p>
-          <span class="gift-card-tag">Listen & Read ✧</span>
+      <!-- Dedicated Song Card -->
+      <div class="castle-song-bar">
+        <div class="song-bar-content">
+          <div class="song-disc-mini">🎵</div>
+          <div class="song-bar-text">
+            <span class="song-bar-badge">Our Song Dedication</span>
+            <h3 class="song-bar-title">"${musicData.title}" — ${musicData.artist}</h3>
+            <p class="song-bar-note" dir="rtl">${musicData.noteArabic}</p>
+          </div>
+          <a href="${musicData.externalUrl}" target="_blank" rel="noopener noreferrer" class="celestial-btn song-play-link">
+            <span>▶</span>
+            <span>Listen</span>
+          </a>
         </div>
       </div>
 
-      <!-- The Grand Love Letter Section (Always Accessible) -->
+      <!-- The Grand Love Letter Section Written Underneath -->
       <div class="final-love-letter-container" id="finalLetterSection">
         <div class="letter-parchment-gold">
           <div class="letter-top-crest">
@@ -3617,17 +3700,17 @@ function renderFinalSurpriseScene(container, returnToMap) {
 
           <div class="stay-controls">
             <button class="celestial-btn secondary-btn" id="closeStaySceneBtn">
-              <span>Return to Letters</span>
+              <span>Return to Memories</span>
             </button>
           </div>
         </div>
       </div>
 
-      <!-- Modal for the 3 Gift Options -->
-      <div class="celestial-modal-overlay" id="surpriseModal" style="display: none;">
-        <div class="celestial-modal-card gift-view-modal">
-          <button class="modal-close-btn" id="surpriseModalClose">✕</button>
-          <div class="modal-content-slot" id="surpriseModalSlot"></div>
+      <!-- Photo Zoom Lightbox Modal -->
+      <div class="celestial-modal-overlay" id="photoLightboxModal" style="display: none;">
+        <div class="celestial-modal-card photo-lightbox-card">
+          <button class="modal-close-btn" id="lightboxClose">✕</button>
+          <div class="lightbox-content-slot" id="lightboxSlot"></div>
         </div>
       </div>
     </div>
@@ -3639,111 +3722,42 @@ function renderFinalSurpriseScene(container, returnToMap) {
     returnToMap();
   });
 
-  const modal = container.querySelector("#surpriseModal");
-  const modalSlot = container.querySelector("#surpriseModalSlot");
-  const modalClose = container.querySelector("#surpriseModalClose");
+  const lightbox = container.querySelector("#photoLightboxModal");
+  const lightboxSlot = container.querySelector("#lightboxSlot");
+  const lightboxClose = container.querySelector("#lightboxClose");
 
-  function openGiftModal(html) {
+  function openPhoto(idx) {
+    const item = gallery[idx];
+    if (!item) return;
     audioManager.playPaperSound();
-    modalSlot.innerHTML = html;
-    modal.style.display = "flex";
+    audioManager.playChime(784, 0.7);
+
+    lightboxSlot.innerHTML = `
+      <div class="lightbox-card-inner">
+        <div class="lightbox-img-frame">
+          <img src="${item.src}" alt="${item.captionArabic}" class="lightbox-full-img" />
+        </div>
+        <div class="lightbox-caption-area">
+          <span class="lightbox-badge">ذكرياتنا الخالدة 0${idx + 1} ♡</span>
+          <p class="lightbox-caption-text" dir="rtl">${item.captionArabic}</p>
+        </div>
+      </div>
+    `;
+
+    lightbox.style.display = "flex";
   }
 
-  modalClose.addEventListener("click", () => modal.style.display = "none");
-  modal.addEventListener("click", (e) => {
-    if (e.target === modal) modal.style.display = "none";
+  lightboxClose.addEventListener("click", () => lightbox.style.display = "none");
+  lightbox.addEventListener("click", (e) => {
+    if (e.target === lightbox) lightbox.style.display = "none";
   });
 
-  // OPTION 1: Personal Letter from Aseel
-  container.querySelector("#optLetterBtn").addEventListener("click", () => {
-    audioManager.playChime(659.25, 1.0);
-    openGiftModal(`
-      <div class="gift-letter-box">
-        <div class="gift-header">
-          <span class="gift-badge">Aseel's Private Letter</span>
-          <h2 class="gift-title">To My Beloved Anity ♡</h2>
-        </div>
-        <div class="gift-letter-body" dir="rtl">
-          <p>${finalData.letterArabic.replace(/\n\n/g, '</p><p>').replace(/\n/g, '<br>')}</p>
-        </div>
-        <div class="gift-letter-footer">
-          <span>October 17, Midnight ♡</span>
-        </div>
-      </div>
-    `);
-  });
-
-  // OPTION 2: Personal Video
-  container.querySelector("#optVideoBtn").addEventListener("click", () => {
-    audioManager.playChime(587.33, 1.0);
-    const hasVideo = !!videoData.src;
-
-    openGiftModal(`
-      <div class="gift-video-box">
-        <div class="gift-header">
-          <span class="gift-badge">Birthday Video</span>
-          <h2 class="gift-title">${videoData.titleEnglish}</h2>
-          <h3 class="gift-sub" dir="rtl">${videoData.titleArabic}</h3>
-        </div>
-
-        ${hasVideo ? `
-          <div class="video-player-frame">
-            <video controls poster="${videoData.posterImage}" playsinline style="width: 100%; border-radius: 12px;">
-              <source src="${videoData.src}" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-          </div>
-        ` : `
-          <div class="video-placeholder-frame">
-            <div class="film-icon">🎬</div>
-            <p class="placeholder-arabic" dir="rtl">${videoData.placeholderMessageArabic}</p>
-            <p class="placeholder-english">${videoData.placeholderMessageEnglish}</p>
-            <div class="video-instructions-pill">
-              <span>Tip for Aseel:</span> Put your video in <code>assets/video/</code> and set its filename in <code>js/config.js</code>!
-            </div>
-          </div>
-        `}
-      </div>
-    `);
-  });
-
-  // OPTION 3: Dedicated Song ("love." by wave to earth)
-  container.querySelector("#optSongBtn").addEventListener("click", () => {
-    audioManager.playChime(784, 1.2);
-    openGiftModal(`
-      <div class="gift-song-box">
-        <div class="song-record-visual">
-          <div class="vinyl-disc">
-            <div class="vinyl-groove"></div>
-            <div class="vinyl-center">
-              <span>♡</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="song-details">
-          <span class="song-badge">Aseel's Personal Dedication</span>
-          <h2 class="song-name">"${musicData.title}"</h2>
-          <h3 class="song-artist">${musicData.artist}</h3>
-        </div>
-
-        <div class="song-dedication-note">
-          <p class="song-note-ar" dir="rtl">${musicData.noteArabic}</p>
-          <p class="song-note-en">"${musicData.noteEnglish}"</p>
-        </div>
-
-        <div class="song-listen-links">
-          <a href="${musicData.externalUrl}" target="_blank" rel="noopener noreferrer" class="celestial-btn song-external-btn">
-            <span>▶</span>
-            <span>Listen on YouTube</span>
-          </a>
-          <a href="${musicData.spotifyUrl}" target="_blank" rel="noopener noreferrer" class="celestial-btn secondary-btn song-external-btn">
-            <span>🎧</span>
-            <span>Search on Spotify</span>
-          </a>
-        </div>
-      </div>
-    `);
+  // Photo click event listeners
+  container.querySelectorAll(".photo-memory-card").forEach(card => {
+    card.addEventListener("click", () => {
+      const idx = parseInt(card.getAttribute("data-idx"), 10);
+      openPhoto(idx);
+    });
   });
 
   // "Stay Here With Me A Little Longer" Interaction

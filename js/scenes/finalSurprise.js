@@ -1,6 +1,6 @@
 /**
  * ANEA'S LITTLE UNIVERSE ♡
- * The Final Surprise: Aseel's Letter, Video, Song, and Love
+ * The Final Surprise: Castle Photo Gallery (6 Memories), Love Letter, and Climax
  */
 
 import { CONFIG } from "../config.js";
@@ -11,7 +11,7 @@ import { Characters } from "../characters.js";
 export function renderFinalSurpriseScene(container, returnToMap) {
   const finalData = CONFIG.finalSurprise;
   const musicData = CONFIG.music;
-  const videoData = CONFIG.video;
+  const gallery = CONFIG.castle.gallery || [];
 
   container.innerHTML = `
     <div class="destination-scene final-surprise-scene" id="finalSurpriseRoot">
@@ -23,45 +23,52 @@ export function renderFinalSurpriseScene(container, returnToMap) {
         </button>
         <div class="scene-title-wrapper">
           <h2 class="scene-title">The Heart of the Universe</h2>
-          <span class="scene-subtitle">هدية من القلب إلى القلب</span>
+          <span class="scene-subtitle">معرض ذكرياتنا الـ 6 الخاصة ♡</span>
         </div>
         <div class="stars-counter-small">⭐ ${stateManager.state.starsCollected}</div>
       </nav>
 
-      <!-- Atmospheric Opening for the Final Surprise -->
-      <div class="final-intro-banner" id="finalIntroBanner">
-        <p class="final-gentle-lead">"Before you go, there's one last little thing..."</p>
-        <p class="final-lead-arabic" dir="rtl">وقبل أن ينتهي عيد ميلادك، هناك تفاصيل صغيرة صُنعت فقط لقلبك..</p>
+      <!-- Atmospheric Opening -->
+      <div class="final-intro-banner">
+        <p class="final-gentle-lead">"Six moments captured in time, held forever in my heart."</p>
+        <p class="final-lead-arabic" dir="rtl">ست لحظات استثنائية من حكايتنا.. محفورة بقلبي إلى الأبد ♡</p>
       </div>
 
-      <!-- Interactive 3 Gift Portals -->
-      <div class="gift-options-row">
-        <!-- Option 1: A Letter From Aseel -->
-        <div class="gift-option-card" id="optLetterBtn">
-          <div class="gift-card-icon">💌</div>
-          <h3 class="gift-card-title">A Letter From Aseel</h3>
-          <p class="gift-card-arabic" dir="rtl">رسالة حب خاصة لكِ</p>
-          <span class="gift-card-tag">Open Letter ✧</span>
-        </div>
+      <!-- 6-PHOTO MEMORY GALLERY -->
+      <div class="castle-photo-grid">
+        ${gallery.map((item, idx) => `
+          <div class="photo-memory-card" data-idx="${idx}">
+            <div class="photo-frame-wrapper">
+              <img src="${item.src}" alt="${item.captionArabic}" class="photo-img" />
+              <div class="photo-zoom-hint">
+                <span>🔍 اضغطي للتكبير</span>
+              </div>
+            </div>
+            <div class="photo-meta">
+              <span class="photo-number">صورة 0${idx + 1} ✧</span>
+              <p class="photo-caption-ar" dir="rtl">${item.captionArabic}</p>
+            </div>
+          </div>
+        `).join("")}
+      </div>
 
-        <!-- Option 2: Personal Video -->
-        <div class="gift-option-card" id="optVideoBtn">
-          <div class="gift-card-icon">📽️</div>
-          <h3 class="gift-card-title">Our Little Video</h3>
-          <p class="gift-card-arabic" dir="rtl">مقطع فيديو الذكريات</p>
-          <span class="gift-card-tag">Watch Video ✧</span>
-        </div>
-
-        <!-- Option 3: Our Little Song ("love." by wave to earth) -->
-        <div class="gift-option-card" id="optSongBtn">
-          <div class="gift-card-icon">🎵</div>
-          <h3 class="gift-card-title">Our Little Song</h3>
-          <p class="gift-card-arabic" dir="rtl">"love." by wave to earth</p>
-          <span class="gift-card-tag">Listen & Read ✧</span>
+      <!-- Dedicated Song Card -->
+      <div class="castle-song-bar">
+        <div class="song-bar-content">
+          <div class="song-disc-mini">🎵</div>
+          <div class="song-bar-text">
+            <span class="song-bar-badge">Our Song Dedication</span>
+            <h3 class="song-bar-title">"${musicData.title}" — ${musicData.artist}</h3>
+            <p class="song-bar-note" dir="rtl">${musicData.noteArabic}</p>
+          </div>
+          <a href="${musicData.externalUrl}" target="_blank" rel="noopener noreferrer" class="celestial-btn song-play-link">
+            <span>▶</span>
+            <span>Listen</span>
+          </a>
         </div>
       </div>
 
-      <!-- The Grand Love Letter Section (Always Accessible) -->
+      <!-- The Grand Love Letter Section Written Underneath -->
       <div class="final-love-letter-container" id="finalLetterSection">
         <div class="letter-parchment-gold">
           <div class="letter-top-crest">
@@ -116,17 +123,17 @@ export function renderFinalSurpriseScene(container, returnToMap) {
 
           <div class="stay-controls">
             <button class="celestial-btn secondary-btn" id="closeStaySceneBtn">
-              <span>Return to Letters</span>
+              <span>Return to Memories</span>
             </button>
           </div>
         </div>
       </div>
 
-      <!-- Modal for the 3 Gift Options -->
-      <div class="celestial-modal-overlay" id="surpriseModal" style="display: none;">
-        <div class="celestial-modal-card gift-view-modal">
-          <button class="modal-close-btn" id="surpriseModalClose">✕</button>
-          <div class="modal-content-slot" id="surpriseModalSlot"></div>
+      <!-- Photo Zoom Lightbox Modal -->
+      <div class="celestial-modal-overlay" id="photoLightboxModal" style="display: none;">
+        <div class="celestial-modal-card photo-lightbox-card">
+          <button class="modal-close-btn" id="lightboxClose">✕</button>
+          <div class="lightbox-content-slot" id="lightboxSlot"></div>
         </div>
       </div>
     </div>
@@ -138,111 +145,42 @@ export function renderFinalSurpriseScene(container, returnToMap) {
     returnToMap();
   });
 
-  const modal = container.querySelector("#surpriseModal");
-  const modalSlot = container.querySelector("#surpriseModalSlot");
-  const modalClose = container.querySelector("#surpriseModalClose");
+  const lightbox = container.querySelector("#photoLightboxModal");
+  const lightboxSlot = container.querySelector("#lightboxSlot");
+  const lightboxClose = container.querySelector("#lightboxClose");
 
-  function openGiftModal(html) {
+  function openPhoto(idx) {
+    const item = gallery[idx];
+    if (!item) return;
     audioManager.playPaperSound();
-    modalSlot.innerHTML = html;
-    modal.style.display = "flex";
+    audioManager.playChime(784, 0.7);
+
+    lightboxSlot.innerHTML = `
+      <div class="lightbox-card-inner">
+        <div class="lightbox-img-frame">
+          <img src="${item.src}" alt="${item.captionArabic}" class="lightbox-full-img" />
+        </div>
+        <div class="lightbox-caption-area">
+          <span class="lightbox-badge">ذكرياتنا الخالدة 0${idx + 1} ♡</span>
+          <p class="lightbox-caption-text" dir="rtl">${item.captionArabic}</p>
+        </div>
+      </div>
+    `;
+
+    lightbox.style.display = "flex";
   }
 
-  modalClose.addEventListener("click", () => modal.style.display = "none");
-  modal.addEventListener("click", (e) => {
-    if (e.target === modal) modal.style.display = "none";
+  lightboxClose.addEventListener("click", () => lightbox.style.display = "none");
+  lightbox.addEventListener("click", (e) => {
+    if (e.target === lightbox) lightbox.style.display = "none";
   });
 
-  // OPTION 1: Personal Letter from Aseel
-  container.querySelector("#optLetterBtn").addEventListener("click", () => {
-    audioManager.playChime(659.25, 1.0);
-    openGiftModal(`
-      <div class="gift-letter-box">
-        <div class="gift-header">
-          <span class="gift-badge">Aseel's Private Letter</span>
-          <h2 class="gift-title">To My Beloved Anity ♡</h2>
-        </div>
-        <div class="gift-letter-body" dir="rtl">
-          <p>${finalData.letterArabic.replace(/\n\n/g, '</p><p>').replace(/\n/g, '<br>')}</p>
-        </div>
-        <div class="gift-letter-footer">
-          <span>October 17, Midnight ♡</span>
-        </div>
-      </div>
-    `);
-  });
-
-  // OPTION 2: Personal Video
-  container.querySelector("#optVideoBtn").addEventListener("click", () => {
-    audioManager.playChime(587.33, 1.0);
-    const hasVideo = !!videoData.src;
-
-    openGiftModal(`
-      <div class="gift-video-box">
-        <div class="gift-header">
-          <span class="gift-badge">Birthday Video</span>
-          <h2 class="gift-title">${videoData.titleEnglish}</h2>
-          <h3 class="gift-sub" dir="rtl">${videoData.titleArabic}</h3>
-        </div>
-
-        ${hasVideo ? `
-          <div class="video-player-frame">
-            <video controls poster="${videoData.posterImage}" playsinline style="width: 100%; border-radius: 12px;">
-              <source src="${videoData.src}" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-          </div>
-        ` : `
-          <div class="video-placeholder-frame">
-            <div class="film-icon">🎬</div>
-            <p class="placeholder-arabic" dir="rtl">${videoData.placeholderMessageArabic}</p>
-            <p class="placeholder-english">${videoData.placeholderMessageEnglish}</p>
-            <div class="video-instructions-pill">
-              <span>Tip for Aseel:</span> Put your video in <code>assets/video/</code> and set its filename in <code>js/config.js</code>!
-            </div>
-          </div>
-        `}
-      </div>
-    `);
-  });
-
-  // OPTION 3: Dedicated Song ("love." by wave to earth)
-  container.querySelector("#optSongBtn").addEventListener("click", () => {
-    audioManager.playChime(784, 1.2);
-    openGiftModal(`
-      <div class="gift-song-box">
-        <div class="song-record-visual">
-          <div class="vinyl-disc">
-            <div class="vinyl-groove"></div>
-            <div class="vinyl-center">
-              <span>♡</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="song-details">
-          <span class="song-badge">Aseel's Personal Dedication</span>
-          <h2 class="song-name">"${musicData.title}"</h2>
-          <h3 class="song-artist">${musicData.artist}</h3>
-        </div>
-
-        <div class="song-dedication-note">
-          <p class="song-note-ar" dir="rtl">${musicData.noteArabic}</p>
-          <p class="song-note-en">"${musicData.noteEnglish}"</p>
-        </div>
-
-        <div class="song-listen-links">
-          <a href="${musicData.externalUrl}" target="_blank" rel="noopener noreferrer" class="celestial-btn song-external-btn">
-            <span>▶</span>
-            <span>Listen on YouTube</span>
-          </a>
-          <a href="${musicData.spotifyUrl}" target="_blank" rel="noopener noreferrer" class="celestial-btn secondary-btn song-external-btn">
-            <span>🎧</span>
-            <span>Search on Spotify</span>
-          </a>
-        </div>
-      </div>
-    `);
+  // Photo click event listeners
+  container.querySelectorAll(".photo-memory-card").forEach(card => {
+    card.addEventListener("click", () => {
+      const idx = parseInt(card.getAttribute("data-idx"), 10);
+      openPhoto(idx);
+    });
   });
 
   // "Stay Here With Me A Little Longer" Interaction
